@@ -8,9 +8,9 @@ SITIOS DE REFERENCIA:
 - https://twitter.com/
 - https://www.moovbydexter.com.ar/home
 - https://www.mercadolibre.com.ar/
--
--
-
+- https://www.google.com.ar/
+- https://www.stockcenter.com.ar/
+ 
 INTEGRANTES DEL EQUIPO: 
 
 Santiago Stornelli: 22 años, estudiante de programación. 
