@@ -1,7 +1,8 @@
 # grupo_4_Sneakers
 
-|| Una breve descripción de la oferta de productos y/o servicios ofrecidos por su
-sitio. También agregar una breve descripción del público al que apunta el sitio. ||
+Sneakers es un E-Commerce dedicado a la venta de zapatillas urbanas. 
+Nuestro público objetivo es jóven y vive en las grandes ciudades.
+Le brindamos una plataforma con una interfaz amigable, estéticamente minimalista y en donde comprar zapatillas es muy sencillo.
 
 SITIOS DE REFERENCIA:
 
