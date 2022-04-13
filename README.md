@@ -14,7 +14,7 @@ INTEGRANTES DEL EQUIPO:
 
 Santiago Stornelli: 22 años, estudiante de programación. 
 
-Matias Feruglio:
+Matias Feruglio: 23 años, estudiante de programación.
 
 Marina Diez: 27 años, Content Manager y estudiante de cerámica
 
