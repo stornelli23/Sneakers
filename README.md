@@ -16,7 +16,7 @@ Santiago Stornelli: 22 años, estudiante de programación.
 
 Matias Feruglio:
 
-Marina Diez:
+Marina Diez: 27 años, Content Manager y estudiante de cerámica
 
 Nicanor Guetti: 31 años, politólogo, corredor textil.
 
