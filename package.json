@@ -1,0 +1,23 @@
+{
+  "name": "grupo4ecommercedh",
+  "version": "1.0.0",
+  "description": "¡BIENVENIDOS A SNEAKERS!😄👟",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stornelli23/grupo4eCommerceDH.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stornelli23/grupo4eCommerceDH/issues"
+  },
+  "homepage": "https://github.com/stornelli23/grupo4eCommerceDH#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
