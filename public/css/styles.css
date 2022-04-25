@@ -1,0 +1,23 @@
+/*GENERAL*/
+
+
+
+/*CARRITO*/
+h1 .titular-carrito{
+    justify-content: center;
+}
+
+article{
+    display: flex;
+}
+
+.bloqueProducto {
+    display: inline-block;
+
+}
+
+.bloqueInferior{ 
+   
+}
+
+/*REOMENDADO PARA VOS*/
