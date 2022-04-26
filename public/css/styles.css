@@ -1,4 +1,50 @@
 /*GENERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-color: white;
+}
+
+header {
+    background-color: #AD1457;
+}
+
+.nav {
+    max-height: 0;
+}
+
+.top-header {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+.logo{
+    display: flex;
+    margin-left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+    display: block;
+    text-align: justify;
+    text-decoration: none;
+}
+
+.nav {
+    max-height: 0;
+}
 
 
 
