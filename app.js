@@ -20,8 +20,8 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, './views/index.html'))   
 })
 
-app.get("/views/productCart.html", (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/productCart.html'))  //ESTO SE ESCRIBE ASÍ??? ---> Se escribe como lo puse abajo
+app.get('/productCart.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/productCart.html')) 
 })
 
 app.get('/productDetail', (req, res) => {

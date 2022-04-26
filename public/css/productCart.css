@@ -1,0 +1,33 @@
+/*GENERAL*/
+
+
+
+/*CARRITO*/
+
+div .contenedor-gral{
+    display: flex;
+    flex-direction: column;
+}
+
+
+div .contenedor-titular{
+    justify-content: center;
+}
+
+article .contenedor-productos{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.bloqueProducto {
+    display: inline-block;
+
+}
+
+.bloqueInferior{ 
+   
+}
+
+
