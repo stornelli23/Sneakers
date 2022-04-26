@@ -1,47 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/productCart.css" /> <!--agregado para que likee a la pág de estilos del carrito-->
     <link rel="stylesheet" href="/css/normalize.css" />
+
+    <script src="https://kit.fontawesome.com/6057857b79.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Document</title>
+    
+    
+    <title>Product Cart</title>
 </head>
 <body>
     <header>
-        <div contenedor-gral>
-            <div class="contenedor-titular">
-        <h2>Carrito de compras</h1>
+        <div class="top-header">
+            <div class="logo">
+            <a href="/"><img src="/img/LogoBlanco.png" alt="LogoNegro"></a>
         </div>
-        <hr><!-- linea horizontal-->
-        <article><!--Producto-->
-            <div class="contenedor-productos">
-            <div class="bloqueProducto"><!--bloque foto-->
-                Aquí va la foto del producto
+            <div class="box">
+                <div class="form" action="#" method="GET">
+                    <input type="search" id="search" placeholder="Buscar productos, marcas" />
+                    <span class="icon"><i class="fa fa-search"></i></span>
+                </div>
             </div>
-            <div class="bloqueProducto"><!--bloque descripción-->
-                aquí va la descripción del producto, el color y el talle
             </div>
-            <div class="bloqueProducto"><!--bloque cantidad-->
-                aquí va el selector de cantidad
-            </div>
-            <div class="bloqueProducto"><!--bloque precio-->
-                aquí va el precio
-            </div>
-            <div class="bloqueInferior"><!--bloque precio-->
-                aquí van los botones "eliminar" "modificar" "Ver otros articulo del vendedor"
-            </div>
-        </div>
-    </div>  
-        </article>
-
-    
-
+          <nav class="link">
+            <ul>
+                <li><a href="/profile">Mi Perfil<i class="fa-solid fa-user"></i></a></li>
+                <li><a href="/likes">Me Gusta<i class="fa-solid fa-heart"></i></a></li>
+                <li><a href="/cart">Mi Carrito<i class="fa-solid fa-basket-shopping"></i></a></li>
+            </ul>
+          </nav>
+          <div class="filters">
+            <ul>
+                <li><a href="#">FILTRO</a></li>
+                <li><a href="#">FILTRO</a></li>
+                <li><a href="#">FILTRO</a></li>
+            </ul>   
+          </div>     
 
 
     </header>
+
+    <main>
+        <div class="contenedor-gral">
+            <div class="contenedor-titular">
+                 <h1>Carrito de compras</h1>
+            </div>
+            
+            <div class="contenedor-productos">
+                
+                <article><!--Producto-->
+                    <div class="bloqueProducto">
+                        <div class="linea">  <!-- linea horizontal-->
+                            <hr>
+                        </div>
+                        <div class="bloqueSuperiorProducto">
+                            <div class="foto"><!--bloque foto-->
+                                <img class="foto-producto" src="/img/NikeEjemplo.jpeg" alt="Producto1">
+                            </div>
+                            
+                            <div class="descripcion"><!--bloque descripción-->
+                                <div class="modelo">Modelo Nike Air
+                                </div>
+                                <div class="color">Color: Negro
+                                </div>
+                                <div class="talle">Talle: 42
+                                </div>
+                                </div>
+                            <div class="cantidad" ><!--bloque cantidad-->
+                                <div class="cantidadtexto">Cantidad:
+                                </div>
+                                    <!--BOTÓN CANTIDAD-->
+                                <div class="input-group plus-minus-input">
+                                        <input class="input-group-field" type="number" name="quantity" value="0" width=10px >
+                                </div>     
+                            </div>
+                            <div class="precio"><!--bloque precio-->
+                                $1000
+                            </div>
+                            
+                        </div>
+                        <div class="bloqueInferiorProducto"><!--bloque precio-->
+                            <a href="#">Eliminar</a>
+                            <a href="#">Modificar</a>
+                            <a href="#">Ver otros artículos del vendedor</a>
+                        </div>
+                    </div>
+                   
+                </article>
+
+
+                <article><!--Producto-->
+                    <div class="bloqueProducto">
+                        <div class="linea">  <!-- linea horizontal-->
+                            <hr>
+                        </div>
+                        <div class="bloqueSuperiorProducto">
+                            <div class="foto"><!--bloque foto-->
+                                <img class="foto-producto" src="/img/NikeEjemplo.jpeg" alt="Producto1">
+                            </div>
+                            
+                            <div class="descripcion"><!--bloque descripción-->
+                                <div class="modelo">Modelo Nike Air
+                                </div>
+                                <div class="color">Color: Negro
+                                </div>
+                                <div class="talle">Talle: 42
+                                </div>
+                                </div>
+                            <div class="cantidad" ><!--bloque cantidad-->
+                                <div class="cantidadtexto">Cantidad:
+                                </div>
+                                    <!--BOTÓN CANTIDAD-->
+                                <div class="input-group plus-minus-input">
+                                        <input class="input-group-field" type="number" name="quantity" value="0" width=10px >
+                                </div>     
+                            </div>
+                            <div class="precio"><!--bloque precio-->
+                                $1000
+                            </div>
+                            
+                        </div>
+                        <div class="bloqueInferiorProducto"><!--bloque precio-->
+                            <a href="#">Eliminar</a>
+                            <a href="#">Modificar</a>
+                            <a href="#">Ver otros artículos del vendedor</a>
+                        </div>
+                    </div>
+                   
+                </article>
+            </div>
+        </div>  
+        
+
+
+
+
+
+    </main>
     
 </body>
 </html>

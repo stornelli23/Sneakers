@@ -4,30 +4,207 @@
 
 /*CARRITO*/
 
-div .contenedor-gral{
+main
+ .contenedor-gral{ /*= contenedor gral del body*/
     display: flex;
     flex-direction: column;
 }
 
 
-div .contenedor-titular{
+main
+ .contenedor-gral
+    .contenedor-titular { /*contenedor del título*/
+    font-size: 4vw;
+    text-align: center;
+    padding: 3vw;   
+}
+main
+
+
+main
+ .contenedor-gral
+    .contenedor-productos{
+    display:flex ;
     justify-content: center;
+    text-align: center;
 }
 
-article .contenedor-productos{
+
+main
+ .contenedor-gral
+    .contenedor-productos
+        .bloqueProducto {   /* = contenedor de cada producto */
+    display: flex;    
+    justify-content: center;
+    width: 360px;
+    flex-direction: column;
+    margin:auto;
+    /*border: 1px dashed blue;*/
+}
+
+main
+ .contenedor-gral
+    .contenedor-productos
+        .bloqueProducto
+            .linea{ /*= linea horizontal*/
+    width: 90%;
+    margin:0px 20px 0px 20px
+}
+
+main
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto{    /* =subdivisión de cada bloque de producto*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 8%;
+    /*border: 1px dashed violet;*/
+}
+
+main
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .descripcion{    /* =subdivisión de cada bloque de producto*/
     display: flex;
     flex-direction: column;
+    min-width: 100px ;
+    justify-content: space-around;
+    text-align: left;    
+    padding: 5% 1.5% 5%     ; 
+    /*border: 1px dashed rgb(0, 106, 255);*/
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .descripcion
+                    .modelo{    
+    font-weight: bolder ;
+    font-size: 90%;
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .descripcion
+                    .color{    
+    font-size: 70%;
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .descripcion
+                    .talle{    
+    font-size: 70%;
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .cantidad{    
+         
+    padding: 12% 1.5% 2%     ; 
+    /*border: 1px dashed rgb(255, 187, 0);*/
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .cantidad
+                    .cantidadtexto{ 
+    margin: 4px 2px 4px;
+    font-style: italic;
+    font-size: 75%;
+
+}
+
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .cantidad
+                    .input-group-field{
+    background-color: rgb(225, 225, 225);
+                    }              
+                
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .precio{
+    justify-content: right; 
+    margin: 10% 5% 10%;
+    font-weight: bolder;
+    color: #AD1457;
+
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .cantidad
+                    .input-group-field{ /*Botón - campo*/
+    width: 30px;
+    justify-content: center;
+    text-align: center;   
+}
+                    
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .precio{    /* =subdivisión de cada bloque de producto*/
+     
+    padding: 5% 1.5% 5%     ; 
+    /*border: 1px dashed rgb(0, 255, 85);*/
+}
+
+.contenedor-gral
+    .contenedor-productos
+        .bloqueProducto
+            .bloqueInferiorProducto{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5% 20% 5% 5%;
+    color: orange;
+    font-weight: lighter;
+}
+.contenedor-gral
+    .contenedor-productos
+        .bloqueProducto
+            .bloqueInferiorProducto
+                a{
+    font-size:8px;
+}
+.contenedor-gral
+    .contenedor-productos
+        .bloqueProducto
+            .bloqueInferiorProducto :hover{
+    font-weight: bold;
+}
+.contenedor-gral
+    .contenedor-productos
+        .bloqueProducto
+            .bloqueInferiorProducto :focus{
+    font-weight: bold;
 }
 
 
-
-.bloqueProducto {
-    display: inline-block;
-
-}
-
+/*  
 .bloqueInferior{ 
    
+}*/
+
+/* --------------Estilo de cada producto----------- */
+
+.foto-producto{
+    justify-content: center;
+    max-width: 100px;
+    max-height: 100px;
+
 }
-
-
