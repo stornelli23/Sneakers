@@ -1,1 +1,89 @@
-Register
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <script src="https://kit.fontawesome.com/6057857b79.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Registrate en Sneakers</title>
+</head>
+
+<body>
+    <header>
+        <section id="top-bar">
+            <div id="burger-menu"><i class="fas fa-bars"></i></div>
+            <img id="logo" src="/img/LogoBlanco.png" alt="logo">
+        </section>
+        <section id="low-bar">
+            <h3>¡Bienvenido!</h3>
+            <pc class="subtitulo-frase">Usa tu usuario y contrasenia Sneakers para ingresar</pc>
+        </section>
+    </header>
+    <main>
+        <div id="contenedor-principal">
+            <h3 class="login-title">Registrate</h3>
+            <div id="contenedor-formulario">
+                <div class="login-register">
+                    <h2 class="titular-sesion-l">Iniciar Sesion</h2>
+                    <h2 class="titular-sesion-r">Registrate</h2>
+                </div>
+                <div id="register-formulario">
+                    <div class="nombre-completo">
+                        <div class="formulario-general">
+                            <p>*Nombre</p>
+                            <input type="text" name="nombre" placeholder="Nombre" class="barra-espacios" required>
+                        </div>
+                        <div class="formulario-general">
+                            <p>*Apellido</p>
+                            <input type="text" name="apellido" placeholder="Apellido" class="barra-espacios" required>
+                        </div>
+                    </div>
+                    <div class="formulario-general">
+                        <p>*E-Mail</p>
+                        <input type="email" name="email" placeholder="ejemplo@email.com" class="barra-espacios" required>
+                    </div>
+                    <div class="password-completo">
+                        <div class="formulario-general">
+                            <p>*Contrasenia</p>
+                            <input type="password" name="password" placeholder="Contrasenia" minlength="5" class="barra-espacios" required>
+                        </div>
+                        <div class="formulario-general">
+                            <p>*Validar contrasenia</p>
+                            <input type="password" name="valid-password" placeholder="Repetir contrasenia" minlength="5" class="barra-espacios" required>
+                        </div>
+                    </div>
+                    <div class="formulario-otros">
+                        <div class="formulario-general">
+                            <p>*Fecha de nacimiento</p>
+                        <input type="date" name="fecha-nacimiento">
+                        </div>
+                        <div class="formulario-general">
+                            <p>*Genero</p>
+                            <select name="genero">
+                                <option value="hombre">Hombre</option>
+                                <option value="mujer">Mujer</option>
+                                <object>Otro</object>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        </div>
+    </main>
+    <footer>
+        1
+    </footer>
+</body>
+
+</html>
