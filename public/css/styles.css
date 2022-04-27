@@ -94,13 +94,6 @@ header {
     overflow: hidden;
 }*/
 
-a:link {
-    text-decoration: none;
-    color: black;
-    display: block;
-    text-align: justify;
-    text-decoration: none;
-}
 
 
 
@@ -109,3 +102,84 @@ a:link {
 
 
 /*REOMENDADO PARA VOS*/
+
+
+
+
+/** Footer **/
+
+footer {
+    background-color: #78002E;
+ }
+
+ .content{
+     width: 30%;
+ }
+ footer div article img {
+     width: 100%;
+     height: auto;
+     margin-top: 10px;
+     margin-bottom: 10px;
+     margin-left: 5px;
+ }
+
+
+ .footer1{
+     box-sizing: border-box;
+     margin-left: 5px;
+     padding: 10px;
+     display: flex;
+     flex-direction: column;
+     width: 50%;
+ }
+
+ .content {
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    flex-direction: row;
+}
+
+main section article {
+    margin: 10px 0px;
+    width: 50%;
+    display: flex;
+   flex-direction: row;
+}
+
+ .foot i {
+     padding-left: 10px;
+     color: white;
+     align-items: flex-end;
+     flex-direction: row;
+     }
+
+footer ul li {
+    list-style-type: none;
+}
+
+nav.link{
+    display: flex;
+    width: 60%;
+    justify-content: flex-end;
+    margin-left: 40px;
+    flex-wrap: wrap;
+}
+
+ul li{
+    text-align: center;
+}
+a:link {
+    text-decoration: none;
+    text-decoration-color:white;
+    display: flex;
+    text-align: justify;
+    justify-content: space-between;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: white;
+}
+

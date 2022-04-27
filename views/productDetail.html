@@ -1,64 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/productDetail.css" /> 
+    <link rel="stylesheet" href="/css/productDetail.css" />
     <link rel="stylesheet" href="/css/normalize.css" />
     <script src="https://kit.fontawesome.com/6057857b79.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
     <title>Detalle Producto</title>
 </head>
+
 <body>
-  <header>
-    <div class="top-header">
-        <div class="logo">
-        <a href="/"><img src="/img/LogoBlanco.png" alt="LogoNegro"></a>
-    </div>
-        <div class="box">
-            <div class="form" action="#" method="GET">
-                <input type="search" id="search" placeholder="Buscar productos, marcas" />
-                <span class="icon"><i class="fa fa-search"></i></span>
+    <header>
+        <nav class="navbar">
+            <nav class="navbar-top">
+                <div class="icono_burgerMenu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="logo">
+                    <img src="/img/LogoBlanco.png" alt="">
+                </div>
+                <div class="iconos-carrito-perfil">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </nav>
+            <nav class="navbar-bottom">
+                <div class="barra-de-busqueda">
+                    <div class="barra-de-busqueda">
+                        <input type="search" placeholder="Buscar productos" /><span><i
+                                class="fa-solid fa-magnifying-glass"></i></span>
+
+                    </div>
+            </nav>
+        </nav>
+    </header>
+    <main class="container">
+        <p class="filter">FILTRO/FILTRO/FILTRO</p>
+        <br>
+        <div class="Product">
+            <article class="card">
+                <div class="foto-prod">
+                    <img src="/img/NikeEjemplo.jpeg" alt="ProductDetail">
+                </div>
+                <div class="main-article">
+                    <p class="name">Modelo Nike</p>
+                    <p class="price">$120.000</p>
+                    <p class="text-top">Talle</p>
+                    <div class="shoe-size">
+                        <p class="size">36</p>
+                        <p class="size">37</p>
+                        <p class="size">38</p>
+                        <p class="size">39</p>
+                        <p class="size">40</p>
+                    </div>
+                    <button class="cart">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </article>
+            <article class="product-description">
+                <div class="card-description">
+                    <h3 class="title">Descripción:</h3>
+                    <p class="air-max">
+                    Las Air Max Dawn, fiel a sus orígenes, están confeccionadas con al menos un 20% de material reciclado por peso. La gamuza sintética y los demás materiales combinan el estilo vintage del running con detalles nuevos. La amortiguación Nike Air brinda comodidad para todo el día.
+                    </p>
+                </div>
+            </article>
+            <section class="recommended">
+                <h3>Recomendados para vos</h3>
+                <div class="related-products">
+                    <article class="card-product">
+                        <img src="/img/airforce.png" alt="Zapatillas Vans" class="product_img">
+                        <div class="main article">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </article>
+                    <article class="card-product">
+                        <img src="/img/airforce.png" alt="Zapatillas Acne" class="product_img">
+                        <div class="main article">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                    </article>
+                    <article class="card-product">
+                        <img src="/img/airforce.png" alt="Zapatillas Air Force" class="product_img">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </article>
+                 </div>
+                </section>
+
+    </main>
+    <footer>
+        <div class="sitefooterbar">
+            <div class="content">
+                <article class="footer1">
+                <img src="/img/LogoBlanco.png">
+                    <div class="foot">
+                        <p class="facebook"><i class="fa-brands fa-facebook"></i></p>
+                        <p class="instagram"><i class="fa-brands fa-instagram"></i></p>
+                    </div>
+                </article>
+                <article class="footer1">
+                <nav class="link">
+                    <ul>
+                        <li><a href="#">Institucionales</a></li>
+                        <li><a href="#">Políticas de Privacidad</a></li>
+                    </ul>
+                </nav>
+            </article>
+                        </div>
+                      </div>
             </div>
         </div>
-        </div>
-      <nav class="link">
-        <ul>
-            <li><a href="/profile">Mi Perfil<i class="fa-solid fa-user"></i></a></li>
-            <li><a href="/likes">Me Gusta<i class="fa-solid fa-heart"></i></a></li>
-            <li><a href="/cart">Mi Carrito<i class="fa-solid fa-basket-shopping"></i></a></li>
-        </ul>
-      </nav>
-      <div class="filters">
-        <ul>
-            <li><a href="#">FILTRO</a></li>
-            <li><a href="#">FILTRO</a></li>
-            <li><a href="#">FILTRO</a></li>
-        </ul>   
-      </div>
-  </header>
-<main class="container">
-<p>FILTRO/FILTRO/FILTRO</p>
-<br>
-<div class="Product">
-<article class="card">
-<img src="/img/NikeEjemplo.jpeg" alt="ProductDetail">
-<div class="Main-article">
-<p class="Name">Modelo Nike</p>
-<p class="Price">$120.000</p>
-<p class="text-top">Talle</p>
-<p class="size">36</p>
-<p class="size">37</p>
-<p class="size">38</p>
-</div>
-</article>
-</div>
-
-
-
-</main>
+    </footer>
 </body>
+
