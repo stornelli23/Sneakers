@@ -1,8 +1,16 @@
-/*GENERAL*/
+
 
 
 
 /*CARRITO*/
+
+/*.banner-carrusel{
+    margin: 10px 0 10px 0;
+}*/
+
+.banner-carrusel img{
+    width: 100%
+}
 
 main
  .contenedor-gral{ /*= contenedor gral del body*/
@@ -15,6 +23,7 @@ main
  .contenedor-gral
     .contenedor-titular { /*contenedor del título*/
     font-size: 4vw;
+    color: rgb(71, 71, 71);
     text-align: center;
     padding: 3vw;   
 }
@@ -68,7 +77,7 @@ main
     .contenedor-productos 
         .bloqueProducto 
             .bloqueSuperiorProducto
-                .descripcion{    /* =subdivisión de cada bloque de producto*/
+                .descripcion{    /* =descripción del producto*/
     display: flex;
     flex-direction: column;
     min-width: 100px ;
@@ -85,13 +94,15 @@ main
                     .modelo{    
     font-weight: bolder ;
     font-size: 90%;
+    color:rgb(71, 71, 71)
 }
 .contenedor-gral 
     .contenedor-productos 
         .bloqueProducto 
             .bloqueSuperiorProducto
                 .descripcion
-                    .color{    
+                    .color{ 
+    color:rgb(71, 71, 71)   ;
     font-size: 70%;
 }
 .contenedor-gral 
@@ -99,7 +110,8 @@ main
         .bloqueProducto 
             .bloqueSuperiorProducto
                 .descripcion
-                    .talle{    
+                    .talle{   
+    color:rgb(71, 71, 71) ;
     font-size: 70%;
 }
 .contenedor-gral 
@@ -117,6 +129,7 @@ main
             .bloqueSuperiorProducto
                 .cantidad
                     .cantidadtexto{ 
+    color:rgb(71, 71, 71);
     margin: 4px 2px 4px;
     font-style: italic;
     font-size: 75%;
@@ -184,13 +197,13 @@ main
 .contenedor-gral
     .contenedor-productos
         .bloqueProducto
-            .bloqueInferiorProducto :hover{
+            .bloqueInferiorProducto :hover{ /*"eliminar", "modificar", y "ver otros.." en negrita al pasar el mouse.*/
     font-weight: bold;
 }
 .contenedor-gral
     .contenedor-productos
         .bloqueProducto
-            .bloqueInferiorProducto :focus{
+            .bloqueInferiorProducto :focus{ /*"eliminar", "modificar", y "ver otros.." en negrita al pasar el mouse.*/
     font-weight: bold;
 }
 
@@ -200,7 +213,7 @@ main
    
 }*/
 
-/* --------------Estilo de cada producto----------- */
+
 
 .foto-producto{
     justify-content: center;

@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/productCart.css" /> <!--agregado para que likee a la pág de estilos del carrito-->
     <link rel="stylesheet" href="/css/normalize.css" />
+    
 
     <script src="https://kit.fontawesome.com/6057857b79.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,36 +21,34 @@
 </head>
 <body>
     <header>
-        <div class="top-header">
-            <div class="logo">
-            <a href="/"><img src="/img/LogoBlanco.png" alt="LogoNegro"></a>
+        <nav class="navbar">
+        <nav class="navbar-top">
+            <div class="icono_burgerMenu">
+                <i class="fas fa-bars"></i>
+              </div>
+              <div class="logo">
+                <img src="/img/LogoBlanco.png" alt="">
+              </div>
+              <div class="iconos-carrito-perfil">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-user"></i>
+              </div>
+        </nav>
+        <nav class="navbar-bottom">
+        <div class="barra-de-busqueda">
+            <div class="barra-de-busqueda">
+                <input type="search" placeholder="Buscar productos"/><span><i class="fa-solid fa-magnifying-glass"></i></span>
+                  
         </div>
-            <div class="box">
-                <div class="form" action="#" method="GET">
-                    <input type="search" id="search" placeholder="Buscar productos, marcas" />
-                    <span class="icon"><i class="fa fa-search"></i></span>
-                </div>
-            </div>
-            </div>
-          <nav class="link">
-            <ul>
-                <li><a href="/profile">Mi Perfil<i class="fa-solid fa-user"></i></a></li>
-                <li><a href="/likes">Me Gusta<i class="fa-solid fa-heart"></i></a></li>
-                <li><a href="/cart">Mi Carrito<i class="fa-solid fa-basket-shopping"></i></a></li>
-            </ul>
-          </nav>
-          <div class="filters">
-            <ul>
-                <li><a href="#">FILTRO</a></li>
-                <li><a href="#">FILTRO</a></li>
-                <li><a href="#">FILTRO</a></li>
-            </ul>   
-          </div>     
-
-
+        </nav>
+    </nav>
+    
     </header>
 
     <main>
+        <div class="banner-carrusel">
+            <img src="/img/banner-carrusel-ejemplo.jpg" alt="">
+        </div>
         <div class="contenedor-gral">
             <div class="contenedor-titular">
                  <h1>Carrito de compras</h1>
@@ -59,7 +58,7 @@
                 
                 <article><!--Producto-->
                     <div class="bloqueProducto">
-                        <div class="linea">  <!-- linea horizontal-->
+                        <div class="linea"">  <!-- linea horizontal-->
                             <hr>
                         </div>
                         <div class="bloqueSuperiorProducto">
