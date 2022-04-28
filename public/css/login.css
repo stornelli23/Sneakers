@@ -108,8 +108,11 @@ main {
     border: 1px solid black;
 }
 
-.formulario-email {
-    margin-bottom: 15px;
+.formulario-email p{
+        text-align: left;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 5px;
 }
 
 .checkbox-u {
@@ -176,33 +179,47 @@ main {
     margin-bottom: 5px;
 }
 
-.formulario-otros{
+
+.nombre-completo,.password-completo,.formulario-otros{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    margin: 10px 0px 10px 0px;
 }
 
-.nombre-completo{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 25px;
-    margin-bottom: 10px;
-}
-
-.password-completo{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 
 /************************Media Queries************************/
 /**Tablet**/
 
-@media (min-width:361px) {
+@media (min-width:767px) {
+
+    .formulario-otros{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .formulario-general{
+        width:45%;
+    }
+    .nombre-completo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
 
     .login-register {
         flex-direction: row;
         justify-content: center;
+    }
+
+    .password-completo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     main {
@@ -218,8 +235,7 @@ main {
     }
 
     .formulario-email {
-        width: 60%;
-
+        width: 100%;
     }
 
     #login-formulario {
@@ -239,7 +255,7 @@ main {
 
 /**Escritorio**/
 
-@media (min-width:769px) {
+@media (min-width:1024px) {
     #burger-menu {
         display: none;
     }
