@@ -20,3 +20,7 @@ Marina Diez: 27 años, Content Manager y estudiante de cerámica.
 
 Nicanor Guetti: 31 años, politólogo, corredor textil.
 
+TABLERO DE TRABAJO EN TRELLO: 
+
+- https://trello.com/b/MleSBfq3/sneakers
+
