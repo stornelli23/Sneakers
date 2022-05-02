@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/6057857b79.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Ubuntu:wght@300&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&family=Ubuntu:wght@300;700&display=swap"
         rel="stylesheet">
     <title>Detalle Producto</title>
 </head>
@@ -19,27 +19,26 @@
 <body>
     <header>
         <nav class="navbar">
-            <nav class="navbar-top">
-                <div class="icono_burgerMenu">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="logo">
-                    <img src="/img/LogoBlanco.png" alt="">
-                </div>
-                <div class="iconos-carrito-perfil">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <i class="fa-solid fa-user"></i>
-                </div>
-            </nav>
-            <nav class="navbar-bottom">
-                <div class="barra-de-busqueda">
-                    <div class="barra-de-busqueda">
-                        <input type="search" placeholder="Buscar productos" /><span><i
-                                class="fa-solid fa-magnifying-glass"></i></span>
-
-                    </div>
-            </nav>
+        <nav class="navbar-top">
+            <div class="icono_burgerMenu">
+                <i class="fas fa-bars"></i>
+              </div>
+              <div class="logo">
+                <a href="/"><img src="/img/LogoBlanco.png" alt=""></a>
+              </div>
+              <div class="iconos-carrito-perfil">
+                <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="/login"><i class="fa-solid fa-user"></i></a>
+              </div>
         </nav>
+        <nav class="navbar-bottom">
+        <div class="barra-de-busqueda">
+            <div class="barra-de-busqueda">
+                <i class="fa-solid fa-magnifying-glass"></i><input type="search" placeholder="Buscar productos..."/>
+                  
+        </div>
+        </nav>
+    </nav>
     </header>
     <main class="container">
         <p class="filter">FILTRO/FILTRO/FILTRO</p>
@@ -54,15 +53,16 @@
                     <p class="price">$120.000</p>
                     <p class="text-top">Talle</p>
                     <div class="shoe-size">
-                        <p class="size">36</p>
-                        <p class="size">37</p>
-                        <p class="size">38</p>
-                        <p class="size">39</p>
-                        <p class="size">40</p>
+                    <button class="size"><span>35</span></button>
+                    <button class="size"><span>36</span></button>
+                    <button class="size"><span>37</span></button>
+                    <button class="size"><span>38</span></button>
+                    <button class="size"><span>39</span></button>
+                    <button class="size"><span>40</span></button>
                     </div>
-                    <button class="cart">
+                   <a href="/productCart"><button class="submit">
                         Agregar al carrito
-                    </button>
+                    </button></a> 
                 </div>
             </article>
             <article class="product-description">
@@ -79,45 +79,56 @@
                     <article class="card-product">
                         <img src="/img/airforce.png" alt="Zapatillas Vans" class="product_img">
                         <div class="main article">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                          <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
                         </div>
                     </article>
                     <article class="card-product">
                         <img src="/img/airforce.png" alt="Zapatillas Acne" class="product_img">
                         <div class="main article">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                            <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
                         </div>
                     </article>
                     <article class="card-product">
                         <img src="/img/airforce.png" alt="Zapatillas Air Force" class="product_img">
-                        <i class="fa-solid fa-cart-shopping"></i>
+                        <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
                     </article>
                  </div>
                 </section>
 
     </main>
     <footer>
-        <div class="sitefooterbar">
-            <div class="content">
-                <article class="footer1">
-                <img src="/img/LogoBlanco.png">
-                    <div class="foot">
-                        <p class="facebook"><i class="fa-brands fa-facebook"></i></p>
-                        <p class="instagram"><i class="fa-brands fa-instagram"></i></p>
-                    </div>
-                </article>
-                <article class="footer1">
-                <nav class="link">
-                    <ul>
-                        <li><a href="#">Institucionales</a></li>
-                        <li><a href="#">Políticas de Privacidad</a></li>
-                    </ul>
-                </nav>
-            </article>
-                        </div>
-                      </div>
-            </div>
+        <div class="footer-main">
+            <section class="footer-left">
+                <div class="logo">
+                    <img src="/img/LogoBlanco.png" alt="">
+                  </div>
+            </section>
+            <section class="footer-center">
+                <div class="footer-info">
+            
+                    <a href="#"><p> Sobre nosotros </p></a>
+                   
+                </div>
+                <div class="footer-info">
+                  
+                    <a href="#"><p> Ayuda </p></a>
+                    
+                </div>
+                <div class="footer-info">
+                    <a href="#"><p> Atención al cliente </p></a>
+                </div>
+
+            </section>
+            <section class="footer-right">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook-square"></i>
+                <i class="fa-brands fa-twitter-square"></i>
+
+            </section>
+
+
         </div>
+
     </footer>
 </body>
-
+</html>

@@ -28,6 +28,11 @@ header {
     width: 35vw;
 }
 
+div.iconos-carrito-perfil{
+    display: flex;
+    flex-direction: row;
+}
+
 .navbar-bottom {
     display: flex;
     justify-content: left;
@@ -139,4 +144,105 @@ footer{
     font-size: 16px;
     padding: 2px;
     
+}
+
+
+/** media queries **/
+
+@media (min-width: 425px) {
+
+    .logo img{
+        width: 60%;
+        align-items: center;
+    }
+    
+    .navbar-bottom {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        height: 30px;
+        background-color: #e35183;
+        padding-left: 5px;
+    }
+    .barra-de-busqueda{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 2px;    
+    }
+    .barra-de-busqueda input{
+        height: 20px;
+        width: fit-content;
+        border-radius: 5px;
+        border: none;
+        padding-left: 5px;
+        background-color: #e35183;
+        
+    }
+    
+    .barra-de-busqueda input::placeholder{
+            color:#78002e;
+    }
+    
+    .navbar i {
+        color: #78002e;
+        font-size: 15px;
+        
+    }
+
+    .footer-main 
+    .footer-left 
+    .logo img {
+        width: 100%;
+    }
+}
+
+
+
+@media (min-width: 769px) {
+
+    .logo img{
+        width: 60%;
+        align-items: center;
+    }
+    
+    .navbar-bottom {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        height: 30px;
+        background-color: #e35183;
+        padding-left: 5px;
+    }
+    .barra-de-busqueda{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 2px;    
+    }
+    .barra-de-busqueda input{
+        height: 20px;
+        width: fit-content;
+        border-radius: 5px;
+        border: none;
+        padding-left: 5px;
+        background-color: #e35183;
+        
+    }
+    
+    .barra-de-busqueda input::placeholder{
+            color:#78002e;
+    }
+    
+    .navbar i {
+        color: #78002e;
+        font-size: 15px;
+        
+    }
+
+    .footer-main 
+    .footer-left 
+    .logo img {
+        width: 60%;
+    }
 }
