@@ -83,7 +83,7 @@ main
     min-width: 100px ;
     justify-content: space-around;
     text-align: left;    
-    padding: 5% 1.5% 5%     ; 
+    padding: 10% 1.5% 10% 1.5%     ; 
     /*border: 1px dashed rgb(0, 106, 255);*/
 }
 .contenedor-gral 
@@ -91,10 +91,12 @@ main
         .bloqueProducto 
             .bloqueSuperiorProducto
                 .descripcion
-                    .modelo{    
+                    .modelo{
+    margin-bottom: 10px;
     font-weight: bolder ;
     font-size: 90%;
     color:rgb(71, 71, 71)
+    
 }
 .contenedor-gral 
     .contenedor-productos 
@@ -118,9 +120,19 @@ main
     .contenedor-productos 
         .bloqueProducto 
             .bloqueSuperiorProducto
+                .columnaCantidad{
+    display : flex ;
+    flex-direction: column;
+    padding: 30%, 0, 30%, 0;
+}
+
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
                 .cantidad{    
          
-    padding: 12% 1.5% 2%     ; 
+    padding:  95% 1.5% 2% 0%;    
     /*border: 1px dashed rgb(255, 187, 0);*/
 }
 .contenedor-gral 
@@ -129,8 +141,8 @@ main
             .bloqueSuperiorProducto
                 .cantidad
                     .cantidadtexto{ 
-    color:rgb(71, 71, 71);
-    margin: 4px 2px 4px;
+    color:rgb(71, 71, 71);    
+    margin: 10%, 5%, 10%, 20%;
     font-style: italic;
     font-size: 75%;
 
@@ -142,9 +154,19 @@ main
             .bloqueSuperiorProducto
                 .cantidad
                     .input-group-field{
+    margin: 15% ;
     background-color: rgb(225, 225, 225);
                     }              
-                
+.contenedor-gral 
+.contenedor-productos 
+    .bloqueProducto 
+        .bloqueSuperiorProducto
+            .columnaCantidad
+                .preciounidad{
+    
+    font-size: 55%;
+    font-weight: lighter;
+}
 .contenedor-gral 
     .contenedor-productos 
         .bloqueProducto 
@@ -183,8 +205,8 @@ main
             .bloqueInferiorProducto{
     display: flex;
     justify-content: space-evenly;
-    padding: 5% 20% 5% 5%;
-    color: orange;
+    padding: 0% 20% 5% 5%;
+    color: rgb(71,71,71);
     font-weight: lighter;
 }
 .contenedor-gral
@@ -193,6 +215,7 @@ main
             .bloqueInferiorProducto
                 a{
     font-size:8px;
+    color:rgb(120,0,46)
 }
 .contenedor-gral
     .contenedor-productos
@@ -207,6 +230,116 @@ main
     font-weight: bold;
 }
 
+.lineaSuma{
+    width: 90%;
+    padding:0px 10% 0px 50%
+
+}
+.contenedor-gral
+    .contenedor-productos
+        .bloqueSuma {   /* = contenedor de producto - bloque de suma*/
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    width: 360px;
+    flex-direction: column;
+    margin:auto;
+    position: relative;
+    
+}
+
+
+.contenedor-gral 
+    .contenedor-productos
+        .bloqueSuma 
+            .envio{
+    display: flex;
+    text-align: right; 
+    margin: 3% 5% 3%;
+    padding:0 0px 0 0 ;
+    font-weight: bolder;
+    color: rgb(71,71,71);
+}
+.contenedor-gral 
+    .contenedor-productos
+        .bloqueSuma 
+            .envio
+                .envio-leyenda{
+    width: 90%;
+    text-align: right;
+                }
+
+                .contenedor-gral 
+                .contenedor-productos
+                    .bloqueSuma 
+                        .envio
+                            .envio-precio{
+                width: 10%;
+                text-align: right;
+                            }
+
+.contenedor-gral 
+    .contenedor-productos
+        .bloqueSuma 
+            .envio{
+    display: flex;
+    text-align: right; 
+    margin: 3% 5% 3%;
+    padding:0 0px 0 0 ;
+    font-weight: bolder;
+    color: rgb(164, 164, 164);
+}
+.contenedor-gral 
+    .contenedor-productos
+        .bloqueSuma 
+            .envio
+                .envio-leyenda{
+    width: 80%;
+    text-align: right;
+    font-style: italic;
+                }
+
+.contenedor-gral 
+.contenedor-productos
+    .bloqueSuma 
+        .envio
+            .envio-precio{
+width: 20%;
+text-align: right;
+font-style: italic;
+            }
+.contenedor-gral 
+    .contenedor-productos
+        .bloqueSuma 
+            .total{
+    display: flex;
+    text-align: right; 
+    margin: 3% 5% 3%;
+    padding:0 0 30% 0 ;
+    font-weight: bolder;
+    
+    color: rgb(21, 182, 45);
+}
+.contenedor-gral 
+    .contenedor-productos
+        .bloqueSuma 
+            .total
+                .total-leyenda{
+    width: 80%;
+    text-align: right;
+    font-size: 100%;
+}
+
+.contenedor-gral 
+            .contenedor-productos
+                .bloqueSuma 
+                    .total
+                        .total-precio{
+            width: 20%;
+            text-align: right;
+            font-size: 130%;
+}
+
 
 /*  
 .bloqueInferior{ 
@@ -219,5 +352,74 @@ main
     justify-content: center;
     max-width: 100px;
     max-height: 100px;
+    padding: 0, 10px, 0, 10px;
 
 }
+
+
+/*----------------------------------tomado del trabajo individual para recomendedados------*/
+section .recommended{
+    margin: 2% 2% 2% 10%;
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+.recomendados{
+    display:flex;    
+    justify-content: center;
+    margin-bottom: 10%;
+    padding: 0 15%;
+}
+.card{
+    justify-content: space-evenly;
+    
+}
+.subetiqueta{
+    
+    border-top: 1px solid #d4d4d4;
+    padding: 15px;
+}
+.predes{
+    display: flex;
+}
+.pre{
+    width: 30%;
+}
+.des{
+    width: 70%;
+    color: #39b54a;
+    margin-left: 10%;   
+        
+}
+.product-img{
+    padding: 10px;
+    margin: 10px;
+}
+
+.card-body{
+   
+    display: inline-block;
+    width: 110px;
+    
+    border: black 3px solid;
+    box-sizing: border-box;
+    
+}
+.card-body:hover {
+    box-shadow: 0px 0px 10px rgb(100,100,100);        
+}
+
+main section article i {
+    transition: all, 500ms;
+}
+.card-body:hover i {
+    transform: rotate(-90deg);  
+}
+
+.card-body:hover .descripciones {       
+    display: block;        
+}
+/****************** hasta aquí reocmendados**************/
+
+    
