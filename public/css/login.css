@@ -1,11 +1,8 @@
-footer {
-    background-color: #78002E;
-    width: 100%;
-}
+
 
 main {
-    background-color: gray;
-    padding: autopx;
+    background-color: rgb(215, 215, 215);
+    
 }
 
 /*********** HEADER ***********/
