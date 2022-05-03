@@ -49,7 +49,7 @@ header {
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 2px;    
+    padding: 2px;
 }
 .barra-de-busqueda input{
     height: 15px;
@@ -59,7 +59,7 @@ header {
     padding-left: 5px;
     background-color: #e35183;
     outline: none;
-    
+
 }
 
 .barra-de-busqueda input::placeholder{
@@ -69,11 +69,11 @@ header {
 .navbar i {
     color: #78002e;
     font-size: 15px;
-    
+
 }
 .barra-de-busqueda i{
     font-size: 12px;
-   
+
 }
 
 
@@ -81,9 +81,24 @@ header {
     width: 100vw;
 }
 
+main{
+    width: 100vw;
+}
+
+.product {
+    width: 50%;
+}
+.product img {
+    width: 50%
+}
+
+
+
+
+
 footer{
     position: absolute;
-    bottom: 0;
+    bottom: 0; 
     background-color:#78002e;
     height: 70px;
     width: 100%;
@@ -131,7 +146,7 @@ footer{
     color: #fff;
     opacity: 0.8;
     font-weight: lighter;
-  
+
 }
 
 .footer-right{
@@ -146,7 +161,7 @@ footer{
     color: #e35183;
     font-size: 16px;
     padding: 2px;
-    
+
 }
 
 
@@ -158,7 +173,7 @@ footer{
         width: 60%;
         align-items: center;
     }
-    
+
     .navbar-bottom {
         display: flex;
         justify-content: left;
@@ -171,7 +186,7 @@ footer{
         display: flex;
         align-items: center;
         height: 100%;
-        padding: 2px;    
+        padding: 2px;
     }
     .barra-de-busqueda input{
         height: 20px;
@@ -180,21 +195,21 @@ footer{
         border: none;
         padding-left: 5px;
         background-color: #e35183;
-        
+
     }
-    
+
     .barra-de-busqueda input::placeholder{
             color:#78002e;
     }
-    
+
     .navbar i {
         color: #78002e;
         font-size: 15px;
-        
+
     }
 
-    .footer-main 
-    .footer-left 
+    .footer-main
+    .footer-left
     .logo img {
         width: 100%;
     }
@@ -208,7 +223,7 @@ footer{
         width: 60%;
         align-items: center;
     }
-    
+
     .navbar-bottom {
         display: flex;
         justify-content: left;
@@ -221,7 +236,7 @@ footer{
         display: flex;
         align-items: center;
         height: 100%;
-        padding: 2px;    
+        padding: 2px;
     }
     .barra-de-busqueda input{
         height: 20px;
@@ -230,21 +245,21 @@ footer{
         border: none;
         padding-left: 5px;
         background-color: #e35183;
-        
+
     }
-    
+
     .barra-de-busqueda input::placeholder{
             color:#78002e;
     }
-    
+
     .navbar i {
         color: #78002e;
         font-size: 15px;
-        
+
     }
 
-    .footer-main 
-    .footer-left 
+    .footer-main
+    .footer-left
     .logo img {
         width: 60%;
     }
