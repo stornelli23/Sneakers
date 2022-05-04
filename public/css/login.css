@@ -97,6 +97,7 @@ main {
 }
 
 .login-register a{
+    text-decoration: none;
     color: black;
 }
 
@@ -317,7 +318,7 @@ footer#footer-register {
     }
 
     main {
-        padding: 20px 0px;
+        padding: 115px 0px;
     }
 
     #contenedor-principal {
@@ -349,7 +350,7 @@ footer#footer-register {
     /**Register*/
     
     footer#footer-register{
-        height: 250px;
+        height: 200px;
     }
 
     .footer-logo-r {
