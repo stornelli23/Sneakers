@@ -236,10 +236,10 @@ main section article i {
     transform: rotate(-90deg);  
 }
 .card-body .descripciones{
-    display: none;
+    visibility: hidden;
 }
 .card-body:hover .descripciones {       
-    display: block;        
+   visibility: visible;        
 }
 
 
@@ -325,6 +325,14 @@ h3 {
 
 @media (min-width: 425px) {
 
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: 'Ubuntu', sans-serif;
+    
+    }
 
 
     .logo img{
@@ -394,6 +402,15 @@ h3 {
 /*******HASTA AQUÍ BREAK INTERMEDIO (500px)****/
 
 @media (min-width: 769px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: 'Ubuntu', sans-serif;
+    
+    }
 
     .logo img{
         width: 60%;
