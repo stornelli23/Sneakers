@@ -11,6 +11,15 @@
 p {
     font-size: 1.8vh;
 }
+main h2 {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    color: #AD1457;
+    font-weight: bolder;
+    margin: 15px;
+}
+
 main
  .contenedor-gral{ /*= contenedor gral del body*/
     display: flex;
@@ -412,7 +421,45 @@ font-style: italic;
 
 
 /*----------------------------------tomado del trabajo individual para recomendedados------*/
+article .art-recomendados{
+    width: 30%;
+    display: flex;
+}
+.product {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    margin: 10px 0;
+}
 
+.product img {
+    width: 20em;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #ebebeb;
+
+    
+}
+
+.product-detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4px;
+}
+
+.product-detail p{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    color:#AD1457;
+}
 /****************** hasta aquí reocmendados**************/
 /********BOTON FINALIZAR COMPRA********************/
 .bloqueSuma .continuarCompra{
@@ -421,47 +468,47 @@ font-style: italic;
     right:15px;
     justify-content: right;
     text-align: center;
-    width: 80%;
+    width: 60%;
     
 }
-.continuarCompra button:hover {
-    background-color: rgb(120,0,46);
-    color:white ;
-    box-shadow: 1px 1px 1px 1px rgba(23, 0, 157, 0.2);
-}
 
-button{
-    display: flex;
-    justify-content: center;
+button {
+    background-color: #AD1457;
+    border: none;
     color: white;
     text-align: center;
-    width: 80%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 10px 1px;
+    padding: 5px;
+    border-radius: 50px;
+    width: 100%;
     position: relative;
     right: 2vh;
-    padding :5px;
-    border-radius: 1vh;
-    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.748);
-    background-color: rgb(173,20,87);
-
-    
 }
-button:hover{
-   
-    border-radius: 1vh;
-    box-shadow: 1px 1px 1px 1px #c6c6c6;
+
+button:hover {
+    background-color: whitesmoke;
+    color: #AD1457;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
     cursor:pointer
-    
 }
 button p{
     font-weight:500;
 }
-
 /** media queries **/
 
 @media (min-width: 425px) {
 
 p {
    font-size: 2vh;
+}
+main h2 {
+    font-size: 20px;
+    
 }
 .contenedor-gral
     .contenedor-productos
@@ -499,13 +546,14 @@ p {
 }
 /*******BREAK INTERMEDIO*******/
 @media (min-width: 500px){
-   /* h1 {
-      font-size: 16px;
-    }*/
+   
     p {
       font-size: 2.5vh;
     }
-    
+    main h2 {
+        font-size: 22px;
+        
+    }
     .contenedor-gral
     .contenedor-productos
         .bloqueProducto
@@ -579,44 +627,49 @@ p {
             font-size: 3vh;
 }
 .bloqueSuma .continuarCompra{
-    
-    right:5vh;
-    
-    width: 50%;
-    margin: 10px;
-}
-.continuarCompra button:hover {
-    background-color: rgb(120,0,46);
-    color:white ;
-    box-shadow: 1px 1px 1px 1px rgba(23, 0, 157, 0.2);
-}
-
-button{
     display: flex;
-    justify-content: center;
-    color: white;
+    position:absolute;
+    right:15px;
+    justify-content: right;
     text-align: center;
     width: 80%;
-    height: 45px;
-    position: relative;
-    right: 3vh;
-    padding :5px;
-    border-radius: 1vh;
-    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.748);
-    background-color: rgb(173,20,87);
-
     
 }
-button p{
+
+button {
+    background-color: #AD1457;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 10px 1px;
+    padding: 5px;
+    border-radius: 50px;
+    width: 50%;
     position: relative;
-    top: 3px;
-    font-weight: bolder;
+    right: 6vh;
+}
+
+button:hover {
+    background-color: whitesmoke;
+    color: #AD1457;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+    cursor:pointer
+}
+button p{
+    font-weight:500;
 }
 }
 
 @media (min-width: 769px) {
-    h1 {
-        font-size: 50%;
+    
+    main h2 {
+        font-size: 24px;
+        
     }
     p {
         font-size: 3vh;
@@ -694,37 +747,15 @@ button p{
             font-size: 4.5vh;
 }
 
-.continuarCompra button:hover {
-    background-color: rgb(120,0,46);
-    color:white ;
-    box-shadow: 1px 1px 1px 1px rgba(23, 0, 157, 0.2);
 }
 
-button{
-    display: flex;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    width: 80%;
-    height: 45px;
-    position: relative;
-    right: 4vh;
-    padding :5px;
-    border-radius: 1vh;
-    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.748);
-    background-color: rgb(173,20,87);
-
+@media (min-width: 1200px) {
+  
+    main h2 {
+        font-size: 28px;
+        
+    }
     
-}
-}
-
-@media (min-width: 1024px) {
-    h1 {
-        font-size: 60%;
-    }
-    h3{
-        font-size: 30px;
-    }
     p {
         font-size: 3.5vh;
     }
@@ -809,29 +840,11 @@ button{
             text-align: center;
             font-size: 4.5vh;
 }
-
-.continuarCompra button:hover {
-    background-color: rgb(120,0,46);
-    color:white ;
-    box-shadow: 1px 1px 1px 1px rgba(23, 0, 157, 0.2);
+button {
+    position:relative;
+    right: 10%;
 }
 
-button{
-    display: flex;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    width: 80%;
-    height: 60px;
-    position: relative;
-    right: 4vh;
-    padding :5px;
-    border-radius: 1vh;
-    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.748);
-    background-color: rgb(173,20,87);
-
-    
-}
 .recomendados{
     margin-bottom: 20vh;
 }
