@@ -13,6 +13,16 @@ main p {
     display: flex;
 }
 
+a:link {
+        text-decoration: none;
+        color: black;
+        display: block;
+        text-align: justify;
+        text-decoration: none;
+}
+
+
+
 p.products {
     margin: 0;
     display: flex;
@@ -84,12 +94,7 @@ p.size {
     justify-items: center;
 }
 
-
-.size span{
-    font-size: 12px;
-}
-
-button {
+.size{
     background-color: #AD1457;
     border: none;
     color: white;
@@ -99,7 +104,24 @@ button {
     font-size: 12px;
     margin: 10px 1px;
     padding: 5px;
-    border-radius: 50px;
+    border-radius: 90px;
+    width: 100%; 
+}
+.size span{
+    font-size: 12px;
+}
+
+button.submit {
+    background-color: #AD1457;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 10px 1px;
+    padding: 5px;
+    border-radius: 5px;
     width: 100%;
 }
 
@@ -242,10 +264,10 @@ main section article i {
     transform: rotate(-90deg);  
 }
 .card-body .descripciones{
-    display: none;
+    visibility: hidden;
 }
 .card-body:hover .descripciones {       
-    display: block;        
+    visibility: visible;        
 }
 
 
@@ -299,7 +321,7 @@ h3 {
     }
 
 
-    button {
+    button.submit {
         background-color: #AD1457;
         border: none;
         color: white;
@@ -308,8 +330,8 @@ h3 {
         display: inline-block;
         font-size: 12px;
         margin: 15px 2px;
-        padding: 5px;
-        border-radius: 50px;
+        padding: 10px;
+        border-radius: 10px;
     }
 
     button {
@@ -358,7 +380,7 @@ h3 {
     }
 
     .column{
-        width: 45%;
+        width: 50%;
         padding-left: 15px;
         padding-bottom: 35px;
     }
@@ -416,7 +438,7 @@ h3 {
     }
 
 
-    button {
+    button.sumbit {
         background-color: #AD1457;
         border: none;
         color: white;
@@ -426,7 +448,7 @@ h3 {
         font-size: 16px;
         margin: 15px 2px;
         padding: 10px;
-        border-radius: 90px;
+        border-radius: 10px;
         width: 100%;
         height: auto;
     }
