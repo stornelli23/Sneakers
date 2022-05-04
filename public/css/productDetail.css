@@ -1,4 +1,3 @@
-
 /** main**/
 
 main {
@@ -9,7 +8,7 @@ main {
     justify-content: flex-start;
 }
 
-main p{
+main p {
     margin-top: 15px;
     display: flex;
 }
@@ -19,60 +18,59 @@ p.products {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    
+
 }
 
-.card  {
+.card-prod {
     background-color: #fff;
     margin: 10px 0px;
     display: flex;
     width: 90%;
 }
 
-.card img{
-    width: 90%; 
+.card-prod img {
+    width: 90%;
     height: auto;
 }
 
-.card
-.foto-prod {
+.card-prod .foto-prod {
     width: 50%;
     box-sizing: border-box;
 }
 
-.card
-.main-article {
-width: 50%;
-display: flex;
-flex-direction: column;
-box-sizing: border-box;
-margin-left: 10px;
+.card-prod .main-article {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-left: 10px;
 }
 
-p.name{
+p.name {
     font-size: 16px;
 }
 
-.price{
+.price {
     font-size: 16px;
     font-weight: bold;
     color: #AD1457;
 }
 
 
-p.text-top{
-    font-size: 12px;
+p.text-top {
+    font-size: 14px;
     border-bottom: solid 1px grey;
     display: flex;
     justify-content: space-between;
 }
 
-.shoe-size{
+.shoe-size {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-p.size{
+
+p.size {
     font-size: 12px;
     background-color: #AD1457;
     color: white;
@@ -86,6 +84,11 @@ p.size{
     justify-items: center;
 }
 
+
+.size span{
+    font-size: 12px;
+}
+
 button {
     background-color: #AD1457;
     border: none;
@@ -93,44 +96,164 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px;
-    margin: 15px 2px;
+    font-size: 12px;
+    margin: 10px 1px;
     padding: 5px;
     border-radius: 50px;
     width: 100%;
-  }
+}
 
-
+button:focus {
+    background-color: whitesmoke;
+    color: #AD1457;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+}
 
 .card-description {
     background-color: #fff;
-    margin: 30px 0px;
+    margin: auto;
     display: flex;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 30px;
     width: 100%;
+    border-bottom: solid 1px lightgray;
 }
-h3.title{
+
+h3.title {
     font-weight: bolder;
     margin-bottom: 10px;
 }
 
-p.air-max{
+p.air-max {
     margin: 10px;
+    position: relative;
+    margin-top: auto;
+    text-size-adjust: 16px;
+    padding-bottom: 10px;
+}
+
+.column{
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px lightgray;
 }
 
 
-.related-products {
-    margin: 0;
+.title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+section .recommended{
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    flex-direction: row;
+    flex-direction: column;
+    margin: 2% 2% 2% 10%;
+    text-align: center;
 }
+section .recommended .recomendados p{
+    font-size: 12;
+}
+h3 {
+    text-align: center;
+}
+.recomendados{
+    display:flex;    
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 10vh;
+}
+section 
+    article
+        .card-body
+             img {
+                    width:100%;
+                    height: auto;
+                    
+}
+.card{
+    width: 30vh;
+    height: 30vh;
+    display: flex;
+    margin-bottom: 5vh;
+    
+}
+.subetiqueta{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border-top: 1px solid #d4d4d4;
+        padding: 10px;
+    
+   
+}
+
+.pre{
+    font-size: 13px;
+    font-weight: bold;
+    /*width: 30%;*/
+}
+.des{
+    font-size: 11px;
+    /*width: 70%;*/
+    color: #78002e;
+    margin-left: 0;   
+        
+}
+.product-img{
+    padding: 5px;
+    /*margin: 10px;*/
+}
+
+.titularRecomendados{
+    margin: 0 0 3% 0;
+    
+}
+.card-body{   
+    display: inline-block;
+    width: 100%;
+    /*border: rgb(255, 255, 255) 3px solid;*/
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+
+main section article i {
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #78002e;
+    color: #AD1457;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: -15px;
+    transition: all, 500ms;
+}
+.card-body:hover i {
+    transform: rotate(-90deg);  
+}
+.card-body .descripciones{
+    display: none;
+}
+.card-body:hover .descripciones {       
+    display: block;        
+}
+
 
 main section article {
     margin: 10px 0px;
     width: 40%;
     display: flex;
-   flex-direction: row;
+    flex-direction: row;
 }
 
 main section article img {
@@ -139,7 +262,7 @@ main section article img {
 }
 
 
-main section article a i{
+main section article a i {
     display: block;
     font-size: 10px;
     padding: 5px;
@@ -157,7 +280,7 @@ main section article a i{
     margin: 12px;
 }
 
-h3{
+h3 {
     font-weight: bolder;
     margin-bottom: 10px;
 }
@@ -165,7 +288,17 @@ h3{
 /** media queries **/
 
 @media (min-width: 425px) {
-    
+
+    .card-prod{
+        margin-bottom: 40px;
+    }
+
+
+    .size span{
+        font-size: 14px;
+    }
+
+
     button {
         background-color: #AD1457;
         border: none;
@@ -174,21 +307,24 @@ h3{
         text-decoration: none;
         display: inline-block;
         font-size: 12px;
-        margin: 15px 5px;
+        margin: 15px 2px;
         padding: 5px;
         border-radius: 50px;
-      }
-      button {
-        transition-duration: 0.4s;
-      }
-      
-      button:hover {
-        background-color: white; 
-        color: #AD1457;
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-      }
+    }
 
-      main section article a i{
+    button {
+        transition-duration: 0.4s;
+    }
+
+    button:focus {
+        background-color: whitesmoke;
+        color: #AD1457;
+        -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+        -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+        box-shadow: inset 0px 0px 5px #c1c1c1;
+    }
+
+    main section article a i {
         display: block;
         font-size: 12px;
         padding: 5px;
@@ -204,15 +340,81 @@ h3{
         transition-duration: 0.4s;
     }
 
-    main section article i:hover {
+    main section article i:focus {
         color: #78002e;
     }
+
+    p.air-max {
+        margin: 10px;
+        position: relative;
+        margin-top: -2px;
+        padding-bottom: 70px;        
+    }
+  
+    .row{
+        display: flex;
+        justify-content: flex-end;
+        justify-self: end;
+    }
+
+    .column{
+        width: 45%;
+        padding-left: 15px;
+        padding-bottom: 35px;
+    }
+
+    .card{
+        width: 50%;
+        height: auto;
+        display: flex;
+        margin-bottom: 5vh;
+        
+    }
+
+    .product-img{
+        width: 100%;
+        height: auto;
+    }
+
 }
 
 
 
 
 @media (min-width: 769px) {
+
+
+    .card-prod .main-article {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        margin-left: 10px;
+        margin-top: 50px;
+        margin-bottom: 40px;
+    }
+
+    p.name {
+        font-size: 24px;
+    }
+
+    .price {
+        font-size: 20px;
+        font-weight: bold;
+        color: #AD1457;
+    }
+
+    p.text-top {
+        font-size: 20px;
+        border-bottom: solid 1px grey;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .size span{
+        font-size: 14px;
+    }
+
 
     button {
         background-color: #AD1457;
@@ -221,24 +423,27 @@ h3{
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 14px;
+        font-size: 16px;
         margin: 15px 2px;
         padding: 10px;
         border-radius: 90px;
         width: 100%;
         height: auto;
-      }
-      button {
-        transition-duration: 0.4s;
-      }
-      
-      button:hover {
-        background-color: white; 
-        color: #AD1457;
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-      }
+    }
 
-      main section article a i{
+    button {
+        transition-duration: 0.4s;
+    }
+
+    button:hover {
+        background-color: whitesmoke;
+        color: #AD1457;
+        -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+        -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+        box-shadow: inset 0px 0px 5px #c1c1c1;
+    }
+
+    main section article a i {
         display: block;
         font-size: 15px;
         padding: 5px;
@@ -258,4 +463,42 @@ h3{
         color: #78002e;
     }
 
+    .card-description {
+        background-color: #fff;
+        margin: auto;
+        display: flex;
+        position: relative;
+        margin-top: 80px;
+        margin-bottom: 90px;
+        width: 100%;
+    }
+
+    h3.title{
+        font-size: 20px;
+    }
+    .air-max{
+    font-size: 16px;
+    }
+
+    h4{
+        font-size: 24px;
+    }
+    .row{
+        display: flex;
+        justify-content: flex-end;
+        justify-self: end;
+        margin-bottom: 80px;
+    }
+
+    .column{
+        padding-bottom: 90px;
+    }
+
+    .card{
+        width: 25%;
+        height: auto;
+        display: flex;
+        margin-bottom: 5vh;
+        
+    }
 }
