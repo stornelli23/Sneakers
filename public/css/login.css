@@ -96,6 +96,9 @@ main {
     flex-direction: column;
 }
 
+.login-register a{
+    color: black;
+}
 
 .barra-espacios {
     padding: 5px 10px;
