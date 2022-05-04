@@ -1,12 +1,8 @@
-
-
 main {
     background-color: rgb(215, 215, 215);
-    
 }
 
 /*********** HEADER ***********/
-
 
 .fas.fa-bars {
     display: flex;
@@ -49,6 +45,7 @@ main {
 
 
 #contenedor-principal {
+    max-width: 700px;
     border-top: solid 2px lightgray;
     border-bottom: solid 2px lightgray;
     background-color: white;
@@ -86,6 +83,7 @@ main {
 }
 
 #login-formulario p {
+    margin-top: 5px;
     font-size: 16px;
     font-weight: bold;
     text-align: left;
@@ -105,17 +103,17 @@ main {
     border: 1px solid black;
 }
 
-.formulario-email p{
-        text-align: left;
-        font-size: 14px;
-        font-weight: bold;
-        margin-bottom: 5px;
+.formulario-email p {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .checkbox-u {
     text-align: center;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin: 10px 0px;
 }
 
 .checkbox-u input {
@@ -127,10 +125,10 @@ main {
     font-size: 15px;
 }
 
-.olvidar-contrasenia {
+.olvidar-contraseña {
     font-size: 14px;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 10px 0px;
     padding: 15px 10px;
     color: black;
     text-decoration: underline;
@@ -140,7 +138,7 @@ main {
     background-color: #e35184;
     border-radius: 15px;
     padding: auto;
-    width: 80%;
+    width: 55%;
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
@@ -148,6 +146,7 @@ main {
     font-weight: bold;
     padding: 13px 23px;
     text-decoration: none;
+    margin-top: 5px;
 }
 
 .boton-login:hover {
@@ -159,46 +158,140 @@ main {
     top: 1px;
 }
 
+.login-register h2{
+    text-align: center;
+    justify-content: center;
+}
+
 /*********** FOOTER ************/
 
+footer#footer-register {
+    width: 100%;
+    bottom: 0;
+    height: 300px;
+    flex-direction: column;
+}
 
+.linea-separadora-r {
+    width: 80%;
+    color: white;
+    margin: 10px 0px;
+}
 
+#footer-abajo-r {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    bottom: 0px;
+    padding: 5px 0px;
+}
 
+.footer-logo-r {
+    display: none;
+    justify-content: center;
+    width: 30%;
+}
+
+.footer-logo-r img {
+    width: 20vw;
+    max-width: 300px;
+}
+
+.texto-copyright-r {
+    color: white;
+    text-align: center;
+    display: block;
+    font-size: 12px;
+    padding: 0px 25px;
+}
+
+#footer-arriba-r{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-info-r{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.control-info-r{
+    color: white;
+    text-decoration: none;
+}
+
+.control-info-r p{
+    font-size: 16px;
+    margin: 5px 0px;
+}
+
+.footer-redes-r{
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #e35183;
+    width: 100%;
+}
+
+.footer-redes-r i{
+    font-size: 30px;
+    color: #e35183;
+    margin: 0px 10px;
+}
 
 
 
 /********************* R E G I S T E R *********************/
 
-.formulario-general p{
+.formulario-general p {
     text-align: left;
     font-size: 14px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin: 5px 0px;
 }
 
 
-.nombre-completo,.password-completo,.formulario-otros{
+.nombre-completo,
+.password-completo,
+.formulario-otros {
     display: flex;
     flex-direction: column;
     margin: 10px 0px 10px 0px;
 }
 
+.control-calendario {
+    font-size: 14px;
+    width: 80%;
+}
+
+.control-selector {
+    font-size: 16px;
+    width: 50%;
+}
 
 /************************Media Queries************************/
 /**Tablet**/
 
-@media (min-width:767px) {
+@media (min-width:426px) {
 
-    .formulario-otros{
+    .formulario-otros {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-    
-    .formulario-general{
-        width:45%;
+
+    .formulario-general {
+        width: 45%;
     }
-    .nombre-completo{
+
+    .nombre-completo {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -211,7 +304,7 @@ main {
         justify-content: center;
     }
 
-    .password-completo{
+    .password-completo {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -248,13 +341,56 @@ main {
         flex-direction: row;
         align-items: center;
     }
-}
 
-/**Escritorio**/
+    /**Register*/
+    
+    footer#footer-register{
+        height: 250px;
+    }
 
-@media (min-width:1024px) {
-    #burger-menu {
-        display: none;
+    .footer-logo-r {
+        display: flex;
+        width: 30%;
+    }
+
+    .texto-copyright-r {
+        width: 60%;
+        font-size: 13px;
+        padding: 0px;
+    }
+
+    .texto-copyright-r {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    #footer-arriba-r{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 70%;
+        max-width: 700px;
+    }
+
+    .footer-redes-r{
+        width: 15%;
+    }
+
+    .footer-info-r{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 75%;
     }
 
 }
+    /**Escritorio**/
+
+    @media (min-width:1024px) {
+        #burger-menu {
+            display: none;
+        }
+
+        .texto-copyright-r {
+            font-size: 15px;
+        }
+    }

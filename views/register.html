@@ -64,24 +64,26 @@
                     </div>
                     <div class="password-completo">
                         <div class="formulario-general">
-                            <p>*Contrasenia</p>
-                            <input type="password" name="password" placeholder="Contrasenia" minlength="5" class="barra-espacios" required>
+                            <p>*Contraseña</p>
+                            <input type="password" name="password" placeholder="contraseña" minlength="5" class="barra-espacios" required>
                         </div>
                         <div class="formulario-general">
-                            <p>*Validar contrasenia</p>
-                            <input type="password" name="valid-password" placeholder="Repetir contrasenia" minlength="5" class="barra-espacios" required>
+                            <p>*Validar contraseña</p>
+                            <input type="password" name="valid-password" placeholder="Repetir contraseña" minlength="5" class="barra-espacios" required>
                         </div>
                     </div>
                     <div class="formulario-otros">
                         <div class="formulario-general">
                             <p>*Fecha de nacimiento</p>
-                        <input type="date" name="fecha-nacimiento">
+                        <input type="date" name="fecha-nacimiento" class="control-calendario">
                         </div>
                         <div class="formulario-general">
                             <p>*Genero</p>
-                            <select name="genero">
+                            <select name="genero" class="control-selector">
+                                <option>Seleccionar</option>
                                 <option value="hombre">Hombre</option>
                                 <option value="mujer">Mujer</option>
+                                <option value="otro-genero">Otro</option>
                                 <object>Otro</object>
                             </select>
                         </div>
@@ -93,41 +95,40 @@
         </div>
         </div>
     </main>
-    <footer>
-        <footer>
-            <div class="footer-main">
-                <section class="footer-left">
-                    <div class="logo">
-                        <img src="/img/LogoBlanco.png" alt="">
-                      </div>
-                </section>
-                <section class="footer-center">
-                    <div class="footer-info">
-                
-                        <a href="#"><p> Sobre nosotros </p></a>
-                       
-                    </div>
-                    <div class="footer-info">
-                      
-                        <a href="#"><p> Ayuda </p></a>
-                        
-                    </div>
-                    <div class="footer-info">
-                        <a href="#"><p> Atención al cliente </p></a>
-                    </div>
-    
-                </section>
-                <section class="footer-right">
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-facebook-square"></i>
-                    <i class="fa-brands fa-twitter-square"></i>
-    
-                </section>
-    
-    
+    <footer id="footer-register">
+        <section id="footer-arriba-r">
+            <div class="footer-info-r">
+            <div>
+                <a href="#" class="control-info-r"><p> Sobre nosotros </p></a>
             </div>
-    
-        </footer>
+            <div>
+                <a href="#" class="control-info-r"><p> Ayuda </p></a>
+            </div>
+            <div>
+                <a href="#" class="control-info-r"><p> Atención al cliente </p></a>
+            </div>
+        </div>
+        <div class="footer-redes-r">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter-square"></i></a>
+        </div>
+        </section>
+        <hr class="linea-separadora-r">
+        <section id="footer-abajo-r">
+                <div class="footer-logo-r">
+                    <img src="/img/LogoBlanco.png" alt="logo">
+                </div>
+                    <div class="texto-copyright-r">
+                        © Copyright - 2021 - 2022 www.sneakers.com.ar, TODOS LOS DERECHOS RESERVADOS. Las fotos
+                        contenidas en
+                        este site, el logotipo y las marcas son propiedad de Sneakers© y/o de sus respectivos
+                        titulares. Está prohibida la reproducción total o parcial, sin la expresa autorización de la
+                        administradora de la tienda virtual. Grupo4-DigitalHouse.
+                    </div>
+        </section>
+        </div>
+    </footer>
 </body>
 
 </html>
