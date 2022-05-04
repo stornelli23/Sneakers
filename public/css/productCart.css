@@ -9,7 +9,7 @@
 }*/
 
 p {
-    font-size: 1.6vh;
+    font-size: 1.8vh;
 }
 main
  .contenedor-gral{ /*= contenedor gral del body*/
@@ -64,6 +64,7 @@ main
     .contenedor-productos 
         .bloqueProducto 
             .bloqueSuperiorProducto{    /* =subdivisión de cada bloque de producto*/
+    width: 100%;;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -78,7 +79,7 @@ main
                     display: flex;
                     text-align: center;
                     justify-content: center;
-                    width:70%;
+                    width: 40%;
                     margin: 20px 5px 0 5px;
                 }
 .contenedor-gral 
@@ -88,6 +89,7 @@ main
                 .foto
                     .foto-producto{
     display: flex;
+    margin-top: 10%;
     text-align : center;
     justify-content: center;
     max-width: 70%;
@@ -103,7 +105,8 @@ main
                 .descripcion{    /* =descripción del producto*/
     display: flex;
     flex-direction: column;
-    min-width: 30% ;
+    width: 20%;
+    min-width: 20% ;
     justify-content: space-around;
     text-align: left;    
     padding: 10% 1.5% 10% 1.5%     ; 
@@ -126,18 +129,18 @@ main
         .bloqueProducto 
             .bloqueSuperiorProducto
                 .descripcion
-                    .color{ 
+                    .color p{ 
     color:rgb(71, 71, 71)   ;
-    font-size: 70%;
+    font-size: 9px;
 }
 .contenedor-gral 
     .contenedor-productos 
         .bloqueProducto 
             .bloqueSuperiorProducto
                 .descripcion
-                    .talle{   
+                    .talle p{   
     color:rgb(71, 71, 71) ;
-    font-size: 70%;
+    font-size: 9px;
 }
 .contenedor-gral 
     .contenedor-productos 
@@ -145,6 +148,7 @@ main
             .bloqueSuperiorProducto
                 .columnaCantidad{
     display : flex ;
+    width: 20%;
     flex-direction: column;
     padding: 30%, 0, 30%, 0;
 }
@@ -154,8 +158,13 @@ main
         .bloqueProducto 
             .bloqueSuperiorProducto
                 .cantidad{    
-         
-    padding:  62% 1.5% 2% 0%;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+       
+    padding:  62% 1.5% 2% 0%;
+    
     /*border: 1px dashed rgb(255, 187, 0);*/
 }
 .contenedor-gral 
@@ -165,7 +174,7 @@ main
                 .cantidad
                     .cantidadtexto{ 
     color:rgb(71, 71, 71);    
-    margin: 10%, 5%, 10%, 20%;
+    margin: 30%, 5%, 10%, 0%;
     font-style: italic;
     font-size: 75%;
 
@@ -179,15 +188,26 @@ main
         .bloqueSuperiorProducto
             .columnaCantidad
                 .preciounidad{
-    
-    font-size: 55%;
+    position: relative;
+    bottom: 10px;
+    left: 25%;
     font-weight: lighter;
+}
+
+.contenedor-gral 
+.contenedor-productos 
+    .bloqueProducto 
+        .bloqueSuperiorProducto
+            .columnaCantidad
+                .preciounidad p{
+        font-size: 70%;
 }
 .contenedor-gral 
     .contenedor-productos 
         .bloqueProducto 
             .bloqueSuperiorProducto
                 .precio{
+    width: 10%;
     justify-content: right; 
     margin: 10% 5% 10%;
     font-weight: bolder;
@@ -199,7 +219,9 @@ main
         .bloqueProducto 
             .bloqueSuperiorProducto
                 .precio p{
-    font-size: 1vh;
+    position: relative;
+    right: 35%;
+    font-size: 2vh;
     
 
 }
@@ -288,6 +310,8 @@ main
         .bloqueSuma 
             .envio{
     display: flex;
+    position: relative;
+    right: 5vw;
     text-align: right; 
     margin: 3% 5% 3%;
     padding:0 0px 0 0 ;
@@ -299,6 +323,8 @@ main
         .bloqueSuma 
             .envio
                 .envio-leyenda{
+    display: flex;
+    justify-content: end;
     width: 90%;
     text-align: right;
                 }
@@ -361,7 +387,7 @@ font-style: italic;
                 .total-leyenda{
     width: 80%;
     text-align: right;
-    font-size: 100%;
+    font-size: 2vh;
 }
 
 .contenedor-gral 
@@ -370,8 +396,8 @@ font-style: italic;
                     .total
                         .total-precio{
             width: 20%;
-            text-align: right;
-            font-size: 130%;
+            text-align: center;
+            font-size: 2vh;
 }
 
 
@@ -392,11 +418,11 @@ font-style: italic;
 .bloqueSuma .continuarCompra{
     display: flex;
     position:absolute;
-    right:2px;
+    right:15px;
     justify-content: right;
     text-align: center;
     width: 80%;
-    margin: 10px;
+    
 }
 .continuarCompra button:hover {
     background-color: rgb(120,0,46);
@@ -410,6 +436,8 @@ button{
     color: white;
     text-align: center;
     width: 80%;
+    position: relative;
+    right: 2vh;
     padding :5px;
     border-radius: 1vh;
     box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.748);
@@ -424,11 +452,14 @@ button:hover{
     cursor:pointer
     
 }
+button p{
+    font-weight:500;
+}
 
 /** media queries **/
 
 @media (min-width: 425px) {
-}
+
 p {
    font-size: 2vh;
 }
@@ -447,16 +478,32 @@ p {
                 .precio p{
     font-size: 2vh;
     
-
 }
-
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .descripcion
+                    .color p{ 
+    
+    font-size: 10px;
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .descripcion
+                    .talle p{   
+            font-size: 10px;
+    }
+}
 /*******BREAK INTERMEDIO*******/
 @media (min-width: 500px){
    /* h1 {
       font-size: 16px;
     }*/
     p {
-      font-size: 2.1vh;
+      font-size: 2.5vh;
     }
     
     .contenedor-gral
@@ -466,15 +513,104 @@ p {
                 a{
     font-size:2vh;
     color:rgb(120,0,46)
-}
-.contenedor-gral 
+    }
+    .contenedor-gral 
+        .contenedor-productos 
+            .bloqueProducto 
+                .bloqueSuperiorProducto
+                    .precio p{
+        font-size: 3vh;
+                    
+
+    }
+    .contenedor-gral 
     .contenedor-productos 
         .bloqueProducto 
             .bloqueSuperiorProducto
-                .precio p{
-    font-size: 3vh;
+                .descripcion
+                    .color p{ 
     
+    font-size: 13px;
+}
+    .contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .descripcion
+                    .talle p{   
+            font-size: 13px;
+    }
+    .contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .cantidad
+                    .input-group-field{ /*Botón - campo*/
+    height : 30px;
+       
+}
+    .contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .columnaCantidad
+                    .preciounidad p{
+            font-size: 12px;
+           
+    }
+    
+.contenedor-gral 
+    .contenedor-productos
+        .bloqueSuma 
+            .total
+                .total-leyenda{
+    width: 80%;
+    text-align: right;
+    font-size: 3vh;
+}
 
+.contenedor-gral 
+            .contenedor-productos
+                .bloqueSuma 
+                    .total
+                        .total-precio{
+            width: 20%;
+            text-align: center;
+            font-size: 3vh;
+}
+.bloqueSuma .continuarCompra{
+    
+    right:5vh;
+    
+    width: 50%;
+    margin: 10px;
+}
+.continuarCompra button:hover {
+    background-color: rgb(120,0,46);
+    color:white ;
+    box-shadow: 1px 1px 1px 1px rgba(23, 0, 157, 0.2);
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    width: 80%;
+    height: 45px;
+    position: relative;
+    right: 3vh;
+    padding :5px;
+    border-radius: 1vh;
+    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.748);
+    background-color: rgb(173,20,87);
+
+    
+}
+button p{
+    position: relative;
+    top: 3px;
+    font-weight: bolder;
 }
 }
 
@@ -483,7 +619,7 @@ p {
         font-size: 50%;
     }
     p {
-        font-size: 2.5vh;
+        font-size: 3vh;
     }
     .contenedor-gral
     .contenedor-productos
@@ -500,6 +636,203 @@ p {
                 .precio p{
     font-size: 3vh;
     
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .descripcion
+                    .color p{ 
+    
+    font-size: 15px;
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .descripcion
+                    .talle p{   
+            font-size: 15px;
+    }
+.contenedor-gral 
+.contenedor-productos 
+    .bloqueProducto 
+        .bloqueSuperiorProducto
+            .columnaCantidad
+                .preciounidad{
+    position: relative;
+    bottom: 20px;
+    left: 25%;
+    font-weight: lighter;
+}
 
+.contenedor-gral 
+.contenedor-productos 
+    .bloqueProducto 
+        .bloqueSuperiorProducto
+            .columnaCantidad
+                .preciounidad p{
+        font-size: 15px;
+}
+.contenedor-gral 
+    .contenedor-productos
+        .bloqueSuma 
+            .total
+                .total-leyenda{
+    width: 80%;
+    text-align: right;
+    font-size: 4.5vh;
+}
+
+.contenedor-gral 
+            .contenedor-productos
+                .bloqueSuma 
+                    .total
+                        .total-precio{
+            width: 20%;
+            text-align: center;
+            font-size: 4.5vh;
+}
+
+.continuarCompra button:hover {
+    background-color: rgb(120,0,46);
+    color:white ;
+    box-shadow: 1px 1px 1px 1px rgba(23, 0, 157, 0.2);
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    width: 80%;
+    height: 45px;
+    position: relative;
+    right: 4vh;
+    padding :5px;
+    border-radius: 1vh;
+    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.748);
+    background-color: rgb(173,20,87);
+
+    
+}
+}
+
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 60%;
+    }
+    h3{
+        font-size: 30px;
+    }
+    p {
+        font-size: 3.5vh;
+    }
+    .contenedor-gral
+    .contenedor-productos
+        .bloqueProducto
+            .bloqueInferiorProducto
+                a{
+    font-size:3vh;
+    color:rgb(120,0,46)
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .precio p{
+    font-size: 4vh;
+    
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .descripcion
+                    .modelo p{ 
+    
+    font-size: 22px;
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .descripcion
+                    .color p{ 
+    
+    font-size: 20px;
+}
+.contenedor-gral 
+    .contenedor-productos 
+        .bloqueProducto 
+            .bloqueSuperiorProducto
+                .descripcion
+                    .talle p{   
+            font-size: 20px;
+    }
+.contenedor-gral 
+.contenedor-productos 
+    .bloqueProducto 
+        .bloqueSuperiorProducto
+            .columnaCantidad
+                .preciounidad{
+    position: relative;
+    bottom: 20px;
+    left: 25%;
+    font-weight: lighter;
+}
+
+.contenedor-gral 
+.contenedor-productos 
+    .bloqueProducto 
+        .bloqueSuperiorProducto
+            .columnaCantidad
+                .preciounidad p{
+        font-size: 15px;
+}
+.contenedor-gral 
+    .contenedor-productos
+        .bloqueSuma 
+            .total
+                .total-leyenda{
+    width: 80%;
+    text-align: right;
+    font-size: 4.5vh;
+}
+
+.contenedor-gral 
+            .contenedor-productos
+                .bloqueSuma 
+                    .total
+                        .total-precio{
+            width: 20%;
+            text-align: center;
+            font-size: 4.5vh;
+}
+
+.continuarCompra button:hover {
+    background-color: rgb(120,0,46);
+    color:white ;
+    box-shadow: 1px 1px 1px 1px rgba(23, 0, 157, 0.2);
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    width: 80%;
+    height: 60px;
+    position: relative;
+    right: 4vh;
+    padding :5px;
+    border-radius: 1vh;
+    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.748);
+    background-color: rgb(173,20,87);
+
+    
+}
+.recomendados{
+    margin-bottom: 20vh;
 }
 }
