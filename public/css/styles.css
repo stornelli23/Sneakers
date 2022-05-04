@@ -141,7 +141,113 @@ header {
 
 
 
-/*REOMENDADO PARA VOS*/
+/***********CARDS*********/
+section .recommended{
+    display: flex;
+    flex-direction: column;
+    margin: 2% 2% 2% 10%;
+    text-align: center;
+}
+section .recommended .recomendados p{
+    font-size: 12;
+}
+h3 {
+    text-align: center;
+}
+.recomendados{
+    display:flex;    
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 10vh;
+}
+section 
+    article
+        .card-body
+             img {
+                    width:80%;
+                    height: 80%;
+                    
+}
+.card{
+    width: 30vh;
+    height: 30vh;
+    display: flex;
+    margin-bottom: 5vh;
+    
+}
+.subetiqueta{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border-top: 1px solid #d4d4d4;
+        padding: 10px;
+    
+   
+}
+/*.predes{
+    display: flex;
+}*/
+.pre{
+    padding: 10% 0 0 0;
+    font-size: 13px;
+    font-weight: bold;
+    /*width: 30%;*/
+}
+.des{
+    font-size: 11px;
+    /*width: 70%;*/
+    color: #39b54a;
+    margin-left: 10%;   
+        
+}
+.product-img{
+    padding: 5px;
+    /*margin: 10px;*/
+}
+
+.titularRecomendados{
+    margin: 0 0 3% 0;
+    
+}
+.card-body{   
+    display: inline-block;
+    width: 100%;
+    /*border: rgb(255, 255, 255) 3px solid;*/
+    box-sizing: border-box;
+    padding: 5px;
+}
+.card-body:hover {
+    box-shadow: 0px 0px 10px rgb(100,100,100);        
+}
+
+main section article i {
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    color: #39b54a;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: -15px;
+    transition: all, 500ms;
+}
+.card-body:hover i {
+    transform: rotate(-90deg);  
+}
+.card-body .descripciones{
+    display: none;
+}
+.card-body:hover .descripciones {       
+    display: block;        
+}
+
+
+
+/*****************HASTA AQUÍ CARDS************/
 
 footer{
     /*position: absolute;*/
@@ -210,12 +316,19 @@ footer{
     padding: 2px;
     
 }
-
+section article p   {
+    font-size: 12px;
+}
+h3 {
+    font-size: 14px;
+}
 
 
 /** media queries **/
 
 @media (min-width: 425px) {
+
+
 
     .logo img{
         width: 60%;
@@ -261,9 +374,27 @@ footer{
     .logo img {
         width: 100%;
     }
+    section article p   {
+        font-size: 15px;
+    }
+h3 {
+        font-size: 18px;
+    }
 }
 
+/*******BREAK INTERMEDIO*******/
+@media (min-width: 500px){
 
+    section article p   {
+        font-size: 16px;
+    }
+h3 {
+        font-size: 18px;
+    }
+
+
+}
+/*******HASTA AQUÍ BREAK INTERMEDIO (500px)****/
 
 @media (min-width: 769px) {
 
@@ -310,5 +441,11 @@ footer{
     .footer-left 
     .logo img {
         width: 60%;
+    }
+section article p   {
+        font-size: 18px;
+    }
+h3 {
+        font-size: 20px;
     }
 }
