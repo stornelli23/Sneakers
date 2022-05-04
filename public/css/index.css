@@ -98,6 +98,7 @@ main h2{
 }
 .wallpaper-section{
     margin: 0;
+    margin-bottom: 10px;
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
@@ -108,7 +109,7 @@ main h2{
 }
 
 main section{
-    margin: 15px 20px ;
+    margin: 10px 20px ;
     width: 90vw;
     display: flex;
     flex-wrap: wrap;
@@ -143,7 +144,7 @@ article{
     display: flex;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 .product img {
