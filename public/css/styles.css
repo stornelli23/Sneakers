@@ -7,10 +7,10 @@
 
 /*PALETA DE COLORES*/
 :root{
-    Primario:      rgb(173,20,87);
-    Claro:         rgb(227,81,131);
-    Oscuro:        rgb(120,0,46);
-    Tipografía1:   rgb(71,71,71);
+    --Primario:      rgb(173,20,87);
+    --Claro:         rgb(227,81,131);
+   --Oscuro:        rgb(120,0,46);
+    --Tipografía1:   rgb(71,71,71);
 
 }
 
