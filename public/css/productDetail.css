@@ -184,83 +184,68 @@ section .recommended .recomendados p{
 h3 {
     text-align: center;
 }
-.recomendados{
-    display:flex;    
+.recommended{
+    display:flex; 
+    flex-direction: row;   
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 10vh;
 }
-section 
-    article
-        .card-body
-             img {
-                    width:100%;
-                    height: auto;
-                    
-}
-.card{
-    width: 30vh;
-    height: 30vh;
+
+article.detalles{
+    width: 90%;
     display: flex;
-    margin-bottom: 5vh;
-    
+    flex-direction: row;
 }
-.subetiqueta{
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        border-top: 1px solid #d4d4d4;
-        padding: 10px;
-    
-   
-}
-
-.pre{
-    font-size: 13px;
-    font-weight: bold;
-    /*width: 30%;*/
-}
-.des{
-    font-size: 11px;
-    /*width: 70%;*/
-    color: #78002e;
-    margin-left: 0;   
-        
-}
-.product-img{
-    padding: 5px;
-    /*margin: 10px;*/
-}
-
-.titularRecomendados{
-    margin: 0 0 3% 0;
-    
-}
-.card-body{   
-    display: inline-block;
+.product-detalle {
     width: 100%;
-    /*border: rgb(255, 255, 255) 3px solid;*/
-    box-sizing: border-box;
-    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    margin: 10px 0;
+}
+
+.product-detalle img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ebebeb;
+    
+}
+
+.product-detalles2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4px;
+}
+
+.product-detalles2 p{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    color:#AD1457;
 }
 
 
-main section article i {
+.product-detalle-airforce{
+    display: none;
+}
+
+
+main section article .product-detalles2 i {
     display: block;
-    font-size: 16px;
+    font-size: 12px;
     padding: 5px;
     width: 30px;
     height: 30px;
-    border: 1px solid #78002e;
-    color: #AD1457;
-    background-color: #FFF;
-    border-radius: 50%;
-    position: absolute;
-    right: 10px;
-    top: -15px;
+    position: relative;
+    left: 50%;
+    top: -100px;
     transition: all, 500ms;
 }
-.card-body:hover i {
+.product-detalles2:hover i {
     transform: rotate(-90deg);  
 }
 .card-body .descripciones{
@@ -346,23 +331,23 @@ h3 {
         box-shadow: inset 0px 0px 5px #c1c1c1;
     }
 
-    main section article a i {
+    main section article .product-detalles2 i {
         display: block;
         font-size: 12px;
         padding: 5px;
         width: 30px;
         height: 30px;
-        box-sizing: border-box;
         position: relative;
-        left: -10px;
-        top: -8px;
+        left: 45%;
+        top: -120px;
+        transition: all, 500ms;
     }
 
-    main section article i {
+    main section article .product-detalles2 i {
         transition-duration: 0.4s;
     }
 
-    main section article i:focus {
+    main section article .product-detalles2 i:focus {
         color: #78002e;
     }
 
@@ -398,12 +383,24 @@ h3 {
         height: auto;
     }
 
+    main section article {
+        margin: 10px 0px;
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    article.detalles{
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 
 
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
 
 
     .card-prod .main-article {
@@ -465,23 +462,23 @@ h3 {
         box-shadow: inset 0px 0px 5px #c1c1c1;
     }
 
-    main section article a i {
+    main section article .product-detalles2 i {
         display: block;
-        font-size: 15px;
+        font-size: 16px;
         padding: 5px;
         width: 30px;
         height: 30px;
-        box-sizing: border-box;
         position: relative;
-        left: -10px;
-        top: -8px;
+        left: 45%;
+        top: -110px;
+        transition: all, 500ms;
     }
 
-    main section article i {
+    main section article .product-detalles2 i {
         transition-duration: 0.4s;
     }
 
-    main section article i:hover {
+    main section article .product-detalles2 i:focus {
         color: #78002e;
     }
 
@@ -523,4 +520,97 @@ h3 {
         margin-bottom: 5vh;
         
     }
+
+    main section article {
+        margin: 10px 0px;
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+
+    main section article .product-detalles2 i {
+        display: block;
+        font-size: 16px;
+        padding: 5px;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        left: 45%;
+        top: -110px;
+        transition: all, 500ms;
+    }
+
+    main section article .product-detalles2 i {
+        transition-duration: 0.4s;
+    }
+
+    main section article .product-detalles2 i:focus {
+        color: #78002e;
+    }
+
+    article.detalles{
+        display: flex;
+        flex-direction: row;
+        width: 20%;
+    }
+    .product-detalle {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        margin: 10px 0;
+    }
+
+    .product-detalle-airforce{
+        display: contents;
+    }
+
+    main section article {
+        margin: 10px 0px;
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+    }
+
+article.detalles .product-detalle-airforce{
+width: 15%;
+display: flex;
+flex-direction: row;
+}
+.product-detalle-airforce {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    margin: 10px 0;
+}
+
+.product-detalle-airforce img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ebebeb;
+    
+}
+
+.product-detalles2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4px;
+}
+
+.product-detalles2 p{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    color:#AD1457;
+}
+
 }
