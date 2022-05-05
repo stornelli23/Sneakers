@@ -533,6 +533,34 @@ h3 {
 
 @media (min-width: 1200px) {
 
+    .size{
+        background-color: #AD1457;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        margin: 10px 1px;
+        padding: 15px;
+        border-radius: 90px;
+        width: 100%; 
+    }
+
+    button.submit {
+        background-color: #AD1457;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 1px;
+        padding: 15px;
+        border-radius: 50px;
+        width: 100%;
+    }
+
     main section article .product-detalles2 i {
         display: block;
         font-size: 16px;
