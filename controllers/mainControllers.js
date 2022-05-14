@@ -1,17 +1,20 @@
 const path = require('path');
+const productos = require('./productos')
+const productosRebajas = require('./productosRebajas')
+const productosRecomendados = require('./productosRecomendados')
 
 const mainControllers = {
 
     index: (req, res) => {
-        res.render('index')  
+        res.render('index', {productosDestacados:productos, descuentos:productosRebajas})  
     },
     
     productCart: (req, res) => {
-        res.render('productCart') 
+        res.render('productCart', {productosRecomendados:productosRecomendados}) 
     },
     
     productDetail: (req, res) => {
-        res.render('productDetail')
+        res.render('productDetail', {recomendados:productosRecomendados})
     },
     
     login: (req, res) => {

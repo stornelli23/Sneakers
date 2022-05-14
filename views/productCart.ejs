@@ -4,10 +4,8 @@
     
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/productCart.css" /> <!--agregado para que likee a la pág de estilos del carrito-->
-    <link rel="stylesheet" href="/css/normalize.css" />
+    <!-- <link rel="stylesheet" href="/css/normalize.css" /> -->
     
-    
-
     <script src="https://kit.fontawesome.com/6057857b79.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,29 +19,7 @@
     <title>Product Cart</title>
 </head>
 <body>
-  
-    <header>
-        <nav class="navbar">
-        <nav class="navbar-top">
-            <div class="icono_burgerMenu">
-                <i class="fas fa-bars"></i>
-              </div>
-              <div class="logo">
-               <a href="/"><img src="/img/LogoBlanco.png" alt=""></a>
-              </div>
-              <div class="iconos-carrito-perfil">
-                <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="/login"><i class="fa-solid fa-user"></i></a>
-              </div>
-        </nav>
-        <nav class="navbar-bottom">
-        <div class="barra-de-busqueda">
-            <div class="barra-de-busqueda">
-                <i class="fa-solid fa-magnifying-glass"></i><input type="search" placeholder="Buscar productos..."/>                
-        </div>
-        </nav>
-    </nav>
-    </header>
+  <%- include ('partials/header') %> 
 
     <main>
         
@@ -187,135 +163,20 @@
         </div>
         
         <div class="recomendados">
+
+            <% productosRecomendados.forEach(producto => { %>
           <article class="art-recomendados">
             <div class="product">
-                <a href="/productDetail"><img src="/img/nike-air-huarache.jpg" alt=""></a>
+                <a href="/productDetail"><img src="/img/<%=producto.imagen%> " alt=""></a>
             <div class="product-detail">
-                <p>Zapatillas Nike Air Huarache</p>
-                <p class="product-price">$25.000</p>
+                <p><%=producto.detalleDeProducto%> </p>
+                <p class="product-price"><%=producto.precioProducto%></p>
             </div>
             
             </div>
           </article>
-          <article class="art-recomendados">
-            <div class="product">
-                <a href="/productDetail"><img src="/img/nike-air-huarache.jpg" alt=""></a>
-            <div class="product-detail">
-                <p>Zapatillas Nike Air Huarache</p>
-                <p class="product-price">$25.000</p>
-            </div>
-            
-            </div>
-          </article>
-          <article class="art-recomendados">
-            <div class="product">
-                <a href="/productDetail"><img src="/img/nike-air-huarache.jpg" alt=""></a>
-            <div class="product-detail">
-                <p>Zapatillas Nike Air Huarache</p>
-                <p class="product-price">$25.000</p>
-            </div>
-            
-            </div>
-          </article>
-          <article class="art-recomendados">
-            <div class="product">
-                <a href="/productDetail"><img src="/img/nike-air-huarache.jpg" alt=""></a>
-            <div class="product-detail">
-                <p>Zapatillas Nike Air Huarache</p>
-                <p class="product-price">$25.000</p>
-            </div>
-            
-            </div>
-          </article>
-        
-        <!--   
-        <article class="card">
-            <div class="card-body">
-              <img
-                class="product-img"
-                width="80"
-                height="80"
-                src="/img/airforce.png" alt="Zapatillas Vans" 
-              />
-              <div class="subetiqueta">
-                <i class="fa-solid fa-truck"></i>
-                
-                  <div class="pre">
-                   <p class="precios">$23.000</p>
-                  </div>
-                  <div class="des">
-                    <p class="descuentos">    20% off</p>
-                  </div>
-                 
-                <p class="descripciones">Zapatillas Vans</p>
-              </div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-body">
-              <img
-                class="product-img"
-                width="80"
-                height="80"
-                src="/img/airforce.png" alt="Zapatillas Vans" 
-              />
-              <div class="subetiqueta">
-                <i class="fa-solid fa-truck"></i>
-                <div class="predes">
-                  <div class="pre">
-                   <p class="precios">$23.000</p>
-                  </div>
-                  <div class="des">
-                    <p class="descuentos">    20% off</p>
-                  </div>
-                </div>
-                <p class="descripciones">Zapatillas Vans</p>
-              </div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-body">
-              <img
-                class="product-img"
-                width="80"
-                height="80"
-                src="/img/airforce.png" alt="Zapatillas Vans" 
-              />
-              <div class="subetiqueta">
-                <i class="fa-solid fa-truck"></i>
-                <div class="predes">
-                  <div class="pre">
-                   <p class="precios">$23.000</p>
-                  </div>
-                  <div class="des">
-                    <p class="descuentos">    20% off</p>
-                  </div>
-                </div>
-                <p class="descripciones">Zapatillas Vans</p>
-              </div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-body">
-              <img
-                class="product-img"
-                width="80"
-                height="80"
-                src="/img/airforce.png" alt="Zapatillas Vans" 
-              />
-              <div class="subetiqueta">
-                <i class="fa-solid fa-truck"></i>
-                <div class="predes">
-                  <div class="pre">
-                   <p class="precios">$23.000</p>
-                  </div>
-                  <div class="des">
-                    <p class="descuentos">    20% off</p>
-                  </div>
-                </div>
-                <p class="descripciones">Zapatillas Vans</p>
-              </div>
-            --> 
+          <% }) %>
+         
             </div>
         </section>
 
@@ -324,40 +185,7 @@
 
 
     </main>
-    <footer>
-        <div class="footer-main">
-            <section class="footer-left">
-                <div class="logo">
-                    <img src="/img/LogoBlanco.png" alt="">
-                  </div>
-            </section>
-            <section class="footer-center">
-                <div class="footer-info">
-            
-                    <a href="#"><p> Sobre nosotros </p></a>
-                   
-                </div>
-                <div class="footer-info">
-                  
-                    <a href="#"><p> Ayuda </p></a>
-                    
-                </div>
-                <div class="footer-info">
-                    <a href="#"><p> Atención al cliente </p></a>
-                </div>
-
-            </section>
-            <section class="footer-right">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook-square"></i>
-                <i class="fa-brands fa-twitter-square"></i>
-
-            </section>
-
-
-        </div>
-
-    </footer>
+    <%- include ('partials/footer') %> 
     
 </body>
 </html>

@@ -506,6 +506,77 @@ button:hover {
 button p{
     font-weight:500;
 }
+
+footer{
+ 
+    background-color:#78002e;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer-main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+
+}
+
+.footer-left{
+    display: flex;
+    width: 35%;
+
+}
+.footer-left .logo img{
+    width: 100%;
+}
+.footer-center{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 40%;
+}
+.footer-center .footer-info {
+    border-bottom: 1px solid #fff;
+    opacity: 0.8;
+}
+.footer-center a {
+    text-decoration: none;
+}
+
+.footer-center p{
+    margin: 3px;
+    color: #fff;
+    opacity: 0.8;
+    font-weight: lighter;
+
+}
+
+.footer-right{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 15%;
+    align-items: center;
+}
+
+.footer-right i{
+    color: #e35183;
+    font-size: 16px;
+    padding: 2px;
+
+}
+.footer-info .info-extra{
+    display: none;
+}
+
 /** media queries **/
 
 @media (min-width: 425px) {
@@ -766,12 +837,16 @@ button p{
         
     }
     
-    p {
+    /* p {
         font-size: 3.5vh;
+<<<<<<< HEAD
     }
     footer p{
         font-size: 16px;
     }
+=======
+    } */
+>>>>>>> 5c64ba435366d5340e46e807c07ba07cdf9a58f1
     .contenedor-gral
     .contenedor-productos
         .bloqueProducto
@@ -861,4 +936,45 @@ button {
 .recomendados{
     margin-bottom: 20vh;
 }
+footer{
+    height: 100px;
+        }
+        .footer-right{
+            width: 15%;
+                }
+        .footer-left{
+    width: 25%;
+        }
+        .footer-left .logo{
+        display: flex;
+        justify-content: center;
+        }
+        .footer-center{
+            width: 60%;
+            flex-direction: row;
+        justify-content: space-evenly;
+        }
+    .footer-center p {
+        text-transform: uppercase;
+        
+    }
+    .footer-center .footer-info{
+        border-bottom: none;
+    }
+    
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+    }
+    
+        .footer-info .info-extra{
+            display: flex;
+        }
+        .info-extra p{
+            border: none;
+            text-transform:none;
+        }
 }
