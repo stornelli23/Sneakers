@@ -22,8 +22,10 @@ main h2 {
 
 main
  .contenedor-gral{ /*= contenedor gral del body*/
+    
     display: flex;
     flex-direction: column;
+   
 }
 
 
@@ -221,6 +223,9 @@ main
     margin: 10% 5% 10%;
     font-weight: bolder;
     color: #AD1457;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 .contenedor-gral 
@@ -415,14 +420,16 @@ font-style: italic;
    
 }*/
 
-
+footer p{
+    font-size: 12px;
+}
 
 
 
 
 /*----------------------------------tomado del trabajo individual para recomendedados------*/
 article .art-recomendados{
-    width: 30%;
+    width: 20%;
     display: flex;
 }
 .product {
@@ -505,6 +512,9 @@ button p{
 
 p {
    font-size: 2vh;
+}
+footer p{
+    font-size: 14px;
 }
 main h2 {
     font-size: 20px;
@@ -758,6 +768,9 @@ button p{
     
     p {
         font-size: 3.5vh;
+    }
+    footer p{
+        font-size: 16px;
     }
     .contenedor-gral
     .contenedor-productos
