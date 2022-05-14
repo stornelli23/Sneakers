@@ -17,28 +17,8 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-        <nav class="navbar-top">
-            <div class="icono_burgerMenu">
-                <i class="fas fa-bars"></i>
-              </div>
-              <div class="logo">
-               <a href="/"><img src="/img/LogoBlanco.png" alt=""></a>
-              </div>
-              <div class="iconos-carrito-perfil">
-                <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="/login"><i class="fa-solid fa-user"></i></a>
-              </div>
-        </nav>
-        <nav class="navbar-bottom">
-        <div class="barra-de-busqueda">
-            <div class="barra-de-busqueda">
-                <i class="fa-solid fa-magnifying-glass"></i><input type="search" placeholder="Buscar productos..."/>                
-        </div>
-        </nav>
-    </nav>
-    </header>
+    <%- include ('partials/header') %> 
+
     <main class="container">
         <p class="filter"> <a href="/">INICIO</a>/<a href="#">HOMBRE</a>/<a href="#">CALZADO</a></p>
         <br>
@@ -98,6 +78,7 @@
             <h3>Recomendados para vos</h3>
 
             <section class="recommended">
+                
                 <article class="detalles">
                     <div class="product-detalle">
                     <a href="/productCart"><img src="/img/nike-air-huarache.jpg" alt=""></a>
@@ -150,64 +131,6 @@
  
 
     </main>
-    <footer>
-        <div class="footer-main">
-            <section class="footer-left">
-                <div class="logo">
-                    <img src="/img/LogoBlanco.png" alt="">
-                  </div>
-            </section>
-            <section class="footer-center">
-                <div class="footer-info">
-            
-                    <a href="#"><p> Sobre nosotros </p></a>
-                   <div class="info-extra"> 
-                       <p>¿Quienes Somos?</p>
-                   </div>
-                   <div class="info-extra"> 
-                    <p>Terminos y condiciones</p>
-                </div>
-                <div class="info-extra"> 
-                    <p>¿Como cuidamos tu privacidad?</p>
-                </div>
-                </div>
-                <div class="footer-info">
-                  
-                    <a href="#"><p> Ayuda </p></a>
-                    <div class="info-extra"> 
-                        <p>Configuracion de mi cuenta</p>
-                    </div>
-                    <div class="info-extra"> 
-                     <p>Preguntas frecuentes</p>
-                 </div>
-                 <div class="info-extra"> 
-                     <p>Cambios y/o devoluciones</p>
-                 </div>
-                </div>
-                <div class="footer-info">
-                    <a href="#"><p> Atención al cliente </p></a>
-                    <div class="info-extra"> 
-                        <p>Denuncias</p>
-                    </div>
-                    <div class="info-extra"> 
-                     <p>Avisos legales</p>
-                 </div>
-                 <div class="info-extra"> 
-                     <p>Seguridad</p>
-                 </div>
-                </div>
-
-            </section>
-            <section class="footer-right">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook-square"></i>
-                <i class="fa-brands fa-twitter-square"></i>
-
-            </section>
-
-
-        </div>
-
-    </footer>
+    <%- include ('partials/footer') %> 
 </body>
 </html>

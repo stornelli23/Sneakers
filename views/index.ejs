@@ -1,40 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
-    
-    <script src="https://kit.fontawesome.com/6057857b79.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
-    <title>Sneakers</title>
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-        <nav class="navbar-top">
-            <div class="icono_burgerMenu">
-                <i class="fas fa-bars"></i>
-              </div>
-              <div class="logo">
-               <a href="/"><img src="/img/LogoBlanco.png" alt=""></a>
-              </div>
-              <div class="iconos-carrito-perfil">
-                <a href="productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="login"><i class="fa-solid fa-user"></i></a>
-              </div>
-        </nav>
-        <nav class="navbar-bottom">
-        <div class="barra-de-busqueda">
-            <div class="barra-de-busqueda">
-                <i class="fa-solid fa-magnifying-glass"></i><input type="search" placeholder="Buscar productos..."/>                
-        </div>
-        </nav>
-    </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/index.css">
+        
+        <script src="https://kit.fontawesome.com/6057857b79.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+        <title>Sneakers</title>
+    </head>
+    <body>
+
+    <%- include ('partials/header') %> 
 
 <!-- COMIENZO MAIN -->
 
@@ -64,202 +44,45 @@
 <h2>PRODUCTOS DESTACADOS</h2>
 
 <section>
+    <% productosDestacados.forEach(producto => { %>
     <article>
+       
         <div class="product">
-        <a href="/productDetail"><img src="/img/nike-air-huarache.jpg" alt=""></a>
+        <a href="/productDetail"><img src="/img/<%=producto.imagen%> " alt=""></a>
         <div class="product-detail">
-            <p>Zapatillas Nike Air Huarache</p>
-            <p class="product-price">$25.000</p>
+            <p><%=producto.detalleDeProducto%></p>
+            <p class="product-price"><%=producto.precioProducto%></p>
         </div>
         
         </div>
+  
             </article>
-
-    <article>
-        <div class="product">
-      <a href="/productDetail"><img src="/img/nike-air-huarache.jpg" alt=""></a>
-        <div class="product-detail">
-            <p>Zapatillas Nike Air Huarache</p>
-            <p class="product-price">$25.000</p>
-        </div>
-        
-        </div>
-            </article>
-
-            <article>
-                <div class="product">
-                    <a href="/productDetail"><img src="/img/nike-air-huarache.jpg" alt=""></a>
-                <div class="product-detail">
-                    <p>Zapatillas Nike Air Huarache</p>
-                    <p class="product-price">$25.000</p>
-                </div>
-                
-                </div>
-                    </article>
-
-                    <article>
-                        <div class="product">
-                       <a href="/productDetail"><img src="/img/airforce.png" alt=""></a>
-                        <div class="product-detail">
-                            <p>Zapatillas Nike Air Force</p>
-                            <p class="product-price">$22.500</p>
-                        </div>
-                        
-                        </div>
-                            </article>         
-                            <article>
-                                <div class="product">
-                                    <a href="/productDetail"><img src="/img/airforce.png" alt=""></a>
-                                <div class="product-detail">
-                                    <p>Zapatillas Nike Air Force</p>
-                                    <p class="product-price">$22.500</p>
-                                </div>
-                                
-                                </div>
-                                    </article>              
-                                    
-                                    <article>
-                                        <div class="product">
-                                            <a href="/productDetail"><img src="/img/airforce.png" alt=""></a>
-                                        <div class="product-detail">
-                                            <p>Zapatillas Nike Air Force</p>
-                                            <p class="product-price">$22.500</p>
-                                        </div>
-                                        
-                                        </div>
-                                            </article>              
+            <% }) %>
 </section>
       <!-- SECCION REBAJAS HOME -->
 
       <h2>REBAJAS</h2>
 <section>
+    <% descuentos.forEach(producto => { %>
     <article>
         <div class="product">
-            <a href="/productDetail"><img src="/img/nike-air-huarache.jpg" alt=""></a>
+            <a href="/productDetail"><img src="/img/<%=producto.imagen%> " alt=""></a>
         <div class="product-detail">
-            <p>Zapatillas Nike Air Huarache</p>
-            <p class="product-price">$25.000</p>
+            <p><%=producto.detalleDeProducto%> </p>
+            <p class="product-price"><%=producto.precioProducto%> </p>
+            <p><%=producto.rebaja%> </p>
         </div>
         
         </div>
             </article>
-        
-            <article>
-                <div class="product">
-                    <a href="/productDetail"><img src="/img/nike-air-huarache.jpg" alt=""></a>
-                <div class="product-detail">
-                    <p>Zapatillas Nike Air Huarache</p>
-                    <p class="product-price">$25.000</p>
-                </div>
-                
-                </div>
-                    </article>
-        
-                    <article>
-                        <div class="product">
-                            <a href="/productDetail"><img src="/img/nike-air-huarache.jpg" alt=""></a>
-                        <div class="product-detail">
-                            <p>Zapatillas Nike Air Huarache</p>
-                            <p class="product-price">$25.000</p>
-                        </div>
-                        
-                        </div>
-                            </article>
+            <% }) %>
 
-                            <article>
-                                <div class="product">
-                                    <a href="/productDetail"><img src="/img/airforce.png" alt=""></a>
-                                <div class="product-detail">
-                                    <p>Zapatillas Nike Air Force</p>
-                                    <p class="product-price">$22.500</p>
-                                </div>
-                                
-                                </div>
-                                    </article>         
-                                    <article>
-                                        <div class="product">
-                                            <a href="/productDetail"><img src="/img/airforce.png" alt=""></a>
-                                        <div class="product-detail">
-                                            <p>Zapatillas Nike Air Force</p>
-                                            <p class="product-price">$22.500</p>
-                                        </div>
-                                        
-                                        </div>
-                                            </article>              
-                                            
-                                            <article>
-                                                <div class="product">
-                                                    <a href="/productDetail"><img src="/img/airforce.png" alt=""></a>
-                                                <div class="product-detail">
-                                                    <p>Zapatillas Nike Air Force</p>
-                                                    <p class="product-price">$22.500</p>
-                                                </div>
-                                                
-                                                </div>
-                                                    </article>  
 </section>
 
     </main>
 
     <!-- FOOTER -->
-    <footer>
-        <div class="footer-main">
-            <section class="footer-left">
-                <div class="logo">
-                    <img src="/img/LogoBlanco.png" alt="">
-                  </div>
-            </section>
-            <section class="footer-center">
-                <div class="footer-info">
-            
-                    <a href="#"><p> Sobre nosotros </p></a>
-                   <div class="info-extra"> 
-                       <p>¿Quienes Somos?</p>
-                   </div>
-                   <div class="info-extra"> 
-                    <p>Terminos y condiciones</p>
-                </div>
-                <div class="info-extra"> 
-                    <p>¿Como cuidamos tu privacidad?</p>
-                </div>
-                </div>
-                <div class="footer-info">
-                  
-                    <a href="#"><p> Ayuda </p></a>
-                    <div class="info-extra"> 
-                        <p>Configuracion de mi cuenta</p>
-                    </div>
-                    <div class="info-extra"> 
-                     <p>Preguntas frecuentes</p>
-                 </div>
-                 <div class="info-extra"> 
-                     <p>Cambios y/o devoluciones</p>
-                 </div>
-                </div>
-                <div class="footer-info">
-                    <a href="#"><p> Atención al cliente </p></a>
-                    <div class="info-extra"> 
-                        <p>Denuncias</p>
-                    </div>
-                    <div class="info-extra"> 
-                     <p>Avisos legales</p>
-                 </div>
-                 <div class="info-extra"> 
-                     <p>Seguridad</p>
-                 </div>
-                </div>
+    <%- include ('partials/footer') %> 
 
-            </section>
-            <section class="footer-right">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook-square"></i>
-                <i class="fa-brands fa-twitter-square"></i>
-
-            </section>
-
-
-        </div>
-
-    </footer>
 </body>
 </html>
