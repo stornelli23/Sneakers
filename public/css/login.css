@@ -1,45 +1,10 @@
 main {
-    background-color: rgb(215, 215, 215);
+    background-color: #ffc69c;
+    background-image: url(../img/fondo-background.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
-
-/*********** HEADER ***********/
-
-.fas.fa-bars {
-    display: flex;
-    font-size: 2em;
-    color: black;
-    padding: 10px;
-    margin-bottom: 15px;
-    max-width: 50px;
-}
-
-#logo {
-    width: 20vw;
-}
-
-#top-bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    padding: 10px;
-}
-
-#low-bar {
-    padding: 10px 10px 20px 40px;
-    text-align: left;
-}
-
-#low-bar h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-
-.subtitulo-frase {
-    font-size: 14px;
-    justify-content: center;
-    width: 20%;
-}
-
 
 /*********** MAIN ***********/
 
@@ -173,7 +138,7 @@ main {
 footer#footer-register {
     width: 100%;
     bottom: 0;
-    height: 300px;
+    height: auto;
     flex-direction: column;
 }
 
@@ -318,7 +283,7 @@ footer#footer-register {
     }
 
     main {
-        padding: 115px 0px;
+        padding: 130px 0px;
     }
 
     #contenedor-principal {
@@ -327,6 +292,7 @@ footer#footer-register {
         text-align: center;
         padding: auto;
         margin: 0px auto 0px auto;
+        box-shadow: 5px 5px 17px 5px rgba(0,0,0,0.76);
     }
 
     .formulario-email {
@@ -391,10 +357,7 @@ footer#footer-register {
     /**Escritorio**/
 
     @media (min-width:1024px) {
-        #burger-menu {
-            display: none;
-        }
-
+        
         .texto-copyright-r {
             font-size: 15px;
         }

@@ -13,6 +13,8 @@ app.listen(port, () => console.log("Servidor corriendo en el puerto 3000"))
 
 app.use(express.static('public'))
 
+app.set('view enginee', 'ejs');
+
 //////////////////////////////////////////////////////////////////
 
 
