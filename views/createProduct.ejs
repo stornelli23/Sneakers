@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/editProduct.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <script src="https://kit.fontawesome.com/6057857b79.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/img/logo-pestaña.png" />
+    <title>Crear producto</title>
+</head>
+
+<body>
+
+    <!----- Header ------>
+
+    <%- include ('partials/header') %>
+
+    <main>
+        <div id="contenedor-principal">
+            <fieldset>
+                <legend>Crear Producto</legend>
+                <div id="contenedor-formulario">
+                    <div class="formulario-general">
+                        <p>*Nombre del Producto</p>
+                        <input type="text" name="detalleProducto" class="barra-espacios">
+                    </div>
+                    <div class="formulario-general">
+                        <p>*Precio</p>
+                        <input type="number" name="precioProducto" class="barra-espacios">
+                    </div>
+                    <div class="formulario-general">
+                        <p>*Descripcion</p>
+                        <textarea name="descripcionProducto" class="descripcion" rows="5" cols="100"></textarea>
+                    </div>
+                    <div class="formulario-general">
+                        <p>*Imagen del Producto</p>
+                        <input type="file" name="imagen" accept=".jpg, .png">
+                    </div>
+                    <div class="formulario-general">
+                        <p>*Categoria</p>
+                        <div class="control-radio">
+                            <div class="radio"><input type="radio" class="control-radio" name="categoria-modelo"
+                                    value="hombre">Hombre</input></div>
+                            <div class="radio"><input type="radio" class="control-radio" name="categoria-modelo"
+                                    value="mujer">Mujer</input></div>
+                            <div class="radio"><input type="radio" class="control-radio" name="categoria-modelo"
+                                    value="unisex">Unisex</input></div>
+                        </div>
+                    </div>
+                    <div class="formulario-general">
+                        <p>*Marca</p>
+                        <select name="marca" class="control-selector">
+                            <option>Seleccionar</option>
+                            <option value="1">Nike</option>
+                            <option value="2">Adidas</option>
+                        </select>
+                    </div>
+                    <div class="formulario-checkbox">
+                        <div>
+                            <p>*Talles</p>
+                        </div>
+                        <div class="checkbox">
+                            <label class="control-checkbox"><input type="checkbox" name="talle" value="35">35</label>
+                            <label class="control-checkbox"><input type="checkbox" name="talle" value="36">36</label>
+                            <label class="control-checkbox"><input type="checkbox" name="talle" value="37">37</label>
+                            <label class="control-checkbox"><input type="checkbox" name="talle" value="38">38</label>
+                            <label class="control-checkbox"><input type="checkbox" name="talle" value="39">39</label>
+                            <label class="control-checkbox"><input type="checkbox" name="talle" value="40">40</label>
+                            <label class="control-checkbox"><input type="checkbox" name="talle" value="41">41</label>
+                            <label class="control-checkbox"><input type="checkbox" name="talle" value="42">42</label>
+                            <label class="control-checkbox"><input type="checkbox" name="talle" value="43">43</label>
+                        </div>
+                        <div class="boton">
+                            <a href="#" class="boton-crear">Crear item</a>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+    </main>
+
+    <!----- Footer ------>
+
+    <%- include ('partials/footer') %>
+
+</body>
+
+</html>

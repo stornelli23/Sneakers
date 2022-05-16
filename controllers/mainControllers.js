@@ -23,9 +23,11 @@ const mainControllers = {
     
     register: (req, res) => {
         res.render('register')
-    }
+    },
     
-
+    createProduct: (req, res) => {
+        res.render('createProduct')
+    }
 
 }
 
