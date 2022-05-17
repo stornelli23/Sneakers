@@ -300,6 +300,10 @@ section .recommended{
 }
 section .recommended .recomendados p{
     font-size: 12;
+    
+}
+p .product-price {
+    color:#AD1457;
 }
 h3 {
     text-align: center;
@@ -338,7 +342,10 @@ h3 {
 
     
 }
-
+.product-foto{
+    display: flex;
+    justify-content: center;
+}
 .product-detail{
     display: flex;
     flex-direction: column;
@@ -352,6 +359,8 @@ h3 {
 }
 
 .product-price {
+    text-align: center;
+    margin-bottom: 10px;
     color:#AD1457;
 }
 /****************** hasta aquí reocmendados**************/
@@ -438,6 +447,9 @@ h2.cart {
    
     p.cart {
       font-size: 2vh;
+    }
+    p.product-price {
+        font-size: 2vh;
     }
     h2.cart {
         font-size: 22px;
@@ -528,6 +540,9 @@ h2.cart {
         
     }
     p.cart {
+        font-size: 3vh;
+    }
+    p.product-price {
         font-size: 3vh;
     }
     .bloqueInferiorProducto
