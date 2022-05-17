@@ -288,9 +288,35 @@ font-style: italic;
 
 
 /*----------------------------------tomado del trabajo individual para recomendedados------*/
-article .art-recomendados{
-    width: 20%;
+.art-recomendados{
+    
+    padding: 10px;
+}
+section .recommended{
     display: flex;
+    flex-direction: column;
+    margin: 2% 2% 2% 10%;
+    text-align: center;
+}
+section .recommended .recomendados p{
+    font-size: 12;
+}
+h3 {
+    text-align: center;
+}
+.recommended{
+    display:flex; 
+    flex-direction: row;   
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 10vh;
+}
+.recomendados{
+    display:flex; 
+    flex-direction: row;   
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 10vh;
 }
 .product {
     width: 100%;
@@ -306,6 +332,7 @@ article .art-recomendados{
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-items: center;
     text-align: center;
     border-bottom: 1px solid #ebebeb;
 
@@ -539,7 +566,13 @@ h2.cart {
             text-align: center;
             font-size: 4.5vh;
         }
-
+    .titularRecomendados{
+        padding-top: 30px;
+    }
+    .art-recomendados{
+    
+        min-width: 34%;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -597,5 +630,9 @@ h2.cart {
     .info-extra p{
             border: none;
             text-transform:none;
+        }
+    .art-recomendados{
+    
+            min-width: 24%;
         }
 }
