@@ -127,6 +127,21 @@ legend {
     top: 1px;
 }
 
+.boton-borrar {
+    box-shadow: inset 0px 3px 9px 0px black;
+    background-color: red;
+    border-radius: 14px;
+    border: 2px solid black;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 37px;
+    text-decoration: none;
+}
+
+
 /************************Media Queries************************/
 /**Tablet**/
 
