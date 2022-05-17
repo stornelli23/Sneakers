@@ -3,6 +3,8 @@
 <head>
     
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/productDetail.css" />
     <link rel="stylesheet" href="/css/productCart.css" /> <!--agregado para que likee a la pág de estilos del carrito-->
     <!-- <link rel="stylesheet" href="/css/normalize.css" /> -->
     
@@ -169,11 +171,13 @@
             <% productosRecomendados.forEach(producto => { %>
           <article class="art-recomendados">
             <div class="product">
+                <div class="product-foto">
                 <a href="/productDetail"><img src="/img/<%=producto.imagen%> " alt=""></a>
-            <div class="product-detail">
+                </div>
+                <div class="product-detail">
                 <p class="cart" ><%=producto.detalleDeProducto%> </p>
-                <p class="cart"  class="product-price"><%=producto.precioProducto%></p>
-            </div>
+                <p class="product-price"><%=producto.precioProducto%></p>
+                </div>
             
             </div>
           </article>
