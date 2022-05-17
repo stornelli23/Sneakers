@@ -243,7 +243,7 @@ article.detalles{
 }
 
 
-main section article .product-detalles2 i {
+section.recommended article .product-detalles2 i {
     display: block;
     font-size: 12px;
     padding: 5px;
@@ -265,20 +265,20 @@ main section article .product-detalles2 i {
 }
 
 
-main section article {
+section.recommended article {
     margin: 10px 0px;
-    width: 40%;
+    width: 90%;
     display: flex;
     flex-direction: row;
 }
 
-main section article img {
+section.recommended article img {
     width: 100%;
     height: auto;
 }
 
 
-main section article a i {
+section.recommended article a i {
     display: block;
     font-size: 10px;
     padding: 5px;
@@ -410,7 +410,7 @@ footer{
         box-shadow: inset 0px 0px 5px #c1c1c1;
     }
 
-    main section article .product-detalles2 i {
+section.recommended article .product-detalles2 i {
         display: block;
         font-size: 12px;
         padding: 5px;
@@ -422,11 +422,11 @@ footer{
         transition: all, 500ms;
     }
 
-    main section article .product-detalles2 i {
+section.recommended article .product-detalles2 i {
         transition-duration: 0.4s;
     }
 
-    main section article .product-detalles2 i:focus {
+ section.recommended article .product-detalles2 i:focus {
         color: #78002e;
     }
 
@@ -462,9 +462,9 @@ footer{
         height: auto;
     }
 
-    main section article {
+section.recommended article {
         margin: 10px 0px;
-        width: 30%;
+        width: 45%;
         display: flex;
         flex-direction: row;
     }
@@ -553,7 +553,7 @@ footer{
         box-shadow: inset 0px 0px 5px #c1c1c1;
     }
 
-    main section article .product-detalles2 i {
+section.recommended article .product-detalles2 i {
         display: block;
         font-size: 12px;
         padding: 5px;
@@ -565,11 +565,18 @@ footer{
         transition: all, 500ms;
     }
 
-    main section article .product-detalles2 i {
+    section.recommended article {
+        margin: 10px 0px;
+        width: 23%;
+        display: flex;
+        flex-direction: row;
+    }
+
+section.recommended article .product-detalles2 i {
         transition-duration: 0.4s;
     }
 
-    main section article .product-detalles2 i:focus {
+section.recommended article .product-detalles2 i:focus {
         color: #78002e;
     }
 
@@ -619,9 +626,9 @@ footer{
         font-size: 18px;
     }
 
-    main section article {
+section.recommended article {
         margin: 10px 0px;
-        width: 30%;
+        width: 23%;
         display: flex;
         flex-direction: row;
     }
@@ -685,7 +692,7 @@ footer{
     h4.title-specification{
         font-size:20px;
     }
-    
+
     h3.recommended {
         font-weight: bolder;
         margin-bottom: 10px;
@@ -693,7 +700,7 @@ footer{
 
     }
 
-    main section article .product-detalles2 i {
+section.recommended article .product-detalles2 i {
         display: block;
         font-size: 16px;
         padding: 5px;
@@ -705,11 +712,11 @@ footer{
         transition: all, 500ms;
     }
 
-    main section article .product-detalles2 i {
+section.recommended article .product-detalles2 i {
         transition-duration: 0.4s;
     }
 
-    main section article .product-detalles2 i:focus {
+.product-detalles2 i:focus {
         color: #78002e;
     }
 
@@ -730,7 +737,7 @@ footer{
         display: contents;
     }
 
-    main section article {
+section.recommended article {
         margin: 10px 0px;
         width: 20%;
         display: flex;
