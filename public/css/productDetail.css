@@ -13,12 +13,14 @@ main.container p {
     display: flex;
 }
 
+
 p.filter a:link {
         text-decoration: none;
         color: black;
         display: block;
         text-align: justify;
         text-decoration: none;
+
 }
 
 
@@ -491,8 +493,17 @@ section.recommended article {
     main.container p {
         margin-top: 15px;
         display: flex;
-        font-size: 14px;
     }
+
+
+
+    p.filter a:link {
+        text-decoration: none;
+        color: black;
+        display: block;
+        text-align: justify;
+        text-decoration: none;
+}
 
     .card-prod .main-article {
         width: 50%;
@@ -551,6 +562,12 @@ section.recommended article {
         -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
         -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
         box-shadow: inset 0px 0px 5px #c1c1c1;
+    }
+
+    h3.title-specification {
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 16px;
     }
 
 section.recommended article .product-detalles2 i {
