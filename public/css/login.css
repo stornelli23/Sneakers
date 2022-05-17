@@ -1,4 +1,4 @@
-main {
+.mainLogin{
     background-color: #ffc69c;
     background-image: url(../img/fondo-background.png);
     background-repeat: no-repeat;
@@ -9,7 +9,7 @@ main {
 /*********** MAIN ***********/
 
 
-#contenedor-principal {
+#contenedor-principal-login {
     max-width: 700px;
     border-top: solid 2px lightgray;
     border-bottom: solid 2px lightgray;
@@ -73,7 +73,7 @@ main {
     border: 1px solid black;
 }
 
-.formulario-email p {
+.formulario-email-login p {
     text-align: left;
     font-size: 14px;
     font-weight: bold;
@@ -91,7 +91,7 @@ main {
     margin-right: 5px;
 }
 
-.display-linea label {
+.display-linea-login label {
     font-size: 15px;
 }
 
@@ -283,11 +283,11 @@ footer#footer-register {
         margin-bottom: 10px;
     }
 
-    main {
+    .mainLogin {
         padding: 130px 0px;
     }
 
-    #contenedor-principal {
+    #contenedor-principal-login {
         border: #78002E 2px solid;
         width: 80%;
         text-align: center;
@@ -296,7 +296,7 @@ footer#footer-register {
         box-shadow: 5px 5px 17px 5px rgba(0,0,0,0.76);
     }
 
-    .formulario-email {
+    .formulario-email-login {
         width: 100%;
     }
 
@@ -308,7 +308,7 @@ footer#footer-register {
         text-align: center;
     }
 
-    .display-linea {
+    .display-linea-login {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -357,7 +357,7 @@ footer#footer-register {
 }
     /**Escritorio**/
 
-    @media (min-width:1024px) {
+    @media (min-width:1200px) {
         
         .texto-copyright-r {
             font-size: 15px;

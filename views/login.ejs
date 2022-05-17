@@ -18,35 +18,25 @@
 </head>
 
 <body>
-    <!--<header>
-        <section id="top-bar">
-            <div id="burger-menu"><i class="fas fa-bars"></i></div>
-            <img id="logo" src="/img/LogoBlanco.png" alt="logo">
-        </section>
-        <section id="low-bar">
-            <h3>¡Bienvenido!</h3>
-            <pc class="subtitulo-frase">Usa tu usuario y contraseña Sneakers para ingresar</pc>
-        </section>
-    </header>-->
     <%- include ('partials/header') %> 
-    <main>
-        <div id="contenedor-principal">
+    <main class="mainLogin">
+        <div id="contenedor-principal-login">
             <h3 class="login-title">Iniciar Sesion</h3>
-            <div id="contenedor-formulario">
+            <div id="contenedor-formulario-login">
                 <div class="login-register">
                     <h2 class="titular-sesion-l">Iniciar Sesion</h2>
                    <a href="/register"><h2 class="titular-sesion-r">Registrate</h2></a>
                 </div>
                 <div id="login-formulario">
-                    <div class="formulario-email">
+                    <div class="formulario-email-login">
                         <p>* Email</p>
                         <input type="email" name="email-usuario" class="barra-espacios" placeholder="ejemplo@email.com">
                     </div>
-                    <div class="formulario-email">
+                    <div class="formulario-email-login">
                         <p>* Contraseña</p>
                         <input type="password" name="password-usuario" class="barra-espacios" placeholder="*********">
                     </div>
-                    <div class="display-linea">
+                    <div class="display-linea-login">
                         <div class="checkbox-u"><label><input type="checkbox" name="recordar-usuario">Recordarme</label>
                         </div>
                         <a href="#" class="olvidar-contraseña">¿Olvidaste tu contraseña?</a>
