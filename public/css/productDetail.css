@@ -417,8 +417,8 @@ footer{
         width: 30px;
         height: 30px;
         position: relative;
-        left: 45%;
-        top: -120px;
+        left: 50%;
+        top: -100px;
         transition: all, 500ms;
     }
 
@@ -488,6 +488,12 @@ footer{
 @media (min-width: 768px) {
 
 
+    main.container p {
+        margin-top: 15px;
+        display: flex;
+        font-size: 14px;
+    }
+
     .card-prod .main-article {
         width: 50%;
         display: flex;
@@ -549,13 +555,13 @@ footer{
 
     main section article .product-detalles2 i {
         display: block;
-        font-size: 16px;
+        font-size: 12px;
         padding: 5px;
         width: 30px;
         height: 30px;
         position: relative;
-        left: 45%;
-        top: -110px;
+        left: 50%;
+        top: -100px;
         transition: all, 500ms;
     }
 
@@ -607,6 +613,12 @@ footer{
         
     }
 
+    h3.recommended {
+        font-weight: bolder;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
     main section article {
         margin: 10px 0px;
         width: 30%;
@@ -630,6 +642,13 @@ footer{
 
 
 @media (min-width: 1200px) {
+
+    main.container p {
+        margin-top: 15px;
+        display: flex;
+        font-size: 18px;
+    }
+
 
     .size{
         background-color: #AD1457;
@@ -659,6 +678,21 @@ footer{
         width: 100%;
     }
 
+    h3.title-specification{
+        font-size: 20px;
+    }
+
+    h4.title-specification{
+        font-size:20px;
+    }
+    
+    h3.recommended {
+        font-weight: bolder;
+        margin-bottom: 10px;
+        font-size: 20px;
+
+    }
+
     main section article .product-detalles2 i {
         display: block;
         font-size: 16px;
@@ -666,8 +700,8 @@ footer{
         width: 30px;
         height: 30px;
         position: relative;
-        left: 45%;
-        top: -110px;
+        left: 48%;
+        top: -115px;
         transition: all, 500ms;
     }
 
