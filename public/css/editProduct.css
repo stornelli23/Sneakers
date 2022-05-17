@@ -4,44 +4,44 @@
     box-sizing: border-box;
 }
 
-main {
+.main-editProduct {
     width: 100%;
     background-color: lightpink;
     padding: 20px 20px;
 }
 
-fieldset {
+.fieldset-editProduct {
     max-width: 900px;
     text-align: center;
     color: #000000;
     border: 1px solid rgb(120,0,46);
 }
 
-legend {
+.legend-editProduct{
     font-size: 20px;
     font-weight: bold;
     font-style: italic;
 }
 
-#contenedor-principal {
+.contenedor-principal-editProduct {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.formulario-general,
-.formulario-checkbox {
+.formulario-general-editProduct,
+.formulario-checkbox-editProduct {
     margin: 10px;
 }
 
-.formulario-general p {
+.formulario-general-editProduct p {
     text-align: left;
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.formulario-checkbox p {
+.formulario-checkbox-editProduct p {
     text-align: left;
     font-size: 14px;
     font-weight: bold;
@@ -49,70 +49,70 @@ legend {
 }
 
 
-.barra-espacios {
+.barra-espacios-editProduct {
     padding: 5px 10px;
     width: 100%;
     border-radius: 12px;
     border: 1px solid lightgray;
 }
 
-.control-selector {
+.control-selector-editProduct {
     font-size: 16px;
     width: 50%;
     display: flex;
 }
 
-.descripcion {
+.descripcion-editProduct {
     width: 100%;
     border: 1px solid lightgray;
 }
 
-.formulario-checkbox {
+.formulario-checkbox-editProduct {
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
-input.imagenes{
+input.imagenes-editProduct{
     display:flex;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.checkbox {
+.checkbox-editProduct {
     display: flex;
     justify-content: space-evenly;
 }
 
-.checkbox label {
+.checkbox-editProduct label {
     margin: 0px 5px;
 }
 
-.control-checkbox input {
+.control-checkbox-editProduct input {
     margin-right: 5px;
 }
 
-.control-radio {
+.control-radio-editProduct {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.control-radio input {
+.control-radio-editProduct input {
     margin-right: 5px;
 }
 
-.radio{
+.radio-editProduct{
     display: flex;
     margin: 0px 15px;
     font-size: 16px;
 }
-.boton {
+.boton-editProduct {
     display: flex;
     justify-content: center;
     margin: 30px 0px 15px 0px;
 }
 
-.boton-crear {
+.boton-crear-editProduct {
     box-shadow: inset 0px 6px 9px 0px #ad1456;
     background-color: #e35184;
     border-radius: 14px;
@@ -126,16 +126,16 @@ input.imagenes{
     text-decoration: none;
 }
 
-.boton-crear:hover {
+.boton-crear-editProduct:hover {
     background-color: #ad1456;
 }
 
-.boton-crear:active {
+.boton-crear-editProduct:active {
     position: relative;
     top: 1px;
 }
 
-.boton-borrar {
+.boton-borrar-editProduct {
     box-shadow: inset 0px 3px 9px 0px black;
     background-color: red;
     border-radius: 14px;
@@ -155,10 +155,10 @@ input.imagenes{
 
 @media (min-width:426px){
 
-    .formulario-general p{
+    .formulario-general-editProduct p{
         font-size: 16px;
     }
-    .formulario-checkbox p{
+    .formulario-checkbox-editProduct p{
         font-size: 16px;
     }
 }

@@ -23,63 +23,63 @@
 
     <%- include ('partials/header') %>
 
-    <main>
-        <div id="contenedor-principal">
+    <main class="main-editProduct">
+        <div class="contenedor-principal-editProduct">
             <fieldset>
                 <legend>Crear Producto</legend>
-                <div id="contenedor-formulario">
-                    <div class="formulario-general">
+                <div>
+                    <div class="formulario-general-editProduct">
                         <p>*Nombre del Producto</p>
-                        <input type="text" name="detalleProducto" class="barra-espacios">
+                        <input type="text" name="detalleProducto" class="barra-espacios-editProduct">
                     </div>
-                    <div class="formulario-general">
+                    <div class="formulario-general-editProduct">
                         <p>*Precio</p>
-                        <input type="number" name="precioProducto" class="barra-espacios">
+                        <input type="number" name="precioProducto" class="barra-espacios-editProduct">
                     </div>
-                    <div class="formulario-general">
+                    <div class="formulario-general-editProduct">
                         <p>*Descripcion</p>
-                        <textarea name="descripcionProducto" class="descripcion" rows="5" cols="100"></textarea>
+                        <textarea name="descripcionProducto" class="descripcion-editProduct" rows="5" cols="100"></textarea>
                     </div>
-                    <div class="formulario-general">
+                    <div class="formulario-general-editProduct">
                         <p>*Imagen del Producto</p>
                         <input type="file" name="imagen" accept=".jpg, .png">
                     </div>
-                    <div class="formulario-general">
+                    <div class="formulario-general-editProduct">
                         <p>*Categoria</p>
-                        <div class="control-radio">
-                            <div class="radio"><input type="radio" class="control-radio" name="categoria-modelo"
+                        <div class="control-radio-editProduct">
+                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="categoria-modelo"
                                     value="hombre">Hombre</input></div>
-                            <div class="radio"><input type="radio" class="control-radio" name="categoria-modelo"
+                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="categoria-modelo"
                                     value="mujer">Mujer</input></div>
-                            <div class="radio"><input type="radio" class="control-radio" name="categoria-modelo"
+                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="categoria-modelo"
                                     value="unisex">Unisex</input></div>
                         </div>
                     </div>
-                    <div class="formulario-general">
+                    <div class="formulario-general-editProduct">
                         <p>*Marca</p>
-                        <select name="marca" class="control-selector">
+                        <select name="marca" class="control-selector-editProduct">
                             <option>Seleccionar</option>
                             <option value="1">Nike</option>
                             <option value="2">Adidas</option>
                         </select>
                     </div>
-                    <div class="formulario-checkbox">
+                    <div class="formulario-checkbox-editProduct">
                         <div>
                             <p>*Talles</p>
                         </div>
-                        <div class="checkbox">
-                            <label class="control-checkbox"><input type="checkbox" name="talle" value="35">35</label>
-                            <label class="control-checkbox"><input type="checkbox" name="talle" value="36">36</label>
-                            <label class="control-checkbox"><input type="checkbox" name="talle" value="37">37</label>
-                            <label class="control-checkbox"><input type="checkbox" name="talle" value="38">38</label>
-                            <label class="control-checkbox"><input type="checkbox" name="talle" value="39">39</label>
-                            <label class="control-checkbox"><input type="checkbox" name="talle" value="40">40</label>
-                            <label class="control-checkbox"><input type="checkbox" name="talle" value="41">41</label>
-                            <label class="control-checkbox"><input type="checkbox" name="talle" value="42">42</label>
-                            <label class="control-checkbox"><input type="checkbox" name="talle" value="43">43</label>
+                        <div class="checkbox-editProduct">
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="talle" value="35">35</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="talle" value="36">36</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="talle" value="37">37</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="talle" value="38">38</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="talle" value="39">39</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="talle" value="40">40</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="talle" value="41">41</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="talle" value="42">42</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="talle" value="43">43</label>
                         </div>
-                        <div class="boton">
-                            <a href="#" class="boton-crear">Crear item</a>
+                        <div class="boton-editProduct">
+                            <a href="#" class="boton-crear-editProduct">Crear item</a>
                         </div>
                     </div>
                 </div>
