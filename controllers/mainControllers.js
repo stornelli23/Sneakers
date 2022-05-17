@@ -14,7 +14,7 @@ const mainControllers = {
     },
     
     productDetail: (req, res) => {
-        res.render('productDetail', {recomendados:productosRecomendados})
+        res.render('productDetail', {productosRecomendados:productosRecomendados})
     },
     
     login: (req, res) => {
