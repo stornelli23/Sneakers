@@ -21,15 +21,29 @@ h2.cart{
 }
 
 .contenedor-productos{
-    background-color: rgb(173,20,87) ;
+    
     justify-content: center;
     text-align: center;
+}
+.carrito{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -20px;
+}
+.fa-cart-shopping{
+    font-size: 6vh;
+    color:#AD1457
+}
+.fa-truck{
+    font-size: 2vh;
+    
 }
 .cajaPadding{
     display: flex;
     flex-direction: column;
     margin: 2% 2% 2% 2% ;
-    background-color: white;
+
 }
 
 .bloqueProducto {   /* = contenedor de cada producto */
@@ -218,7 +232,7 @@ h2.cart{
 .envio{
     display: flex;
     position: relative;
-    right: 5vw;
+    right: 2vw;
     text-align: right; 
     margin: 3% 5% 3%;
     padding:0 0px 0 0 ;
@@ -234,8 +248,11 @@ h2.cart{
                 }
 
 .envio-precio{
-                width: 10%;
+                width: 20%;
                 text-align: right;
+                margin-top: 2px;
+                text-align: right;
+                font-style: italic;
                             }
 
 .envio{
@@ -253,11 +270,6 @@ h2.cart{
     font-style: italic;
                 }
 
-.envio-precio{
-width: 20%;
-text-align: right;
-font-style: italic;
-            }
 
 .total{
     display: flex;
@@ -444,7 +456,9 @@ h2.cart {
 }
 /*******BREAK INTERMEDIO*******/
 @media (min-width: 500px){
-   
+    .fa-cart-shopping{
+        font-size: 6vh;
+    }
     p.cart {
       font-size: 2vh;
     }
@@ -481,8 +495,12 @@ h2.cart {
             font-size: 80%;
            
     }
-    
-    
+    .envio-precio{
+        margin-top: 5px;
+                    }
+    .fa-truck{
+        font-size: 3vh;
+    }
     
     .total-leyenda{
     width: 80%;
@@ -570,6 +588,7 @@ h2.cart {
     .preciounidad p{
         font-size: 15px;
     }
+    
     .total-leyenda{
         width: 80%;
         text-align: right;
@@ -622,6 +641,9 @@ h2.cart {
 
     .preciounidad p{
         font-size: 15px;
+    }
+    .envio-precio{
+        width: 18%;
     }
     .total-leyenda{
          width: 80%;
