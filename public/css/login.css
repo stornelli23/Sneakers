@@ -220,7 +220,7 @@ footer#footer-register {
 
 /********************* R E G I S T E R *********************/
 
-.formulario-general p {
+.formulario-general-login p {
     text-align: left;
     font-size: 14px;
     font-weight: bold;
@@ -228,20 +228,20 @@ footer#footer-register {
 }
 
 
-.nombre-completo,
-.password-completo,
-.formulario-otros {
+.nombre-completo-register,
+.password-completo-register,
+.formulario-otros-register {
     display: flex;
     flex-direction: column;
     margin: 10px 0px 10px 0px;
 }
 
-.control-calendario {
+.control-calendario-login {
     font-size: 14px;
     width: 80%;
 }
 
-.control-selector {
+.control-selector-login {
     align-content: left;
     font-size: 16px;
     width: 50%;
@@ -252,17 +252,17 @@ footer#footer-register {
 
 @media (min-width:426px) {
 
-    .formulario-otros {
+    .formulario-otros-register {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    .formulario-general {
+    .formulario-general-login {
         width: 45%;
     }
 
-    .nombre-completo {
+    .nombre-completo-register {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -275,7 +275,7 @@ footer#footer-register {
         justify-content: center;
     }
 
-    .password-completo {
+    .password-completo-register {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
