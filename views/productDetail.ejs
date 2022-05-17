@@ -78,20 +78,22 @@
             <h3>Recomendados para vos</h3>
 
             <section class="recommended">
+                <% productosRecomendados.forEach(productos => { %>
+                    <article class="detalles">
+                        <div class="product-detalle">
+                        <a href="/productCart"><img src="/img/<%=productos.imagen%> " alt=""></a>
+                        <div class="product-detalles2">
+                            <p><%= productos.detalleDeProducto %> </p>
+                            <p class="product-price"><%= productos.precioProducto %> </p>
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        
+                        </div>
+                            </article>
+                <% }) %>
                 
-                <article class="detalles">
-                    <div class="product-detalle">
-                    <a href="/productCart"><img src="/img/nike-air-huarache.jpg" alt=""></a>
-                    <div class="product-detalles2">
-                        <p>Zapatillas Nike Air Huarache</p>
-                        <p class="product-price">$25.000</p>
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </div>
-                    
-                    </div>
-                        </article>
             
-                <article class="detalles">
+                <!-- <article class="detalles">
                     <div class="product-detalle">
                   <a href="/productCart"><img src="/img/nike-air-huarache.jpg" alt=""></a>
                     <div class="product-detalles2">
@@ -124,7 +126,7 @@
                                     </div>
                                     
                                     </div>
-                                        </article>      
+                                        </article>       -->
                
                 </section>
         
