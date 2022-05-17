@@ -73,7 +73,7 @@
     border: 1px solid black;
 }
 
-.formulario-email p {
+.formulario-email-login p {
     text-align: left;
     font-size: 14px;
     font-weight: bold;
@@ -91,7 +91,7 @@
     margin-right: 5px;
 }
 
-.display-linea label {
+.display-linea-login label {
     font-size: 15px;
 }
 
@@ -296,7 +296,7 @@ footer#footer-register {
         box-shadow: 5px 5px 17px 5px rgba(0,0,0,0.76);
     }
 
-    .formulario-email {
+    .formulario-email-login {
         width: 100%;
     }
 
@@ -308,7 +308,7 @@ footer#footer-register {
         text-align: center;
     }
 
-    .display-linea {
+    .display-linea-login {
         display: flex;
         flex-direction: row;
         align-items: center;
