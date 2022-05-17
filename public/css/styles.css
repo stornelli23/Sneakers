@@ -53,7 +53,7 @@ header {
 }
 
 .logo img{
-    width: 35vw;
+    width: 120px;
 }
 
 .iconos-carrito-perfil{
@@ -103,102 +103,7 @@ header {
     font-size: 12px;
 
 }
-/* 
 
-section .recommended{
-    display: flex;
-    flex-direction: column;
-    margin: 2% 2% 2% 10%;
-    text-align: center;
-}
-section .recommended .recomendados p{
-    font-size: 12;
-}
-h3 {
-    text-align: center;
-}
-.recomendados{
-    display:flex;    
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 10vh;
-}
-section 
-    article
-        .card-body
-             img {
-                    width:100%;
-                    height: auto;
-                    
-}
-.card{
-    width: 30vh;
-    height: 30vh;
-    display: flex;
-    margin-bottom: 5vh;
-    
-}
-.subetiqueta{
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        border-top: 1px solid #d4d4d4;
-        padding: 10px;
-    
-   
-}
-
-.pre{
-    font-size: 13px;
-    font-weight: bold;
-    
-}
-.des{
-    font-size: 11px;
-    
-    color: #78002e;
-    margin-left: 0;   
-        
-}
-.product-img{
-    padding: 5px;
-   
-}
-
-.titularRecomendados{
-    margin: 0 0 3% 0;
-    
-}
-.card-body{   
-    display: inline-block;
-    width: 100%;
-
-    box-sizing: border-box;
-    padding: 5px;
-}
-
-
-main section article i {
-    display: block;
-    font-size: 16px;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    color: #AD1457;
-    position: absolute;
-    right: 10px;
-    top: -15px;
-    transition: all, 500ms;
-}
-.card-body:hover i {
-    transform: rotate(-90deg);  
-}
-.card-body .descripciones{
-    visibility: hidden;
-}
-.card-body:hover .descripciones {       
-   visibility: visible;        
-}  */
 
 
 
@@ -228,10 +133,11 @@ footer{
 .footer-left{
     display: flex;
     width: 35%;
+    justify-content: center;
 
 }
 .footer-left .logo img{
-    width: 100%;
+    width: 120px;
 }
 .footer-center{
     display: flex;
@@ -279,7 +185,7 @@ footer{
 @media (min-width: 425px) {
 
     .logo img{
-        width: 60%;
+        width: 135px;
         align-items: center;
     }
 
@@ -322,7 +228,7 @@ footer{
     .footer-main
     .footer-left
     .logo img {
-        width: 100%;
+        width: 135px;
     }
 }
 
@@ -331,7 +237,7 @@ footer{
 @media (min-width: 768px) {
 
     .logo img{
-        width: 60%;
+        width: 150px;
         align-items: center;
     }
 
@@ -372,7 +278,7 @@ footer{
     .footer-main
     .footer-left
     .logo img {
-        width: 60%;
+        width: 150px;
     }
 }
 
@@ -385,6 +291,8 @@ height: 90px;
             }
     .footer-left{
 width: 25%;
+display: flex;
+justify-content: center;
     }
     .footer-left .logo{
     display: flex;
