@@ -6,19 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/index.css">
         <link rel="stylesheet" href="/css/styles.css">
+        <!-- <link rel="stylesheet" href="/css/login.css">  -->
+        <!-- <link rel="stylesheet" href="/css/editProduct.css">  -->
+        <link rel="stylesheet" href="/css/productDetailss">
+        <link rel="stylesheet" href="/css/productCart.css">
         <script src="https://kit.fontawesome.com/6057857b79.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
         <title>Sneakers</title>
     </head>
-    <body>
+    <body class="indexBody">
 
     <%- include ('partials/header') %> 
 
 <!-- COMIENZO MAIN -->
 
-    <main>
+    <main class="indexMain">
         <div class="banner-carrusel">
             <img src="/img/adidas-banner-otono.jpg" alt="">
         </div>
@@ -43,15 +47,15 @@
 
 <h2>PRODUCTOS DESTACADOS</h2>
 
-<section>
+<section class="indexDestacados">
     <% productosDestacados.forEach(producto => { %>
-    <article>
+    <article class="articleIndex">
        
-        <div class="product">
+        <div class="productIndex">
         <a href="/productDetail"><img src="/img/<%=producto.imagen%> " alt=""></a>
-        <div class="product-detail">
+        <div class="product-detail-Index">
             <p><%=producto.detalleDeProducto%></p>
-            <p class="product-price"><%=producto.precioProducto%></p>
+            <p class="product-price-Index"><%=producto.precioProducto%></p>
         </div>
         
         </div>
@@ -62,14 +66,14 @@
       <!-- SECCION REBAJAS HOME -->
 
       <h2>REBAJAS</h2>
-<section>
+<section class="indexDestacados">
     <% descuentos.forEach(producto => { %>
-    <article>
-        <div class="product">
+    <article class="articleIndex">
+        <div class="productIndex">
             <a href="/productDetail"><img src="/img/<%=producto.imagen%> " alt=""></a>
-        <div class="product-detail">
+        <div class="product-detail-Index">
             <p><%=producto.detalleDeProducto%> </p>
-            <p class="product-price"><%=producto.precioProducto%> </p>
+            <p class="product-price-Index"><%=producto.precioProducto%> </p>
             <p><%=producto.rebaja%> </p>
         </div>
         
