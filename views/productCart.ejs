@@ -25,7 +25,7 @@
         
         <div class="contenedor-gral">
             <div class="contenedor-titular">
-                 <h2>CARRITO DE COMPRAS</h2>
+                 <h2 class="cart">CARRITO DE COMPRAS</h2>
             </div>
             
             <div class="contenedor-productos">
@@ -41,16 +41,16 @@
                         </div>
                         
                         <div class="descripcion"><!--bloque descripción-->
-                              <div class="modelo"><p> Nike Air</p>
+                              <div class="modelo"><p class="cart" > Nike Air</p>
                               </div>
-                              <div class="color"><p>Color: Negro</p>
+                              <div class="color"><p class="cart" >Color: Negro</p>
                               </div>
-                              <div class="talle"><p>Talle: 42</p>
+                              <div class="talle"><p class="cart" >Talle: 42</p>
                               </div>
                         </div>
                         <div class="columnaCantidad">
                             <div class="cantidad" ><!--bloque cantidad-->
-                                <div class="cantidadtexto"><p>Cantidad:</p>
+                                <div class="cantidadtexto"><p class="cart" >Cantidad:</p>
                                 </div>
                                     <!--BOTÓN CANTIDAD-->
                                 <div class="input-group plus-minus-input">
@@ -58,12 +58,12 @@
                                 </div>     
                             </div>
                             <div class="preciounidad">
-                                <p>Precio unit.:</p>
-                                <p>$10.000</p>
+                                <p class="cart" >Precio unit.:</p>
+                                <p class="cart" >$10.000</p>
                             </div>
                         </div>
                         <div class="precio"><!--bloque precio-->
-                            <p>$30000</p>
+                            <p class="cart" >$30000</p>
                         </div>
                         
                     </div>
@@ -88,16 +88,16 @@
                             </div>
                             
                             <div class="descripcion"><!--bloque descripción-->
-                                  <div class="modelo"><p> Nike Air</p>
+                                  <div class="modelo"><p class="cart" > Nike Air</p>
                                   </div>
-                                  <div class="color"><p>Color: Negro</p>
+                                  <div class="color"><p class="cart" >Color: Negro</p>
                                   </div>
-                                  <div class="talle"><p>Talle: 42</p>
+                                  <div class="talle"><p class="cart" >Talle: 42</p>
                                   </div>
                             </div>
                             <div class="columnaCantidad">
                                 <div class="cantidad" ><!--bloque cantidad-->
-                                    <div class="cantidadtexto"><p>Cantidad:</p>
+                                    <div class="cantidadtexto"><p class="cart" >Cantidad:</p>
                                     </div>
                                         <!--BOTÓN CANTIDAD-->
                                     <div class="input-group plus-minus-input">
@@ -105,12 +105,12 @@
                                     </div>     
                                 </div>
                                 <div class="preciounidad">
-                                    <p>Precio unit.:</p>
-                                    <p>$10.000</p>
+                                    <p class="cart" >Precio unit.:</p>
+                                    <p class="cart" >$10.000</p>
                                 </div>
                             </div>
                             <div class="precio"><!--bloque precio-->
-                                <p>$30000</p>
+                                <p class="cart" >$30000</p>
                             </div>
                             
                         </div>
@@ -127,9 +127,9 @@
                   <article>
                         <div class="bloqueSuma">
                             <div class="envio"><!--bloque SUBTOTAL SIN ENVIO-->
-                                <div class="envio-leyenda"><p>Costo de envío:</p>
+                                <div class="envio-leyenda"><p class="cart" >Costo de envío:</p>
                                 </div>
-                                <div class="envio-precio"><p>$500</p>
+                                <div class="envio-precio"><p class="cart" >$500</p>
                                 </div>
                             </div>
                             
@@ -142,7 +142,7 @@
                             </div>
                             <div class="continuarCompra">
                             
-                                <button type="submit"><p>¡Finalizar compra!</p></button>
+                                <button class="finalizar" type="submit"><p class="cart" >¡Finalizar compra!</p></button>
                               
                             </div>
 
@@ -159,7 +159,7 @@
         
         <section class="recommended">
         <div class="titularRecomendados">
-            <h2>RECOMENDADOS PARA VOS</h2>
+            <h2 class="cart">RECOMENDADOS PARA VOS</h2>
         </div>
         
         <div class="recomendados">
@@ -169,8 +169,8 @@
             <div class="product">
                 <a href="/productDetail"><img src="/img/<%=producto.imagen%> " alt=""></a>
             <div class="product-detail">
-                <p><%=producto.detalleDeProducto%> </p>
-                <p class="product-price"><%=producto.precioProducto%></p>
+                <p class="cart" ><%=producto.detalleDeProducto%> </p>
+                <p class="cart"  class="product-price"><%=producto.precioProducto%></p>
             </div>
             
             </div>
