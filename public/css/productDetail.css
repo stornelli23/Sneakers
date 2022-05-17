@@ -149,7 +149,7 @@ article.product-specification{
 }
 
 h3.title-specification {
-    font-weight: bolder;
+    font-weight: 600;
     margin-bottom: 10px;
 }
 
@@ -687,6 +687,7 @@ section.recommended article {
 
     h3.title-specification{
         font-size: 20px;
+        font-weight: 600;
     }
 
     h4.title-specification{
