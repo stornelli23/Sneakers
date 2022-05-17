@@ -21,10 +21,16 @@ h2.cart{
 }
 
 .contenedor-productos{
+    background-color: rgb(173,20,87) ;
     justify-content: center;
     text-align: center;
 }
-
+.cajaPadding{
+    display: flex;
+    flex-direction: column;
+    margin: 2% 2% 2% 2% ;
+    background-color: white;
+}
 
 .bloqueProducto {   /* = contenedor de cada producto */
     display: flex;    
@@ -116,14 +122,14 @@ h2.cart{
     color:rgb(71, 71, 71);    
     margin: 30%, 5%, 10%, 0%;
     font-style: italic;
-    font-size: 75%;
+    font-size: 65%;
 
 }
 
 .preciounidad{
     position: relative;
     bottom: 10px;
-    left: 25%;
+    left: 5%;
     font-weight: lighter;
 }
 
@@ -373,10 +379,16 @@ h2.cart {
     font-size: 20px;
     
 }
-
+.cantidadtexto p.cart{  
+    font-size: 2vh;
+}
+.preciounidad p{
+    font-size: 80%;
+   
+}
 .bloqueInferiorProducto
                 a{
-    font-size: 1.8vh;
+    font-size: 1.5vh;
     color:rgb(120,0,46)
 }
 
@@ -398,35 +410,40 @@ h2.cart {
 @media (min-width: 500px){
    
     p.cart {
-      font-size: 2.5vh;
+      font-size: 2vh;
     }
     h2.cart {
         font-size: 22px;
         
     }
     .bloqueInferiorProducto
-                a{
-    font-size:2vh;
+    a{
+    font-size:1.5vh;
     color:rgb(120,0,46)
     }
+    .cajaPadding{
+        margin: 5% 10% 5% 10% ;
+    }
     .precio p{
-        font-size: 3vh;
+        font-size: 1.8vh;
                     
 
     }
     .color p{    
-    font-size: 13px;
+    font-size: 12px;
     }
     .talle p{   
-            font-size: 13px;
+            font-size: 12px;
     }
     .input-group-field{ /*Botón - campo*/
     height : 30px;
     }
     .preciounidad p{
-            font-size: 12px;
+            font-size: 80%;
            
     }
+    
+    
     
     .total-leyenda{
     width: 80%;
@@ -504,7 +521,7 @@ h2.cart {
     .preciounidad{
     position: relative;
     bottom: 20px;
-    left: 25%;
+    right: 30%;
     font-weight: lighter;
     }
 
@@ -552,7 +569,6 @@ h2.cart {
     .preciounidad{
          position: relative;
          bottom: 20px;
-         left: 25%;
          font-weight: lighter;
     }
 
