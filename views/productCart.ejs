@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include ('partials/head.ejs') %> 
-
-<body>
-  <%- include ('partials/header') %> 
+    <%- include ('partials/head.ejs') %> <body>
+  
 
     <main>
-        
+        <%- include ('partials/header') %> 
         <div class="contenedor-gral">
             <div class="contenedor-titular">
                  <h2 class="cart">CARRITO DE COMPRAS</h2>
             </div>
             
             <div class="contenedor-productos">
+                <div class="carrito">
+                
+                <i class="fa-solid fa-cart-shopping"></i>
+                </div>
                 <div class="cajaPadding">
                 
                     <article><!--Producto-->
@@ -113,7 +115,7 @@
                       <article>
                             <div class="bloqueSuma">
                                 <div class="envio"><!--bloque SUBTOTAL SIN ENVIO-->
-                                    <div class="envio-leyenda"><p class="cart" >Costo de envío:</p>
+                                    <div class="envio-leyenda"><p class="cart" ><i class="fa-solid fa-truck"></i>  Costo de envío:</p>
                                     </div>
                                     <div class="envio-precio"><p class="cart" >$500</p>
                                     </div>
