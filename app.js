@@ -15,6 +15,8 @@ app.use(express.static('public'))
 
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'views'));
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 
 //////////////////////////////////////////////////////////////////
 
@@ -22,6 +24,10 @@ const mainRoutes = require('./routes/mainRoutes');
 
 app.use('/', mainRoutes);
 
+
+const productsRoutes = require('./routes/productsRoutes');
+
+app.use('/', productsRoutes);
 
 
 // app.get('*', (req, res) => {

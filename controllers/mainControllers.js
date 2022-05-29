@@ -2,6 +2,10 @@ const path = require('path');
 const productos = require('./productos')
 const productosRebajas = require('./productosRebajas')
 const productosRecomendados = require('./productosRecomendados')
+const fs = require('fs')
+const productFilePath = path.join(__dirname,'../data/products.json')
+const productsJson = JSON.parse(fs.readFileSync(productFilePath, 'utf-8'))
+
 
 const mainControllers = {
 
@@ -14,7 +18,10 @@ const mainControllers = {
     },
     
     productDetail: (req, res) => {
-        res.render('productDetail', {productosRecomendados:productosRecomendados})
+
+        let id = req.params.id;
+        let productosFiltrados = productsJson.find(products => products.product_id == id)
+        res.render('productDetail', {productosFiltrados})
     },
     
     login: (req, res) => {
@@ -29,9 +36,37 @@ const mainControllers = {
         res.render('createProduct')
     },
 
+    store: (req, res) => {
+
+        let image
+        if(req.files[0] != undefined){
+            image = req.files[0].filename
+        } else {
+            image = 'default-image.jpeg'
+        }
+    
+        let newProduct = {
+            id: productsJson[productsJson.length-1].id+1,
+            ...req.body,
+            image : image
+        }
+  
+        productsJson.push(newProduct) ; 
+        fs.writeFileSync(productsFilePath, JSON.stringify(productsJson));
+        res.redirect('/')
+        },
+
     editProduct: (req, res) => {
-        res.render('editProduct')
-    }
+        let id = req.params.id;
+        let productosFiltrados = productsJson.find(products => products.product_id == id)
+        res.render('editProduct', {productosFiltrados})
+    },
+
+    products: (req, res) => {
+        res.render('products', {productsJson})
+    },
+
+
 
 }
 
