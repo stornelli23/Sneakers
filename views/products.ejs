@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('partials/head.ejs') %> 
+
+    <!-- BODY -->
+
+    <body class="indexBody">
+
+    <%- include ('partials/header') %> 
+
+<!-- COMIENZO MAIN -->
+
+    <main class="indexMain">
+
+
+        <!-- SECCION WALLPAPERS PRINCIPALES HOME -->
+
+
+      <!-- SECCION DESTACADOS HOME -->
+
+<h2>PRODUCTOS</h2>
+
+<section class="indexDestacados">
+    <% productsJson.forEach(producto => { %>
+    <article class="articleIndex">
+       
+        <div class="productIndex">
+        <a href="/productDetail/<%=producto.product_id%> "><img src="/img/<%=producto.product_image%> " alt=""></a>
+        <div class="product-detail-Index">
+            <p><%=producto.product_description%></p>
+            <p class="product-price-Index"><%=producto.product_price%></p>
+        </div>
+        
+        </div>
+  
+            </article>
+            <% }) %>
+</section>
+      <!-- SECCION REBAJAS HOME -->
+
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <%- include ('partials/footer') %> 
+
+</body>
+</html>

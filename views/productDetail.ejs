@@ -12,13 +12,14 @@
     </div>
         <br>
         <div class="Product-detail">
+         
             <article class="card-prod">
                 <div class="foto-prod">
-                    <img src="/img/NikeEjemplo.jpeg" alt="ProductDetail">
+                    <img src="/img/<%=productosFiltrados.product_image%> " alt="">
                 </div>
                 <div class="main-article">
-                    <p class="name">Modelo Nike</p>
-                    <p class="price">$120.000</p>
+                    <p class="name"><%=productosFiltrados.product_name%></p>
+                    <p class="price"><%=productosFiltrados.product_price%></p>
                     <p class="text-top">Talle</p>
                     <div class="shoe-size">
                     <button class="size"><span>35</span></button>
@@ -33,14 +34,17 @@
                     </button></a> 
                 </div>
             </article>
+          
+
             <article class="product-specification">
                 <div class="card-specification">
                     <h3 class="title-specification">Descripción:</h3>
                     <p class="air-max">
-                    Las Air Max Dawn, fiel a sus orígenes, están confeccionadas con al menos un 20% de material reciclado por peso. La gamuza sintética y los demás materiales combinan el estilo vintage del running con detalles nuevos. La amortiguación Nike Air brinda comodidad para todo el día.
+                    <%=productosFiltrados.product_description%>
                     </p>
                 </div>
             </article>
+           
             <div class="container">
                 <div class="row">
                 <div class="column">
@@ -67,19 +71,19 @@
             <h3 class="recommended">Recomendados para vos</h3>
 
             <section class="recommended">
-                <% productosRecomendados.forEach(productos => { %>
+              
                     <article class="detalles">
                         <div class="product-detalle">
-                        <a href="/productCart"><img src="/img/<%=productos.imagen%> " alt=""></a>
+                        <a href="/productCart"><img src="/img/<%=productosFiltrados.product_image%> " alt=""></a>
                         <div class="product-detalles2">
-                            <p><%= productos.detalleDeProducto %> </p>
-                            <p class="product-price"><%= productos.precioProducto %> </p>
+                            <p><%=productosFiltrados.product_description%> </p>
+                            <p class="product-price"><%=productosFiltrados.product_price%> </p>
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                         
                         </div>
                             </article>
-                <% }) %>
+      
                 
             
                

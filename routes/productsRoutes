@@ -1,0 +1,15 @@
+const express = require('express');
+const router = express.Router();
+const mainControllers = require('../controllers/mainControllers');
+
+// ROUTES GET//
+router.get('/productCart', mainControllers.productCart);
+router.get('/createProduct', mainControllers.createProduct);
+router.get('/editProduct/:id', mainControllers.editProduct);
+router.get('/products', mainControllers.products);
+router.get('/productDetail/:id', mainControllers.productDetail);
+
+// ROUTES POST//
+router.post('/createProduct', mainControllers.store);
+
+module.exports = router;
