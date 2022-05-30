@@ -1,10 +1,13 @@
+const fs = require('fs')
 const path = require('path');
+
+const productFilePath = path.join(__dirname,'../data/products.json')
+const productsJson = JSON.parse(fs.readFileSync(productFilePath, 'utf-8'))
+
 const productos = require('./productos')
 const productosRebajas = require('./productosRebajas')
 const productosRecomendados = require('./productosRecomendados')
-const fs = require('fs')
-const productFilePath = path.join(__dirname,'../data/products.json')
-const productsJson = JSON.parse(fs.readFileSync(productFilePath, 'utf-8'))
+
 
 
 const mainControllers = {
@@ -37,7 +40,6 @@ const mainControllers = {
     },
 
     store: (req, res) => {
-
         let image
         if(req.files[0] != undefined){
             image = req.files[0].filename
@@ -46,13 +48,16 @@ const mainControllers = {
         }
     
         let newProduct = {
-            id: productsJson[productsJson.length-1].id+1,
+            
+            id: productsJson[productsJson.length-1].product_id+1,
             ...req.body,
             image : image
         }
-  
+        
         productsJson.push(newProduct) ; 
-        fs.writeFileSync(productsFilePath, JSON.stringify(productsJson));
+        console.log(productsJson);
+        fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
+        console.log("producto guardado")
         res.redirect('/')
         },
 
