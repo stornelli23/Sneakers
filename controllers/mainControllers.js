@@ -13,7 +13,12 @@ const productosRecomendados = require('./productosRecomendados')
 const mainControllers = {
 
     index: (req, res) => {
-        res.render('index', {productosDestacados:productos, descuentos:productosRebajas})  
+
+        let descuentos = productsJson.filter(product => product.product_discount > 0)
+        let destacados = productsJson.filter(product => product.product_discount <= 0)
+
+
+        res.render('index', {destacados, descuentos})  
     },
     
     productCart: (req, res) => {
@@ -21,7 +26,6 @@ const mainControllers = {
     },
     
     productDetail: (req, res) => {
-
         let id = req.params.id;
         let productosFiltrados = productsJson.find(products => products.product_id == id)
         res.render('productDetail', {productosFiltrados})
@@ -49,9 +53,9 @@ const mainControllers = {
     
         let newProduct = {
             
-            id: productsJson[productsJson.length-1].product_id+1,
+            product_id: productsJson[productsJson.length-1].product_id+1,
             ...req.body,
-            image : image
+            product_image : image
         }
         
         productsJson.push(newProduct) ; 

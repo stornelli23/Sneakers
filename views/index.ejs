@@ -36,14 +36,14 @@
 <h2>PRODUCTOS DESTACADOS</h2>
 
 <section class="indexDestacados">
-    <% productosDestacados.forEach(producto => { %>
+    <% destacados.forEach(producto => { %>
     <article class="articleIndex">
        
         <div class="productIndex">
-        <a href="/productDetail"><img src="/img/<%=producto.imagen%> " alt=""></a>
+        <a href="/productDetail/<%= producto.product_id %> "><img src="/img/<%=producto.product_image%> " alt=""></a>
         <div class="product-detail-Index">
-            <p><%=producto.detalleDeProducto%></p>
-            <p class="product-price-Index"><%=producto.precioProducto%></p>
+            <p><%=producto.product_description%></p>
+            <p class="product-price-Index"><%=producto.product_price%></p>
         </div>
         
         </div>
@@ -58,11 +58,11 @@
     <% descuentos.forEach(producto => { %>
     <article class="articleIndex">
         <div class="productIndex">
-            <a href="/productDetail"><img src="/img/<%=producto.imagen%> " alt=""></a>
+            <a href="/productDetail"><img src="/img/<%=producto.product_image%> " alt=""></a>
         <div class="product-detail-Index">
-            <p><%=producto.detalleDeProducto%> </p>
-            <p class="product-price-Index"><%=producto.precioProducto%> </p>
-            <p><%=producto.rebaja%> </p>
+            <p><%=producto.product_description%> </p>
+            <p class="product-price-Index"><%=producto.product_price%> </p>
+            <p><%=producto.product_discount%> </p>
         </div>
         
         </div>
