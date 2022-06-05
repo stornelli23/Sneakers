@@ -85,8 +85,8 @@
   "product_description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
   "product_image": "nike-air-huarache.jpg",
   "product_category": "Mujer",
-  "product_brand": "Aardwolf",
-  "product_size": "S",
+  "product_brand": "Adidas",
+  "product_size": "35",
   "product_discount": "0"
 }, {
   "product_id": 10,
@@ -95,8 +95,8 @@
   "product_description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
   "product_image": "nike-air-huarache.jpg",
   "product_category": "Hombre",
-  "product_brand": "Galapagos penguin",
-  "product_size": "2XL",
+  "product_brand": "Nike",
+  "product_size": "38",
   "product_discount": "10"
 }, {
   "product_id": 11,

@@ -36,19 +36,19 @@
                         <p>*Categoria</p>
                         <div class="control-radio-editProduct">
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="product_category"
-                                    value=<%=productEdit.product_category%> >Hombre</input></div>
+                                    <%if(productEdit.product_category=="Hombre"){%>checked<%}%>>Hombre</input></div>
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="product_category"
-                                    value=<%=productEdit.product_category%>>Mujer</input></div>
+                                <%if(productEdit.product_category=="Mujer"){%>checked<%}%>>Mujer</input></div>
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="product_category"
-                                    value=<%=productEdit.product_category%>>Unisex</input></div>
+                                <%if(productEdit.product_category=="Unisex"){%>checked<%}%>>Unisex</input></div>
                         </div>
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>*Marca</p>
                         <select name="product_brand" class="control-selector-editProduct">
                             <option>Seleccionar</option>
-                            <option value=<%=productEdit.product_brand%> >Nike</option>
-                            <option value=<%=productEdit.product_brand%>>Adidas</option>
+                            <option  <%if(productEdit.product_brand=="Nike"){%>selected<%}%> >Nike</option>
+                            <option  <%if(productEdit.product_brand=="Adidas"){%>selected<%}%> >Adidas</option>
                         </select>
                     </div>
                     <div class="formulario-checkbox-editProduct">
@@ -56,15 +56,15 @@
                             <p>*Talles</p>
                         </div>
                         <div class="checkbox-editProduct">
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="35">35</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="36">36</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="37">37</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="38">38</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="39">39</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="40">40</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="41">41</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="42">42</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="43">43</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size=="35"){%>checked<%}%>>35</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size=="36"){%>checked<%}%>>36</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size=="37"){%>checked<%}%>>37</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size=="38"){%>checked<%}%>>38</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size=="39"){%>checked<%}%>>39</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size=="40"){%>checked<%}%>>40</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size=="41"){%>checked<%}%>>41</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size=="42"){%>checked<%}%>>42</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size=="43"){%>checked<%}%>>43</label>
                         </div>
                     </div>
                     <div class="boton-editProduct">
