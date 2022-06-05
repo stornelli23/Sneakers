@@ -64,7 +64,6 @@ const mainControllers = {
 
     editProduct: (req, res) => {
         let id = req.params.id;
-        // let productosFiltrados = productsJson.find(products => products.product_id == id)
         let productEdit = productsJson[id-1]
         res.render('editProduct', {productEdit})
     },
