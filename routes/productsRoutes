@@ -38,7 +38,9 @@ router.get('/editProduct/:id', mainControllers.editProduct);
 router.get('/products', mainControllers.products);
 router.get('/productDetail/:id', mainControllers.productDetail);
 
+
 // ROUTES POST//
 router.post('/createProduct', upload.any(), mainControllers.store);
+router.delete('/editProduct/:id', mainControllers.delete);
 
 module.exports = router;

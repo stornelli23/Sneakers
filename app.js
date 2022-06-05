@@ -5,6 +5,7 @@ const app = express();
 const path = require ('path')
 
 const port = 3000
+const methodOverride = require('method-override')
 
 //////////////////////////////////////////////////////////////////
 
@@ -17,7 +18,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'views'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
-
+app.use(methodOverride('_method'));
 //////////////////////////////////////////////////////////////////
 
 const mainRoutes = require('./routes/mainRoutes');

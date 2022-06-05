@@ -4,9 +4,6 @@ const path = require('path');
 const productFilePath = path.join(__dirname,'../data/products.json')
 const productsJson = JSON.parse(fs.readFileSync(productFilePath, 'utf-8'))
 
-const productos = require('./productos')
-const productosRebajas = require('./productosRebajas')
-const productosRecomendados = require('./productosRecomendados')
 
 
 
@@ -67,16 +64,22 @@ const mainControllers = {
 
     editProduct: (req, res) => {
         let id = req.params.id;
-        let productosFiltrados = productsJson.find(products => products.product_id == id)
-        res.render('editProduct', {productosFiltrados})
+        // let productosFiltrados = productsJson.find(products => products.product_id == id)
+        let productEdit = productsJson[id-1]
+        res.render('editProduct', {productEdit})
     },
 
     products: (req, res) => {
         res.render('products', {productsJson})
     },
 
-
-
+    delete: (req,res) => {
+        let id = req.params.id
+        let productDelete = productsJson.splice(id, 1)
+        res.render('/products', products)
+    }
+     
+ 
 }
 
 module.exports = mainControllers;
