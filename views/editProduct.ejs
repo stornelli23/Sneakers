@@ -71,7 +71,9 @@
                         <a href="/products" class="boton-crear-editProduct">Guardar cambios</a>
                     </div>
                     <div class="boton-editProduct">
-                        <button><a href="/products" class="boton-borrar-editProduct" >Eliminar producto</a></button>
+                    <form method="POST" action="/editProduct/delete/<%=productEdit.product_id%>?_method=DELETE">
+                        <button type="submit"><a href="/products" class="boton-borrar-editProduct" >Eliminar producto</a></button>
+                    </form>
                     </div>
                 </div>
             </fieldset>
