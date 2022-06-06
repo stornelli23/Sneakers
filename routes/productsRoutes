@@ -41,6 +41,7 @@ router.get('/productDetail/:id', mainControllers.productDetail);
 
 // ROUTES POST//
 router.post('/createProduct', upload.any(), mainControllers.store);
+router.put('/editProduct/:id', upload.any(), mainControllers.editProductStore);
 /*router.delete('/editProduct/:id', mainControllers.delete);*/
 router.delete('/editProduct/delete/:id', function(req,res) {
     res.send("Soy delete"); //Puse esta funcion en vez de redirigir al controlador para probar que funcione la ruta. Hasta ahora no me funcionó

@@ -67,6 +67,30 @@ const mainControllers = {
         let productEdit = productsJson[id-1]
         res.render('editProduct', {productEdit})
     },
+    editProductStore: (req, res) => {
+        let image
+        if(req.files[0] != undefined){
+            image = req.files[0].filename
+        } else {
+            image = 'default-image.jpeg'
+        }
+    
+        let editedProduct = {
+            
+            product_id : productsJson[req.params.id-1].product_id ,
+            ...req.body,
+            product_image : image ,
+            product_discount : productsJson[req.params.id-1].product_discount
+        }
+        
+        
+        productsJson.splice(editedProduct.product_id-1, 1, editedProduct) ; 
+        console.log(productsJson);
+        fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
+        console.log("producto modificado")
+        
+        res.redirect('/')
+    },
 
     products: (req, res) => {
         res.render('products', {productsJson})
