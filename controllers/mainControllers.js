@@ -98,8 +98,12 @@ const mainControllers = {
 
     delete: (req,res) => {
         let id = req.params.id
-        let productDelete = productsJson.splice(id, 1)
-        res.render('/products', products)
+        let productDelete = productsJson.splice(id-1, 1)
+        let productEdit = productsJson[id-1]
+        console.log(productsJson);
+        fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
+        console.log("producto eliminado")
+        res.render('/products',{products})
     }
      
  

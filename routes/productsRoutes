@@ -34,17 +34,19 @@ const upload = multer({ storage: storage })
 // ROUTES GET//
 router.get('/productCart', mainControllers.productCart);
 router.get('/createProduct', mainControllers.createProduct);
-router.get('/editProduct/:id', mainControllers.editProduct);
+router.get('/editProduct/:id/', mainControllers.editProduct);
 router.get('/products', mainControllers.products);
-router.get('/productDetail/:id', mainControllers.productDetail);
+router.get('/productDetail/:id/', mainControllers.productDetail);
 
 
 // ROUTES POST//
+router.post('/editProduct/delete/:id/', mainControllers.delete);
 router.post('/createProduct', upload.any(), mainControllers.store);
-router.put('/editProduct/:id', upload.any(), mainControllers.editProductStore);
-/*router.delete('/editProduct/:id', mainControllers.delete);*/
-router.delete('/editProduct/delete/:id', function(req,res) {
+router.put('/editProduct/:id/', upload.any(), mainControllers.editProductStore);
+
+/*router.post('/editProduct/delete/:id', function(req,res) {
+  console.log("hola")
     res.send("Soy delete"); //Puse esta funcion en vez de redirigir al controlador para probar que funcione la ruta. Hasta ahora no me funcionó
-  });
+  });*/
 
 module.exports = router;

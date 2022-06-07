@@ -28,7 +28,7 @@ app.use('/', mainRoutes);
 
 const productsRoutes = require('./routes/productsRoutes');
 
-app.use('/', productsRoutes);
+app.use('/products', productsRoutes);
 
 
 // app.get('*', (req, res) => {
