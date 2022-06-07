@@ -56,28 +56,29 @@
                             <p>*Talles</p>
                         </div>
                         <div class="checkbox-editProduct">
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="35" <%if(productEdit.product_size.includes("35")){%>checked<%}%>>35</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="36"<%if(productEdit.product_size.includes("36")){%>checked<%}%>>36</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="37"<%if(productEdit.product_size.includes("37")){%>checked<%}%>>37</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="38"<%if(productEdit.product_size.includes("38")){%>checked<%}%>>38</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="39"<%if(productEdit.product_size.includes("39")){%>checked<%}%>>39</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="40"<%if(productEdit.product_size.includes("40")){%>checked<%}%>>40</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="41"<%if(productEdit.product_size.includes("41")){%>checked<%}%>>41</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="42"<%if(productEdit.product_size.includes("42")){%>checked<%}%>>42</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="43"<%if(productEdit.product_size.includes("43")){%>checked<%}%>>43</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("35")){%>checked<%}%>>35</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("36")){%>checked<%}%>>36</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("37")){%>checked<%}%>>37</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("38")){%>checked<%}%>>38</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("39")){%>checked<%}%>>39</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("40")){%>checked<%}%>>40</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("41")){%>checked<%}%>>41</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("42")){%>checked<%}%>>42</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("43")){%>checked<%}%>>43</label>
                         </div>
                     </div>
                     <div class="boton-editProduct">
                         <button type="submit" class="boton-crear-editProduct">Guardar cambios</button>
                     </div>
+         </form>
                     <div class="boton-editProduct">
-                    <form method="POST" action="/products/editProduct/delete/<%=productEdit.product_id%>">
+                    <form method="POST" action="/products/editProduct/delete/<%=productEdit.product_id%>?_method=DELETE">
                         <button type="submit" class="boton-borrar-editProduct">Eliminar producto</button>
                     </form>
                     </div>
                 </div>
             </fieldset>
-        </form>
+        
         </div>
 
     </main>

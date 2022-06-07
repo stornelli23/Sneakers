@@ -65,7 +65,11 @@ const mainControllers = {
     editProduct: (req, res) => {
         let id = req.params.id;
         let productEdit = productsJson[id-1]
-        res.render('editProduct', {productEdit})
+        console.log(id)
+        console.log("----")
+        console.log(productEdit)
+        
+        res.render('editProduct', {productEdit:productEdit})
     },
     editProductStore: (req, res) => {
         let image
@@ -100,10 +104,11 @@ const mainControllers = {
         let id = req.params.id
         let productDelete = productsJson.splice(id-1, 1)
         let productEdit = productsJson[id-1]
-        console.log(productsJson);
+        
         fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
+        
         console.log("producto eliminado")
-        res.render('/products',{products})
+        res.render('products',{productsJson})
     }
      
  
