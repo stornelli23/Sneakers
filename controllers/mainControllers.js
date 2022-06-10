@@ -64,12 +64,13 @@ const mainControllers = {
 
     editProduct: (req, res) => {
         let id = req.params.id;
-        let productEdit = productsJson[id-1]
-        console.log(id)
-        console.log("----")
-        console.log(productEdit)
+        let indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
+        let productEdit = productsJson[indiceObjeto]
         
-        res.render('editProduct', {productEdit:productEdit})
+        console.log("--Objeto a editar--")
+        console.log(productEdit)
+        res.render('editProduct', {productEdit : productEdit})
+        
     },
     editProductStore: (req, res) => {
         let image
@@ -78,20 +79,24 @@ const mainControllers = {
         } else {
             image = 'default-image.jpeg'
         }
-    
+        let id = req.params.id;
+        const indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
+        
         let editedProduct = {
             
-            product_id : productsJson[req.params.id-1].product_id ,
+            product_id : productsJson[indiceObjeto].product_id ,
             ...req.body,
             product_image : image ,
-            product_discount : productsJson[req.params.id-1].product_discount
+            product_discount : productsJson[indiceObjeto].product_discount
         }
         
         
-        productsJson.splice(editedProduct.product_id-1, 1, editedProduct) ; 
-        console.log(productsJson);
+        productsJson.splice(indiceObjeto, 1, editedProduct) ; 
+        
         fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
         console.log("producto modificado")
+        console.log("--Objeto editado--")
+        console.log(productsJson[indiceObjeto])
         
         res.redirect('/')
     },
@@ -102,8 +107,9 @@ const mainControllers = {
 
     delete: (req,res) => {
         let id = req.params.id
-        let productDelete = productsJson.splice(id-1, 1)
-        let productEdit = productsJson[id-1]
+        const indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
+        let productDelete = productsJson.splice(indiceObjeto, 1)
+        
         
         fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
         
