@@ -42,6 +42,7 @@ router.get('/productDetail/:id/', mainControllers.productDetail);
 // ROUTES POST//
 router.delete('/editProduct/delete/:id/', mainControllers.delete);
 router.post('/createProduct', upload.any(), mainControllers.store);
+router.post('/productCart/:id/', mainControllers.productCart);
 router.put('/editProduct/:id/', upload.any(), mainControllers.editProductStore);
 
 /*router.post('/editProduct/delete/:id', function(req,res) {

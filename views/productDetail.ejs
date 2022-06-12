@@ -15,7 +15,7 @@
          
             <article class="card-prod">
                 <div class="foto-prod">
-                    <img src="/img/<%=productosFiltrados.product_image%> " alt="">
+                    <img src="/img/products/<%=productosFiltrados.product_image%> " alt="">
                 </div>
                 <div class="main-article">
                     <p class="name"><%=productosFiltrados.product_name%></p>
@@ -29,9 +29,12 @@
                     <button class="size"><span>39</span></button>
                     <button class="size"><span>40</span></button>
                     </div>
-                   <a href="/products/productCart"><button class="submit">
-                        Agregar al carrito
-                    </button></a> 
+                    <form method="POST" action="/products/productCart/<%=productosFiltrados.product_id%>">
+                      <button class="submit">
+                            Agregar al carrito
+                        </button></a> 
+                    </form>
+  
                 </div>
             </article>
           
@@ -71,19 +74,20 @@
             <h3 class="recommended">Recomendados para vos</h3>
 
             <section class="recommended">
-              
-                    <article class="detalles">
-                        <div class="product-detalle">
-                        <a href="/products/productCart"><img src="/img/<%=productosFiltrados.product_image%> " alt=""></a>
-                        <div class="product-detalles2">
-                            <p><%=productosFiltrados.product_description%> </p>
-                            <p class="product-price"><%=productosFiltrados.product_price%> </p>
-                            <i class="fa-solid fa-cart-shopping"></i>
+                <% destacados.forEach(producto => { %>
+                    <article class="articleIndex">
+                       
+                        <div class="productIndex">
+                        <a href="/products/productDetail/<%= producto.product_id %> "><img src="/img/products/<%=producto.product_image%> " alt=""></a>
+                        <div class="product-detail-Index">
+                            <p><%=producto.product_name%></p>
+                            <p class="product-price-Index"><%=producto.product_price%></p>
                         </div>
                         
                         </div>
+                  
                             </article>
-      
+                            <% }) %>
                 
             
                

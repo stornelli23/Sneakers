@@ -6,7 +6,8 @@ const path = require ('path')
 
 const port = 3000
 const methodOverride = require('method-override')
-
+const session = require('express-session');
+const cookie = require('cookie-parser');
 //////////////////////////////////////////////////////////////////
 
 
@@ -19,6 +20,8 @@ app.set('views', path.resolve(__dirname, 'views'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(session({secret: 'secret'}));
+app.use(cookie());
 //////////////////////////////////////////////////////////////////
 
 const mainRoutes = require('./routes/mainRoutes');

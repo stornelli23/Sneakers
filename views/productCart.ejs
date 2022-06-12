@@ -17,7 +17,9 @@
                 <i class="fa-solid fa-cart-shopping"></i>
                 </div>
                 <div class="cajaPadding">
-                
+                 
+   
+                    <% arrayCarrito.forEach(producto => { %>
                     <article><!--Producto-->
                           <div class="bloqueProducto">
                               <div class="linea">  <!-- linea horizontal-->
@@ -25,15 +27,15 @@
                               </div>
                               <div class="bloqueSuperiorProducto">
                                   <div class="foto"><!--bloque foto-->
-                                      <img class="foto-producto" src="/img/NikeEjemplo.jpeg" alt="Producto1">
+                                      <img class="foto-producto" src="/img/products/public/img/products/nike-air-huarache.jpg" alt="Producto1">
                                   </div>
+
                                   
                                   <div class="descripcion"><!--bloque descripción-->
-                                        <div class="modelo"><p class="cart" > Nike Air</p>
+                                        <div class="modelo"><p class="cart" > <%= producto.product_name %></p>
                                         </div>
-                                        <div class="color"><p class="cart" >Color: Negro</p>
-                                        </div>
-                                        <div class="talle"><p class="cart" >Talle: 42</p>
+                    
+                                        <div class="talle"><p class="cart" >Talle: <%= producto.product_size%> </p>
                                         </div>
                                   </div>
                                   <div class="columnaCantidad">
@@ -47,11 +49,11 @@
                                       </div>
                                       <div class="preciounidad">
                                           <p class="cart" >Precio unit.:</p>
-                                          <p class="cart" >$10.000</p>
+                                          <p class="cart" ><%=producto.product_price%> </p>
                                       </div>
                                   </div>
                                   <div class="precio"><!--bloque precio-->
-                                      <p class="cart" >$30000</p>
+                                      <p class="cart" >Suma total: </p>
                                   </div>
                                   
                               </div>
@@ -63,55 +65,8 @@
                               
                           </div>
                     </article>
-                
-                
-                    <article><!--Producto-->
-                        <div class="bloqueProducto">
-                            <div class="linea">  <!-- linea horizontal-->
-                                <hr>
-                            </div>
-                            <div class="bloqueSuperiorProducto">
-                                <div class="foto"><!--bloque foto-->
-                                    <img class="foto-producto" src="/img/NikeEjemplo.jpeg" alt="Producto1">
-                                </div>
-                                
-                                <div class="descripcion"><!--bloque descripción-->
-                                      <div class="modelo"><p class="cart" > Nike Air</p>
-                                      </div>
-                                      <div class="color"><p class="cart" >Color: Negro</p>
-                                      </div>
-                                      <div class="talle"><p class="cart" >Talle: 42</p>
-                                      </div>
-                                </div>
-                                <div class="columnaCantidad">
-                                    <div class="cantidad" ><!--bloque cantidad-->
-                                        <div class="cantidadtexto"><p class="cart" >Cantidad:</p>
-                                        </div>
-                                            <!--BOTÓN CANTIDAD-->
-                                        <div class="input-group plus-minus-input">
-                                                <input class="input-group-field" type="number" name="quantity" value="0" width=10px >
-                                        </div>     
-                                    </div>
-                                    <div class="preciounidad">
-                                        <p class="cart" >Precio unit.:</p>
-                                        <p class="cart" >$10.000</p>
-                                    </div>
-                                </div>
-                                <div class="precio"><!--bloque precio-->
-                                    <p class="cart" >$30000</p>
-                                </div>
-                                
-                            </div>
-                            <div class="bloqueInferiorProducto"><!--bloque precio-->
-                                <a href="#">Eliminar</a>
-                                <a href="#">Modificar</a>
-                                <a href="#">Ver otros artículos del vendedor</a>
-                            </div>
-                            <div class="linea">  <!-- linea horizontal-->
-                                <hr>
-                            </div>
-                        </div>
-                      </article>
+                    <% }) %>
+
                       <article>
                             <div class="bloqueSuma">
                                 <div class="envio"><!--bloque SUBTOTAL SIN ENVIO-->
@@ -138,7 +93,7 @@
                             
                         
                         
-                    </article>
+                    </article> 
                 </div>
             </div>
         </div>  
@@ -153,15 +108,15 @@
         
         <div class="recomendados">
 
-            <% productosRecomendados.forEach(producto => { %>
+            <% destacados.forEach(producto => { %>
           <article class="art-recomendados">
             <div class="product">
                 <div class="product-foto">
-                <a href="/productDetail"><img src="/img/<%=producto.imagen%> " alt=""></a>
+                <a href="/productDetail"><img src="/img/products/<%=producto.product_image%> " alt=""></a>
                 </div>
                 <div class="product-detail">
-                <p class="cart" ><%=producto.detalleDeProducto%> </p>
-                <p class="product-price"><%=producto.precioProducto%></p>
+                <p class="cart" ><%=producto.product_description%> </p>
+                <p class="product-price"><%=producto.product_price%></p>
                 </div>
             
             </div>

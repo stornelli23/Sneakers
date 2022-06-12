@@ -19,13 +19,25 @@ const mainControllers = {
     },
     
     productCart: (req, res) => {
-        res.render('productCart', {productosRecomendados:productosRecomendados}) 
+        let id = req.params.id;
+        let arrayCarrito = [];
+        let carrito = req.session.arrayCarrito;
+        if (carrito) {
+            arrayCarrito = carrito
+        } 
+        const indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
+        arrayCarrito.push(productsJson[indiceObjeto]);
+        req.session.arrayCarrito = arrayCarrito;
+        let destacados = productsJson.filter(product => product.product_discount <= 0);
+        res.render('productCart', {arrayCarrito, destacados}) 
     },
     
     productDetail: (req, res) => {
         let id = req.params.id;
         let productosFiltrados = productsJson.find(products => products.product_id == id)
-        res.render('productDetail', {productosFiltrados})
+        let destacados = productsJson.filter(product => product.product_discount <= 0)
+    
+        res.render('productDetail', {productosFiltrados, destacados})
     },
     
     login: (req, res) => {

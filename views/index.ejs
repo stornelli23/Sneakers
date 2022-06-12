@@ -12,7 +12,7 @@
 
     <main class="indexMain">
         <div class="banner-carrusel">
-            <img src="/img/adidas-banner-otono.jpg" alt="">
+            <img src="/img/products/adidas-banner-otono.jpg" alt="">
         </div>
 
         <!-- SECCION WALLPAPERS PRINCIPALES HOME -->
@@ -20,12 +20,12 @@
 <section class="wallpaper-section">
     <article class="wallpaper-article">
         <div class="wallpaper">
-<img src="/img/adidas-wallpaper1.png" alt="">
+<img src="/img/products/adidas-wallpaper1.png" alt="">
 </div>
 </article>
 <article class="wallpaper-article">
     <div class="wallpaper">
-<img src="/img/nike-wallpaper1.jpg" alt="">
+<img src="/img/products/nike-wallpaper1.jpg" alt="">
 </div>
  </article>
 
@@ -40,7 +40,7 @@
     <article class="articleIndex">
        
         <div class="productIndex">
-        <a href="/products/productDetail/<%= producto.product_id %> "><img src="/img/<%=producto.product_image%> " alt=""></a>
+        <a href="/products/productDetail/<%= producto.product_id %> "><img src="/img/products/<%=producto.product_image%> " alt=""></a>
         <div class="product-detail-Index">
             <p><%=producto.product_name%></p>
             <p class="product-price-Index"><%=producto.product_price%></p>
@@ -58,7 +58,7 @@
     <% descuentos.forEach(producto => { %>
     <article class="articleIndex">
         <div class="productIndex">
-            <a href="/products/productDetail/<%=producto.product_id%> "><img src="/img/<%=producto.product_image%> " alt=""></a>
+            <a href="/products/productDetail/<%=producto.product_id%> "><img src="/img/products/<%=producto.product_image%> " alt=""></a>
         <div class="product-detail-Index">
             <p><%=producto.product_name%> </p>
             <p class="product-price-Index"><%=producto.product_price%> </p>
