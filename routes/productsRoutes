@@ -15,15 +15,8 @@ const storage = multer.diskStorage({
     },
 
     filename: function (req, file, cb) {
-
-      const name = file.originalname
-      
-      console.log("🚀 ~ file: products.js ~ line 21 ~ file", file)
-
-      
-     
+      const name = file.originalname     
       cb(null, name)
-
     }
 
   })
@@ -44,10 +37,5 @@ router.delete('/editProduct/delete/:id/', mainControllers.delete);
 router.post('/createProduct', upload.any(), mainControllers.store);
 router.post('/productCart/:id/', mainControllers.productCart);
 router.put('/editProduct/:id/', upload.any(), mainControllers.editProductStore);
-
-/*router.post('/editProduct/delete/:id', function(req,res) {
-  console.log("hola")
-    res.send("Soy delete"); //Puse esta funcion en vez de redirigir al controlador para probar que funcione la ruta. Hasta ahora no me funcionó
-  });*/
 
 module.exports = router;

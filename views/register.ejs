@@ -7,6 +7,7 @@
     <%- include ('partials/header') %> 
 
     <main class="mainLogin">
+        <form method="POST" action="/register" enctype="multipart/form-data">
         <div id="contenedor-principal-login">
             <h3 class="login-title">Registrate</h3>
             <div id="contenedor-formulario-login">
@@ -14,15 +15,16 @@
                    <a href="/login"> <h2 class="titular-sesion-l">Iniciar Sesion</h2></a>
                     <h2 class="titular-sesion-r">Registrate</h2>
                 </div>
+               
                 <div id="register-formulario">
                     <div class="nombre-completo-register">
                         <div class="formulario-general-login">
                             <p>*Nombre</p>
-                            <input type="text" name="nombre" placeholder="Nombre" class="barra-espacios" required>
+                            <input type="text" name="first_name" placeholder="Nombre" class="barra-espacios" required>
                         </div>
                         <div class="formulario-general-login">
                             <p>*Apellido</p>
-                            <input type="text" name="apellido" placeholder="Apellido" class="barra-espacios" required>
+                            <input type="text" name="last_name" placeholder="Apellido" class="barra-espacios" required>
                         </div>
                     </div>
                     <div class="formulario-email-login">
@@ -35,23 +37,23 @@
                             <input type="password" name="password" placeholder="contraseña" minlength="5" class="barra-espacios" required>
                         </div>
                         <div class="formulario-general-login">
-                            <p>*Validar contraseña</p>
-                            <input type="password" name="valid-password" placeholder="Repetir contraseña" minlength="5" class="barra-espacios" required>
+                            <p>*Foto de perfil</p>
+                            <input type="file" name="avatar" id="" accept=".png, .jpg, .jpeg">
                         </div>
                     </div>
                     <div class="formulario-otros-register">
                         <div class="formulario-general-login">
                             <p>*Fecha de nacimiento</p>
-                        <input type="date" name="fecha-nacimiento" class="control-calendario-login">
+                        <input type="date" name="date_of_birth" class="control-calendario-login">
                         </div>
                         <div class="formulario-general-login">
                             <p>*Genero</p>
-                            <select name="genero" class="control-selector-login">
+                            <select name="gender" class="control-selector-login">
                                 <option>Seleccionar</option>
-                                <option value="hombre">Hombre</option>
-                                <option value="mujer">Mujer</option>
-                                <option value="otro-genero">Otro</option>
-                                <object>Otro</object>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+                                <option value="O">Otro</option>
+                               
                             </select>
                         </div>
                     </div>
@@ -63,6 +65,7 @@
         </div>
         </div>
         </div>
+    </form>
     </main>
     <%- include ('partials/footerLogin') %> 
 

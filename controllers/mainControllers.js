@@ -39,15 +39,7 @@ const mainControllers = {
     
         res.render('productDetail', {productosFiltrados, destacados})
     },
-    
-    login: (req, res) => {
-        res.render('login')
-    },
-    
-    register: (req, res) => {
-        res.render('register')
-    },
-    
+        
     createProduct: (req, res) => {
         res.render('createProduct')
     },
@@ -67,10 +59,8 @@ const mainControllers = {
             product_image : image
         }
         
-        productsJson.push(newProduct) ; 
-        console.log(productsJson);
+        productsJson.push(newProduct) ;      
         fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
-        console.log("producto guardado")
         res.redirect('/')
         },
 

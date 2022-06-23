@@ -20,7 +20,7 @@ app.set('views', path.resolve(__dirname, 'views'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(session({secret: 'secret'}));
+app.use(session({secret: 'secret', resave: false, saveUninitialized: false}));
 app.use(cookie());
 //////////////////////////////////////////////////////////////////
 
@@ -31,11 +31,8 @@ app.use('/', mainRoutes);
 
 const productsRoutes = require('./routes/productsRoutes');
 
-app.use('/products', productsRoutes);
+app.use('/products', productsRoutes)
 
+const usersRoutes = require('./routes/usersRoutes');
 
-// app.get('*', (req, res) => {
-    
-//     res.status(404).send("Not found 404")
-    
-// })
+app.use(usersRoutes)
