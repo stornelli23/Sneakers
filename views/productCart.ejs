@@ -18,7 +18,12 @@
                 </div>
                 <div class="cajaPadding">
                  
-   
+
+
+                    <% if(arrayCarrito.length > 0) { %>
+
+
+
                     <% arrayCarrito.forEach(producto => { %>
                     <article><!--Producto-->
                           <div class="bloqueProducto">
@@ -67,6 +72,10 @@
                     </article>
                     <% }) %>
 
+                    
+
+
+
                       <article>
                             <div class="bloqueSuma">
                                 <div class="envio"><!--bloque SUBTOTAL SIN ENVIO-->
@@ -94,6 +103,13 @@
                         
                         
                     </article> 
+                    <% } else { %>
+
+                        <h2> ¡Tu carrito está vacío!</h2>
+
+                    <% } %>
+
+
                 </div>
             </div>
         </div>  
