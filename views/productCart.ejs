@@ -63,7 +63,11 @@
                                   
                               </div>
                               <div class="bloqueInferiorProducto"><!--bloque precio-->
-                                  <a href="#">Eliminar</a>
+                                  <form method="POST" action="/products/productCart/delete/<%=producto.product_id%>?_method=DELETE">
+                                    <button class="submit">
+                                          Eliminar
+                                      </button></a> 
+                                  </form>
                                   <a href="#">Modificar</a>
                                   <a href="#">Ver otros artículos del vendedor</a>
                               </div>
