@@ -12,15 +12,13 @@
             <div id="contenedor-formulario-login">
                 <div class="login-register">
                     <h2 class="titular-sesion-l">Iniciar Sesion</h2>
-                   <a href="/register"><h2 class="titular-sesion-r">Registrate</h2></a>
+                   <a href="/register"><h2 class="titular-sesion-r">Registrarse</h2></a>
                 </div> 
                 <div id="login-formulario">
                     <div class="formulario-email-login">
                         <p>* Email</p>
                         <input type="email" name="email-usuario" class="barra-espacios" placeholder="ejemplo@email.com" value="<%= locals.old && old.name %> ">
-                        <% if (locals.errors && errors.name) { %>
-                            <p><%= errors.name %> </p>  
-                        <% } %>
+                        
                     </div>
                     <div class="formulario-email-login">
                         <p>* Contraseña</p>

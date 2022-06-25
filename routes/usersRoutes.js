@@ -3,7 +3,8 @@ const router = express.Router();
 const multer  = require('multer');
 const path = require ('path');
 const imgFilePath = path.join(__dirname, '../public/img/users');
-const { check } = require('express-validator');
+const { body } = require('express-validator');
+
 
 ///*** Controller Require **** */
 const usersControllers = require('../controllers/usersControllers');
@@ -28,30 +29,38 @@ const upload = multer({ storage: storage })
 /*VALIDACIONES*/
 
 const validateLogin = [
-  check('email-usuario')
-    .notEmpty()
-    .withMessage('Este campo no puede estar vacio').bail()
-    .isEmail().withMessage('Ingrese un email valido'),
+  body('email-usuario').notEmpty().withMessage('Este campo no puede estar vacio').bail().isEmail().withMessage('Ingrese un email valido'),
 
-  check('password-usuario')
-    .notEmpty().withMessage('Este campo no puede estar vacio')
+  body('password-usuario').notEmpty().withMessage('Este campo no puede estar vacio')
 ]
 
 const validateRegister = [
-  check('first_name').notEmpty()
-  .withMessage('Este campo no puede estar vacio').bail(),
+  body('first_name').notEmpty().withMessage('Este campo no puede estar vacio'),
 
-  check('last_name').notEmpty()
-  .withMessage('Este campo no puede estar vacio').bail(),
+  body('last_name').notEmpty().withMessage('Este campo no puede estar vacio'),
 
-  check('email').notEmpty()
-  .withMessage('Este campo no puede estar vacio').bail().isEmail().withMessage('Ingrese un email valido'),
+  body('email').notEmpty().withMessage('Este campo no puede estar vacio').bail().isEmail().withMessage('Ingrese un email valido'),
 
-  check('password').notEmpty()
-  .withMessage('Este campo no puede estar vacio').bail(),
+  body('password').notEmpty().withMessage('Este campo no puede estar vacio'),
 
-  check('date_of_birth'),
-  check('gender')
+  body('date_of_birth').notEmpty().withMessage('Este campo no puede estar vacio'),
+
+  body('gender').notEmpty().withMessage('Seleccione una opcion'),
+
+  body('avatar').custom((value, {req}) => {
+    let file = req.file;
+    let acceptedExtensions = ['.png', '.jpg', '.jpeg'];
+      if(!file){
+        throw new Error('Tienes que subir una imagen')
+      }else{
+        let fileExtension = path.extname(file.originalname);
+        if(!acceptedExtensions.includes(fileExtension)) {
+          throw new Error(`Las extensiones permitidas son ${acceptedExtensions.join('. ')}`);
+      }
+    }
+    
+    return true;
+  })
 ]
 
 /*RUTAS POR GET*/
@@ -63,7 +72,7 @@ router.get('/userProfile/:id', usersControllers.profile);
 
 /*RUTAS POR POST*/
 
-router.post('/register', upload.any(), validateRegister, usersControllers.processRegister);
+router.post('/register', upload.single('avatar'), validateRegister, usersControllers.processRegister);
 router.post('/login', validateLogin, usersControllers.loginProcess);
 
 module.exports = router;

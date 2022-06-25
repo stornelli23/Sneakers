@@ -21,30 +21,30 @@ const usersControllers = {
     res.render("register");
   },
   processRegister: (req, res) => {
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
-    } else {
+    let resultValidation = validationResult(req);
+    
+    if (resultValidation.errors.length > 0) {
       res.render("register", { 
-        errors: errors.mapped(), 
-        old: req.body });
+        errors: resultValidation.mapped(), 
+        oldData: req.body });
+    }else{
+      // let image 
+      //     if(req.files[0] != undefined){
+      //         image = req.files[0].filename
+      //     } else {
+      //         image = 'avatardefault.png'
+      //     };
+  
+      let newUser = {
+          user_id: User.generateId(),
+          ...req.body,
+          // avatar: image,
+          password: bcrypt.hashSync(req.body.password, 10)
+      }
+      usersJson.push(newUser);
+      fs.writeFileSync(userFilePath, JSON.stringify(usersJson, null, ' '));
+      return res.redirect("/users");
     }
-
-    let image 
-        if(req.files[0] != undefined){
-            image = req.files[0].filename
-        } else {
-            image = 'avatardefault.png'
-        };
-
-    let newUser = {
-        user_id: User.generateId(),
-        ...req.body,
-        avatar: image,
-        password: bcrypt.hashSync(req.body.password, 10)
-    }
-    usersJson.push(newUser);
-    fs.writeFileSync(userFilePath, JSON.stringify(usersJson, null, ' '));
-    res.redirect("/users");
   },
 
   profile: (req, res) => {
@@ -52,14 +52,7 @@ const usersControllers = {
   },
 
   loginProcess: (req, res) => {
-    let resultValidation = validationResult(req);
-
-    if (resultValidation.errors.isEmpty()) {
-    } else {
-      res.render("login", { 
-        errors: resultValidation.mapped(), 
-        old: req.body });
-    }
+   
   },
 };
 

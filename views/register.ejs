@@ -13,48 +13,87 @@
             <div id="contenedor-formulario-login">
                 <div class="login-register">
                    <a href="/login"> <h2 class="titular-sesion-l">Iniciar Sesion</h2></a>
-                    <h2 class="titular-sesion-r">Registrate</h2>
+                    <h2 class="titular-sesion-r">Registrarse</h2>
                 </div>
                
                 <div id="register-formulario">
                     <div class="nombre-completo-register">
                         <div class="formulario-general-login">
-                            <p>*Nombre</p>
-                            <input type="text" name="first_name" placeholder="Nombre" class="barra-espacios" required>
+                            <p>Nombre</p>
+                            <input type="text" name="first_name" value="<%= locals.oldData ? oldData.first_name : null %>" placeholder="Nombre" class="barra-espacios">
+                            <% if (locals.errors && errors.first_name) { %>
+                             <div class="error-text">
+                               <p> <%= errors.first_name.msg %> </p>  
+                             </div>
+                            <% } %>
                         </div>
                         <div class="formulario-general-login">
-                            <p>*Apellido</p>
-                            <input type="text" name="last_name" placeholder="Apellido" class="barra-espacios" required>
+                            <p>Apellido</p>
+                            <input type="text" name="last_name" value="<%= locals.oldData ? oldData.last_name : null %>" placeholder="Apellido" class="barra-espacios">
+                            <% if (locals.errors && errors.last_name) { %>
+                                <div class="error-text">
+                                  <p> <%= errors.last_name.msg %> </p>  
+                                </div>
+                               <% } %>
                         </div>
                     </div>
                     <div class="formulario-email-login">
-                        <p>*E-Mail</p>
-                        <input type="email" name="email" placeholder="ejemplo@email.com" class="barra-espacios" required>
+                        <p>E-Mail</p>
+                        <input type="email" name="email" value="<%= locals.oldData ? oldData.email : null %> " placeholder="ejemplo@email.com" class="barra-espacios">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="error-text">
+                              <p> <%= errors.email.msg %> </p>  
+                            </div>
+                           <% } %>
                     </div>
                     <div class="password-completo-register">
                         <div class="formulario-general-login">
-                            <p>*Contraseña</p>
-                            <input type="password" name="password" placeholder="contraseña" minlength="5" class="barra-espacios" required>
+                            <p>Contraseña</p>
+                            <input type="password" name="password" placeholder="contraseña" minlength="5" class="barra-espacios" >
+                            <% if (locals.errors && errors.password) { %>
+                                <div class="error-text">
+                                  <p> <%= errors.password.msg %> </p>  
+                                </div>
+                               <% } %>
                         </div>
                         <div class="formulario-general-login">
-                            <p>*Foto de perfil</p>
-                            <input type="file" name="avatar" id="" accept=".png, .jpg, .jpeg">
+                            <p>Foto de perfil</p>
+                            <input type="file" name="avatar">
+                            <% if (locals.errors && errors.avatar) { %>
+                                <div class="error-text">
+                                  <p> <%= errors.avatar.msg %> </p>  
+                                </div>
+                               <% } %>
                         </div>
                     </div>
                     <div class="formulario-otros-register">
                         <div class="formulario-general-login">
-                            <p>*Fecha de nacimiento</p>
-                        <input type="date" name="date_of_birth" class="control-calendario-login">
-                        </div>
+                            <p>Fecha de nacimiento</p>
+                        <input type="date" name="date_of_birth" class="control-calendario-login" value="<%= locals.oldData ? oldData.date_of_birth : null %> " >
+                        <% if (locals.errors && errors.date_of_birth) { %>
+                            <div class="error-text">
+                              <p> <%= errors.date_of_birth.msg %> </p>  
+                            </div>
+                           <% } %>    
+                    </div>
                         <div class="formulario-general-login">
-                            <p>*Genero</p>
-                            <select name="gender" class="control-selector-login">
+                            <p>Genero</p>
+                            <select name="gender" class="control-selector-login" >
                                 <option>Seleccionar</option>
-                                <option value="M">Masculino</option>
-                                <option value="F">Femenino</option>
-                                <option value="O">Otro</option>
-                               
+                                <% 
+                                let gender = ['Masculino', 'Femenino', 'Otro'];
+                                %> 
+                                <% for( let unGenero of gender ) { %>
+                                    <option 
+                                    value="<%= unGenero %>" <%= locals.oldData && (unGenero === oldData.gender) ? 'selected' : null %> > <%= unGenero %>
+                                </option>                 
+                                <% } %>
                             </select>
+                            <% if (locals.errors && errors.gender) { %>
+                                <div class="error-text">
+                                  <p> <%= errors.gender.msg %> </p>  
+                                </div>
+                               <% } %>
                         </div>
                     </div>
                     <div><button type="submit" class="boton-login">Registrarse</button>
