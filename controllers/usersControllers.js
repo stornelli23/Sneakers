@@ -28,7 +28,20 @@ const usersControllers = {
       res.render("register", { 
         errors: resultValidation.mapped(), 
         oldData: req.body });
-    }else{
+    }
+
+    let userInDB = User.findByField('email', req.body.email)
+      if(userInDB){
+
+        return res.render('register', {
+          errors: {
+            email: {
+              msg: 'El email ingresado ya esta registrado'
+            },
+            oldData: req.body
+          }
+        })
+      }
       let image 
           if(file){
               image = file.filename
@@ -45,7 +58,7 @@ const usersControllers = {
       usersJson.push(newUser);
       fs.writeFileSync(userFilePath, JSON.stringify(usersJson, null, ' '));
       return res.redirect("/users");
-    }
+    
   },
 
   profile: (req, res) => {
