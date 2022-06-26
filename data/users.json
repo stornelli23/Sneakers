@@ -118,5 +118,35 @@
   "date_of_birth": "2022-06-02",
   "gender": "F",
   "avatar": "default-image.jpeg"
+ },
+ {
+  "user_id": 13,
+  "first_name": "santi",
+  "last_name": "Stornelli",
+  "email": "santystornelli@hotmail.com",
+  "password": "$2a$10$g5PL3jxVXG6D.lo6NrISv.TrIc2loBcW3mSoLBfeZeHqLDeTCaMqe",
+  "date_of_birth": "2022-06-24",
+  "gender": "Masculino",
+  "avatar": "avatardefault.png"
+ },
+ {
+  "user_id": 14,
+  "first_name": " Santiago",
+  "last_name": "asdasdasd",
+  "email": "lopezrocio694@outlook.es",
+  "password": "$2a$10$o8x/zSCHnpFktck1mjX37eBy24afvajclI3tqk2O/yzI/hK/VcJw2",
+  "date_of_birth": "2022-06-09",
+  "gender": "Femenino",
+  "avatar": "CAPTURACONSULTA.png"
+ },
+ {
+  "user_id": 15,
+  "first_name": " Santiago",
+  "last_name": "de avatar",
+  "email": "lucascled@gmail.com",
+  "password": "$2a$10$p8XoRqwEazuhofFNApVTjOUADA1rRJRRh9E1WydF7YPt8VIGf9Zn2",
+  "date_of_birth": "2022-06-23",
+  "gender": "Masculino",
+  "avatar": "avatardefault.png"
  }
 ]

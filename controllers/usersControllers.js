@@ -22,23 +22,24 @@ const usersControllers = {
   },
   processRegister: (req, res) => {
     let resultValidation = validationResult(req);
+    let file = req.file;
     
     if (resultValidation.errors.length > 0) {
       res.render("register", { 
         errors: resultValidation.mapped(), 
         oldData: req.body });
     }else{
-      // let image 
-      //     if(req.files[0] != undefined){
-      //         image = req.files[0].filename
-      //     } else {
-      //         image = 'avatardefault.png'
-      //     };
+      let image 
+          if(file){
+              image = file.filename
+          } else {
+              image = 'avatardefault.png'
+          };
   
       let newUser = {
           user_id: User.generateId(),
           ...req.body,
-          // avatar: image,
+          avatar: image,
           password: bcrypt.hashSync(req.body.password, 10)
       }
       usersJson.push(newUser);

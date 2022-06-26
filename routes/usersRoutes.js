@@ -35,30 +35,26 @@ const validateLogin = [
 ]
 
 const validateRegister = [
-  body('first_name').notEmpty().withMessage('Este campo no puede estar vacio'),
+  body('first_name').notEmpty().withMessage('Ingrese su nombre'),
 
-  body('last_name').notEmpty().withMessage('Este campo no puede estar vacio'),
+  body('last_name').notEmpty().withMessage('Ingrese su apellido'),
 
-  body('email').notEmpty().withMessage('Este campo no puede estar vacio').bail().isEmail().withMessage('Ingrese un email valido'),
+  body('email').notEmpty().withMessage('Ingrese su email').bail().isEmail().withMessage('Ingrese un email valido'),
 
-  body('password').notEmpty().withMessage('Este campo no puede estar vacio'),
+  body('password').notEmpty().withMessage('Ingrese su contraseña'),
 
-  body('date_of_birth').notEmpty().withMessage('Este campo no puede estar vacio'),
+  body('date_of_birth').notEmpty().withMessage('Ingrese su fecha de nacimiento'),
 
   body('gender').notEmpty().withMessage('Seleccione una opcion'),
 
   body('avatar').custom((value, {req}) => {
     let file = req.file;
     let acceptedExtensions = ['.png', '.jpg', '.jpeg'];
-      if(!file){
-        throw new Error('Tienes que subir una imagen')
-      }else{
-        let fileExtension = path.extname(file.originalname);
-        if(!acceptedExtensions.includes(fileExtension)) {
-          throw new Error(`Las extensiones permitidas son ${acceptedExtensions.join('. ')}`);
-      }
-    }
-    
+    if(file){
+      let fileExtension = path.extname(file.originalname)
+      if(!acceptedExtensions.includes(fileExtension)){
+        throw new Error(`Las extensiones permitidas son ${acceptedExtensions.join('. ')}`)} 
+    }  
     return true;
   })
 ]
