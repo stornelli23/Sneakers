@@ -66,7 +66,32 @@ const usersControllers = {
   },
 
   loginProcess: (req, res) => {
-   
+    let userToLogin = User.findByField('email', req.body.email);
+    if(userToLogin){
+      
+      let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password)
+      if(passwordOk){
+        res.redirect('/')
+      }else {
+
+        return res.render("login", {
+          errors: {
+            password: {
+              msg: 'Contraseña incorrecta'
+            }
+          }
+        });
+      }
+    }else {
+      return res.render("login", {
+        errors: {
+          email: {
+            msg: 'El email ingresado no está registrado'
+          }
+        }
+      });
+
+    }
   },
 };
 

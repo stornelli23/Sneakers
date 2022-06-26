@@ -17,12 +17,22 @@
                 <div id="login-formulario">
                     <div class="formulario-email-login">
                         <p>* Email</p>
-                        <input type="email" name="email-usuario" class="barra-espacios" placeholder="ejemplo@email.com" value="<%= locals.old && old.name %> ">
+                        <input type="email" name="email" class="barra-espacios" placeholder="ejemplo@email.com" value="<%= locals.old && old.name %> ">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="error-text">
+                              <p> <%= errors.email.msg %> </p>  
+                            </div>
+                           <% } %>
                         
                     </div>
                     <div class="formulario-email-login">
                         <p>* Contraseña</p>
-                        <input type="password" name="password-usuario" class="barra-espacios" placeholder="*********">
+                        <input type="password" name="password" class="barra-espacios" placeholder="*********">
+                        <% if (locals.errors && errors.password) { %>
+                            <div class="error-text">
+                              <p> <%= errors.password.msg %> </p>  
+                            </div>
+                           <% } %>
                     </div>
                     <div class="display-linea-login">
                         <div class="checkbox-u"><label><input type="checkbox" name="recordar-usuario">Recordarme</label>

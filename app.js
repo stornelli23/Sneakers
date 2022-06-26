@@ -31,7 +31,7 @@ app.use('/', mainRoutes);
 
 const productsRoutes = require('./routes/productsRoutes');
 
-app.use('/products', productsRoutes)
+app.use(productsRoutes)
 
 const usersRoutes = require('./routes/usersRoutes');
 

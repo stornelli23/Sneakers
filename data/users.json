@@ -118,5 +118,15 @@
   "date_of_birth": "2022-06-02",
   "gender": "F",
   "avatar": "default-image.jpeg"
+ },
+ {
+  "user_id": 13,
+  "first_name": " Santiago",
+  "last_name": "Stornelli",
+  "email": "santystornelli@hotmail.com",
+  "password": "$2a$10$ZaeqeV25OaGfzRPu.IUCN.puRwNDAwQ4rMwGx09kttWu8CDxElq8q",
+  "date_of_birth": "2022-06-22",
+  "gender": "Masculino",
+  "avatar": "avatardefault.png"
  }
 ]

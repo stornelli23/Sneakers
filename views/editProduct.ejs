@@ -11,7 +11,7 @@
 
     <main class="main-editProduct">
         <div class="contenedor-principal-editProduct">
-            <form method="POST" action="/products/editProduct/<%=productEdit.product_id%>?_method=PUT" enctype="multipart/form-data">
+            <form method="POST" action="/editProduct/<%=productEdit.product_id%>?_method=PUT" enctype="multipart/form-data">
             <fieldset class="fieldset-editProduct">
                 <legend class="legend-editProduct">Editar Producto </legend>
                 <div>
@@ -72,7 +72,7 @@
                     </div>
          </form>
                     <div class="boton-editProduct">
-                    <form method="POST" action="/products/editProduct/delete/<%=productEdit.product_id%>?_method=DELETE">
+                    <form method="POST" action="/editProduct/delete/<%=productEdit.product_id%>?_method=DELETE">
                         <button type="submit" class="boton-borrar-editProduct">Eliminar producto</button>
                     </form>
                     </div>
