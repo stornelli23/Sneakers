@@ -11,21 +11,26 @@ const usersJson = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 
 const usersControllers = {
   index: (req, res) => {
-    res.render("users", { usersJson });
+    let logueado = req.session.userLogged ;
+    res.render("users", { usersJson, logueado });
   },
   login: (req, res) => {
-    res.render("login");
+    let logueado = req.session.userLogged ;
+
+    res.render('login', {logueado});
   },
 
   register: (req, res) => {
-    res.render("register");
+    let logueado = req.session.userLogged ;
+    res.render("register",{logueado});
   },
   processRegister: (req, res) => {
+    let logueado = req.session.userLogged ;
     let resultValidation = validationResult(req);
     let file = req.file;
     
     if (resultValidation.errors.length > 0) {
-      res.render("register", { 
+      res.render("register", {logueado,  
         errors: resultValidation.mapped(), 
         oldData: req.body });
     }
@@ -33,7 +38,7 @@ const usersControllers = {
     let userInDB = User.findByField('email', req.body.email)
       if(userInDB){
 
-        return res.render('register', {
+        return res.render('register', {logueado,
           errors: {
             email: {
               msg: 'El email ingresado ya esta registrado'
@@ -62,19 +67,26 @@ const usersControllers = {
   },
 
   profile: (req, res) => {
-    res.render("userProfile");
+    let logueado = req.session.userLogged ;
+    res.render("userProfile",{logueado});
   },
 
   loginProcess: (req, res) => {
+    let logueado = req.session.userLogged ;
     let userToLogin = User.findByField('email', req.body.email);
     if(userToLogin){
       
       let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password)
       if(passwordOk){
+        
+        req.session.userLogged = userToLogin;
+        
+        
+        
         res.redirect('/')
       }else {
 
-        return res.render("login", {
+        return res.render("login", {logueado,
           errors: {
             password: {
               msg: 'Contraseña incorrecta'
@@ -83,7 +95,7 @@ const usersControllers = {
         });
       }
     }else {
-      return res.render("login", {
+      return res.render("login", {logueado,
         errors: {
           email: {
             msg: 'El email ingresado no está registrado'

@@ -8,8 +8,16 @@
                <a href="/"><img src="/img/products/LogoBlanco.png" alt=""></a>
               </div>
               <div class="iconos-carrito-perfil">
+                
+                <% if(logueado) { %>
+                    <a href="/userProfile/<%=logueado.user_id%>/"> <img width="20" height="20" src="/img/users/<%= logueado.avatar %>"> </a><p style="color:white">Hola <%= logueado.first_name %> !</p> 
+                    <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <% } else { %>
+                
                 <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
                 <a href="/login"><i class="fa-solid fa-user"></i></a>
+
+                <% } %>
               </div>
         </nav>
         <nav class="navbar-bottom">

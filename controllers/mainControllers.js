@@ -11,14 +11,18 @@ const mainControllers = {
 
     index: (req, res) => {
 
+        let logueado = req.session.userLogged ;
+
+        
         let descuentos = productsJson.filter(product => product.product_discount > 0)
         let destacados = productsJson.filter(product => product.product_discount <= 0)
 
 
-        res.render('index', {destacados, descuentos})  
+        res.render('index', {destacados, descuentos, logueado})  
     },
     
     productCart: (req, res) => {
+        let logueado = req.session.userLogged ;
         let id = req.params.id;
         let arrayCarrito = [];
         let carrito = req.session.arrayCarrito;
@@ -35,10 +39,11 @@ const mainControllers = {
         }
         let destacados = productsJson.filter(product => product.product_discount <= 0);
         
-        res.render('productCart', {arrayCarrito, destacados,carrito}) 
+        res.render('productCart', {arrayCarrito, destacados,carrito, logueado}) 
     },
 
     productCartDelete: (req, res) => {
+        let logueado = req.session.userLogged ;
         let id = req.params.id;
         let arrayCarrito = [];
         let carrito = req.session.arrayCarrito;
@@ -55,19 +60,21 @@ const mainControllers = {
     }
         let destacados = productsJson.filter(product => product.product_discount <= 0);
         
-        res.render('productCart', {arrayCarrito, destacados,carrito}) 
+        res.render('productCart', {arrayCarrito, destacados,carrito,logueado}) 
     },
     
     productDetail: (req, res) => {
+        let logueado = req.session.userLogged ;
         let id = req.params.id;
         let productosFiltrados = productsJson.find(products => products.product_id == id)
         let destacados = productsJson.filter(product => product.product_discount <= 0)
     
-        res.render('productDetail', {productosFiltrados, destacados})
+        res.render('productDetail', {productosFiltrados, destacados, logueado})
     },
         
     createProduct: (req, res) => {
-        res.render('createProduct')
+        let logueado = req.session.userLogged ;
+        res.render('createProduct',{logueado})
     },
 
     store: (req, res) => {
@@ -91,13 +98,14 @@ const mainControllers = {
         },
 
     editProduct: (req, res) => {
+        let logueado = req.session.userLogged ;
         let id = req.params.id;
         let indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
         let productEdit = productsJson[indiceObjeto]
         
         console.log("--Objeto a editar--")
         console.log(productEdit)
-        res.render('editProduct', {productEdit : productEdit})
+        res.render('editProduct', {productEdit : productEdit, logueado})
         
     },
     editProductStore: (req, res) => {
@@ -130,10 +138,12 @@ const mainControllers = {
     },
 
     products: (req, res) => {
-        res.render('products', {productsJson})
+        let logueado = req.session.userLogged ;
+        res.render('products', {productsJson, logueado})
     },
 
     delete: (req,res) => {
+        let logueado = req.session.userLogged ;
         let id = req.params.id
         const indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
         let productDelete = productsJson.splice(indiceObjeto, 1)
@@ -142,7 +152,7 @@ const mainControllers = {
         fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
         
         console.log("producto eliminado")
-        res.render('products',{productsJson})
+        res.render('products',{productsJson, logueado})
     }
      
  
