@@ -22,14 +22,40 @@ const mainControllers = {
         let id = req.params.id;
         let arrayCarrito = [];
         let carrito = req.session.arrayCarrito;
+
         if (carrito) {
-            arrayCarrito = carrito
+          arrayCarrito = carrito
         } 
         const indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
+        console.log("------Indice Objeto--------")
+        console.log(indiceObjeto)
+        if (indiceObjeto != -1){
         arrayCarrito.push(productsJson[indiceObjeto]);
         req.session.arrayCarrito = arrayCarrito;
+        }
         let destacados = productsJson.filter(product => product.product_discount <= 0);
-        res.render('productCart', {arrayCarrito, destacados}) 
+        
+        res.render('productCart', {arrayCarrito, destacados,carrito}) 
+    },
+
+    productCartDelete: (req, res) => {
+        let id = req.params.id;
+        let arrayCarrito = [];
+        let carrito = req.session.arrayCarrito;
+
+        if (carrito) {
+            arrayCarrito = carrito
+          }
+        
+        const indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
+        if (indiceObjeto != -1){
+        
+        arrayCarrito.splice(indiceObjeto,1);
+        req.session.arrayCarrito = arrayCarrito;
+    }
+        let destacados = productsJson.filter(product => product.product_discount <= 0);
+        
+        res.render('productCart', {arrayCarrito, destacados,carrito}) 
     },
     
     productDetail: (req, res) => {

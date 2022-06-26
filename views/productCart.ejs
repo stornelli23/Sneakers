@@ -18,7 +18,12 @@
                 </div>
                 <div class="cajaPadding">
                  
-   
+
+
+                    <% if(arrayCarrito.length > 0) { %>
+
+
+
                     <% arrayCarrito.forEach(producto => { %>
                     <article><!--Producto-->
                           <div class="bloqueProducto">
@@ -58,7 +63,11 @@
                                   
                               </div>
                               <div class="bloqueInferiorProducto"><!--bloque precio-->
-                                  <a href="#">Eliminar</a>
+                                  <form method="POST" action="/products/productCart/delete/<%=producto.product_id%>?_method=DELETE">
+                                    <button class="submit">
+                                          Eliminar
+                                      </button></a> 
+                                  </form>
                                   <a href="#">Modificar</a>
                                   <a href="#">Ver otros artículos del vendedor</a>
                               </div>
@@ -66,6 +75,10 @@
                           </div>
                     </article>
                     <% }) %>
+
+                    
+
+
 
                       <article>
                             <div class="bloqueSuma">
@@ -94,6 +107,13 @@
                         
                         
                     </article> 
+                    <% } else { %>
+
+                        <h2> ¡Tu carrito está vacío!</h2>
+
+                    <% } %>
+
+
                 </div>
             </div>
         </div>  
