@@ -128,5 +128,15 @@
   "date_of_birth": "2022-06-22",
   "gender": "Masculino",
   "avatar": "avatardefault.png"
+ },
+ {
+  "user_id": 14,
+  "first_name": "Matias",
+  "last_name": "Feruglio",
+  "email": "matias.feruglio@hotmail.com",
+  "password": "$2a$10$BA5oStJXsGtW/BGLr2TtEOqkR3p1mTiQHqbKrO9UW3EZrqBwRfqnW",
+  "date_of_birth": "1998-06-22",
+  "gender": "M",
+  "avatar": "avatardefault.png"
  }
 ]

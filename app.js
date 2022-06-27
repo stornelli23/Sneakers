@@ -8,6 +8,10 @@ const port = 3000
 const methodOverride = require('method-override')
 const session = require('express-session');
 const cookie = require('cookie-parser');
+////////////////////////-- MIDDLEWARES --/////////////////////////
+
+const cookieAuthMiddleware = require('./middlewares/cookieAuthMiddleware');
+
 //////////////////////////////////////////////////////////////////
 
 
@@ -22,6 +26,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(session({secret: 'secret', resave: false, saveUninitialized: false}));
 app.use(cookie());
+app.use(cookieAuthMiddleware);
 //////////////////////////////////////////////////////////////////
 
 const mainRoutes = require('./routes/mainRoutes');

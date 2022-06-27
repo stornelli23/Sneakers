@@ -65,6 +65,7 @@ router.get('/users', usersControllers.index);
 router.get('/login', usersControllers.login);
 router.get('/register', usersControllers.register);
 router.get('/userProfile/:id', usersControllers.profile);
+router.get('/logout', usersControllers.logout);
 
 /*RUTAS POR POST*/
 

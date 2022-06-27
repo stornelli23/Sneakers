@@ -81,9 +81,10 @@ const usersControllers = {
         
         req.session.userLogged = userToLogin;
         
-        
-        
-        res.redirect('/')
+        if (req.body.recordarUsuario != undefined){
+          res.cookie('userEmail', userToLogin.email, {maxAge: (60000 * 60)})
+        }
+
       }else {
 
         return res.render("login", {logueado,
@@ -93,7 +94,7 @@ const usersControllers = {
             }
           }
         });
-      }
+        }
     }else {
       return res.render("login", {logueado,
         errors: {
@@ -104,7 +105,16 @@ const usersControllers = {
       });
 
     }
+    
+    
+    res.redirect('/')
   },
+
+  logout: (req,res) => {
+    res.clearCookie('userEmail');
+    req.session.destroy();
+    return res.redirect('/')
+  }
 };
 
 module.exports = usersControllers;
