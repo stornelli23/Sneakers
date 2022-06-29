@@ -47,16 +47,18 @@ const mainControllers = {
         let id = req.params.id;
         let arrayCarrito = [];
         let carrito = req.session.arrayCarrito;
-
+        
         if (carrito) {
             arrayCarrito = carrito
-          }
+        }
+                
+        const indiceAEliminar = arrayCarrito.findIndex(elemento=>{ return elemento.product_id == id})
+        if (indiceAEliminar != -1){
         
-        const indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
-        if (indiceObjeto != -1){
-        
-        arrayCarrito.splice(indiceObjeto,1);
+        arrayCarrito.splice(indiceAEliminar,1);
+       
         req.session.arrayCarrito = arrayCarrito;
+        
     }
         let destacados = productsJson.filter(product => product.product_discount <= 0);
         

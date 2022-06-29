@@ -204,13 +204,41 @@ h2.cart{
     color:rgb(120,0,46)
 }
 
-.bloqueInferiorProducto :hover{ /*"eliminar", "modificar", y "ver otros.." en negrita al pasar el mouse.*/
+.bloqueInferiorProducto :hover{ /* "modificar", y "ver otros.." en negrita al pasar el mouse.*/
     font-weight: bold;
 }
 
-.bloqueInferiorProducto :focus{ /*"eliminar", "modificar", y "ver otros.." en negrita al pasar el mouse.*/
+.bloqueInferiorProducto :focus{ /* "modificar", y "ver otros.." en negrita al pasar el mouse.*/
     font-weight: bold;
 }
+
+button {/*"eliminar",
+    
+    background-color: white;
+    border: none;
+    color: #AD1457;
+    text-align: center;
+    text-decoration: none;
+    /* -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1; */
+    cursor:pointer;
+    color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none; /* for button */
+   -webkit-appearance: button; /* for input */
+     -moz-user-select: none;
+      -ms-user-select: none;
+}
+
+button:hover  {/*"eliminar",*/
+    font-weight: bold;
+}
+
 
 .lineaSuma{
     width: 90%;
