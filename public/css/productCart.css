@@ -8,6 +8,16 @@ h2.cart{
     margin: 15px;
 }
 
+h3
+{
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    color: #AD1457;
+    font-weight: bolder;
+    margin: 15px;
+}
+
 .contenedor-gral{ /*= contenedor gral del body*/    
     display: flex;
     flex-direction: column;
@@ -455,6 +465,15 @@ h2.cart {
     font-size: 20px;
     
 }
+h3
+{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    color: #AD1457;
+    font-weight: bolder;
+    margin: 15px;
+}
 .cantidadtexto p.cart{  
     font-size: 2vh;
 }
@@ -497,6 +516,11 @@ h2.cart {
         font-size: 22px;
         
     }
+    h3
+{
+    font-size: 22px;
+   
+}
     .bloqueInferiorProducto
     a{
     font-size:1.5vh;
@@ -585,6 +609,11 @@ h2.cart {
         font-size: 24px;
         
     }
+    h3 {
+        font-size: 24px;
+        
+    }
+    
     p.cart {
         font-size: 3vh;
     }
@@ -640,6 +669,10 @@ h2.cart {
 @media (min-width: 1200px) {
   
     h2.cart {
+        font-size: 28px;
+        
+    }
+    h3 {
         font-size: 28px;
         
     }
