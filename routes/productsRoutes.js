@@ -40,3 +40,8 @@ router.delete('/productCart/delete/:id/', mainControllers.productCartDelete);
 router.put('/editProduct/:id/', upload.any(), mainControllers.editProductStore);
 
 module.exports = router;
+
+
+
+
+
