@@ -49,4 +49,21 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config)
 
     return User
+
+    User.associate = function(models){
+        User.belongsToMany(models.Product, {
+            as: 'products',
+            through: 'orders',
+            foreignKey: 'user_id',
+            otherKey: 'product_id',
+            timestamps: false
+        })
+    }
+
+    User.associate = function(models){
+        User.belongsTo(models.Permission, {
+            as: 'permissions',
+            foreignKey: 'permission_id'
+        })
+    }
 }

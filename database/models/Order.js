@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Orders';
+    let alias = 'Order';
     let cols = {
         id: {
             type: dataTypes.SMALLINT(6),
@@ -41,7 +41,9 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
         underscored: true,
     };
-    const Orders = sequelize.define(alias, cols, config)
+    const Order = sequelize.define(alias, cols, config)
 
-    return Orders
+    return Order
+
+    
 }

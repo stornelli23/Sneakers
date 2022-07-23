@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Permissions';
+    let alias = 'Permission';
     let cols = {
         id: {
             type: dataTypes.SMALLINT(6),
@@ -17,7 +17,15 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
         underscored: true,
     };
-    const Permissions = sequelize.define(alias, cols, config)
+    const Permission = sequelize.define(alias, cols, config)
 
-    return Permissions
+    return Permission
+
+    
+    Permission.associate = function(models){
+        Permission.hasMany(models.User, {
+            as: 'users',
+            foreignKey: 'permission_id'
+        })
+    }
 }
