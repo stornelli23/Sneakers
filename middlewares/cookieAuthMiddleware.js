@@ -1,4 +1,4 @@
-const User = require('../database/models/User')
+const User = require('../controllers/usersControllers')
 
 function cookieAuthMiddleware (req,res,next){
     let emailInCookie = req.cookies.userEmail;

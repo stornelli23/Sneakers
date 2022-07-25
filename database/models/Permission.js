@@ -1,3 +1,4 @@
+
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Permission';
     let cols = {
@@ -8,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         permission: {
-            type: dataTypes.VARCHAR(15),
+            type: dataTypes.STRING(15),
             allowNull: false
         }
     };
