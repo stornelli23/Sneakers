@@ -3,22 +3,33 @@ const path = require('path');
 
 const productFilePath = path.join(__dirname,'../data/products.json')
 const productsJson = JSON.parse(fs.readFileSync(productFilePath, 'utf-8'))
-
-
-
+const db = require('../database/models');
+const Sequelize = require('sequelize');
+const Op = db.Sequelize.Op;
 
 const mainControllers = {
 
     index: (req, res) => {
-
         let logueado = req.session.userLogged ;
-
-        
-        let descuentos = productsJson.filter(product => product.product_discount > 0)
-        let destacados = productsJson.filter(product => product.product_discount <= 0)
-
-
-        res.render('index', {destacados, descuentos, logueado})  
+        let descuentos = db.Product.findAll({
+            where: {
+               discount: {[Op.gt] : 0}
+            }}).then(producto => {
+                res.send(producto);
+             }).catch(err => {
+                res.send(err)
+             })
+        let destacados = db.Product.findAll({
+                where: {
+                   discount: {[Op.lte] : 0}
+                }}).then(producto => {
+                    res.send(producto);
+                 }).catch(err => {
+                    res.send(err)
+                 })
+        // let descuentos = productsJson.filter(product => product.product_discount > 0)
+        // let destacados = productsJson.filter(product => product.product_discount <= 0)
+        res.render('index', {descuentos, destacados})  
     },
     
     productCart: (req, res) => {
