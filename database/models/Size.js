@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
     };
     const Size = sequelize.define(alias, cols, config)
 
-    return Size
+    
 
     
     Size.associate = function(models){
@@ -32,4 +32,6 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         })
     }
+
+    return Size
 }

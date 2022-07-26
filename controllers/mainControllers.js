@@ -14,6 +14,7 @@ const mainControllers = {
             where: {
                discount: {[Op.gt] : 0}
             }}).then(producto => {
+                console.log(producto)
                 res.send(producto);
              }).catch(err => {
                 res.send(err)
@@ -28,7 +29,7 @@ const mainControllers = {
                  })
         // let descuentos = productsJson.filter(product => product.product_discount > 0)
         // let destacados = productsJson.filter(product => product.product_discount <= 0)
-        res.render('index', {descuentos, destacados})  
+        res.render('index', {descuentos, destacados, logueado})  
     },
     
     productCart: (req, res) => {

@@ -10,19 +10,19 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         first_name: {
-            type: dataTypes.VARCHAR(50),
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         last_name: {
-            type: dataTypes.VARCHAR(50),
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         email: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         password: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         date_of_birth: {
@@ -30,11 +30,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         gender: {
-            type: dataTypes.VARCHAR(20),
+            type: dataTypes.STRING(20),
             allowNull: false
         },
         avatar: {
-            type: dataTypes.VARCHAR(80),
+            type: dataTypes.STRING(80),
             allowNull: false
         },
         permission_id: {
