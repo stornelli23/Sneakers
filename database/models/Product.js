@@ -44,7 +44,7 @@ module.exports = (sequelize, dataTypes) => {
     };
     const Product = sequelize.define(alias, cols, config)
 
-    return Product
+   
 
     Product.associate = function(models){
         Product.belongsToMany(models.User, {
@@ -79,5 +79,7 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'brand_id'
         })
     }
+
+    return Product
 
 }

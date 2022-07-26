@@ -1,6 +1,4 @@
-const Sequelize = require('sequelize');
-const Product = require('../models/Product.js');
-const Permission = require('../models/Permission.js');
+
 
 module.exports = (sequelize, dataTypes) => {
     let alias = 'User';

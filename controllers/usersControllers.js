@@ -20,11 +20,6 @@ const usersControllers = {
 
     res.render('login', {logueado});
   },
-  findByField: db.User.findByField((field, text) {
-    let allUsers = this.findAll();
-    let userFound = allUsers.find(user => user[field] === text);
-    return userFound;)
-
   register: (req, res) => {
     let logueado = req.session.userLogged ;
     res.render("register",{logueado});

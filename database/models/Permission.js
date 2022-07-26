@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
     };
     const Permission = sequelize.define(alias, cols, config)
 
-    return Permission
+   
 
     
     Permission.associate = function(models){
@@ -29,4 +29,5 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'permission_id'
         })
     }
+    return Permission
 }
