@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(session({secret: 'secret', resave: false, saveUninitialized: false}));
 app.use(cookie());
-// app.use(cookieAuthMiddleware);
+app.use(cookieAuthMiddleware);
 //////////////////////////////////////////////////////////////////
 
 const mainRoutes = require('./routes/mainRoutes');

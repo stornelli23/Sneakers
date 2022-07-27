@@ -36,37 +36,40 @@
 <h2>PRODUCTOS DESTACADOS</h2>
 
 <section class="indexDestacados">
- 
+    <% destacados.forEach(element => { %>
     <article class="articleIndex">
-       
         <div class="productIndex">
-        <a href="/productDetail/<%= destacados.id %> "><img src="<%=destacados.image%>" alt=""></a>
+        <a href="/productDetail/<%= element.id %> "><img src="<%=element.image%>" alt=""></a>
         <div class="product-detail-Index">
-            <p><%=destacados.name%></p>
-            <p class="product-price-Index"><%=destacados.price%></p>
+            <p><%=element.name%></p>
+            <p class="product-price-Index"><%=element.price%></p>
         </div>
         
         </div>
-  
+       
             </article>
-         
+            <% }) %>
 </section>
       <!-- SECCION REBAJAS HOME -->
 
       <h2>REBAJAS</h2>
 <section class="indexDestacados">
-   
+   <% descuentos.forEach(element => { %>
+    
     <article class="articleIndex">
         <div class="productIndex">
-            <a href="/productDetail/<%=descuentos.id%> "><img src="<%=descuentos.image%> " alt=""></a>
-        <div class="product-detail-Index">
-            <p><%=descuentos.name%> </p>
-            <p class="product-price-Index"><%=descuentos.price%> </p>
-            <p><%=descuentos.discount%> </p>
+            <a href="/productDetail/<%=element.id%> "><img src="<%=element.image%> " alt=""></a>
+            <div class="product-detail-Index">
+                <p><%=element.name%> </p>
+                <p class="product-price-Index"><%=element.price%> </p>
+                <p><%=element.discount%> </p>
+            </div>
+            
         </div>
-        
-        </div>
+
+       
             </article>
+            <% }) %>
        
 
 </section>

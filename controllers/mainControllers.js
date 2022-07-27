@@ -8,28 +8,21 @@ const Op = db.Sequelize.Op;
 
 const mainControllers = {
 
-    index: (req, res) => {
+    index: async (req, res) => {
         let logueado = req.session.userLogged ;
-        let descuentos = db.Product.findAll({
+        let descuentos = await db.Product.findAll({
             where: {
                discount: {[Op.gt] : 0}
-            }}).then(producto => {
-                console.log(producto)
-                res.send(producto);
-             }).catch(err => {
-                res.send(err)
-             })
-        let destacados = db.Product.findAll({
+            }})
+             
+        let destacados =  await db.Product.findAll({
                 where: {
                    discount: {[Op.lte] : 0}
-                }}).then(producto => {
-                    res.send(producto);
-                 }).catch(err => {
-                    res.send(err)
-                 })
-        // let descuentos = productsJson.filter(product => product.product_discount > 0)
-        // let destacados = productsJson.filter(product => product.product_discount <= 0)
+                }})
+
+           
         res.render('index', {descuentos, destacados, logueado})  
+        
     },
     
     productCart: (req, res) => {
