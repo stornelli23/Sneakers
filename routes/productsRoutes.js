@@ -4,8 +4,7 @@ const multer  = require('multer');
 const path = require ('path');
 const imgFilePath = path.join(__dirname, '../public/img');
 ///*** Controller Require **** */
-const mainControllers = require('../controllers/mainControllers');
-
+const productsController = require('../controllers/productsController');
 // ************ MULTER ************
 
 const storage = multer.diskStorage({
@@ -25,19 +24,19 @@ const upload = multer({ storage: storage })
 
 
 // ROUTES GET//
-router.get('/productCart', mainControllers.productCart);
-router.get('/createProduct', mainControllers.createProduct);
-router.get('/editProduct/:id/', mainControllers.editProduct);
-router.get('/products', mainControllers.products);
-router.get('/productDetail/:id/', mainControllers.productDetail);
+router.get('/productCart', productsController.productCart);
+router.get('/createProduct', productsController.createProduct);
+router.get('/editProduct/:id/', productsController.editProduct);
+router.get('/products', productsController.products);
+router.get('/productDetail/:id/', productsController.productDetail);
 
 
 // ROUTES POST//
-router.delete('/editProduct/delete/:id/', mainControllers.delete);
-router.post('/createProduct', upload.any(), mainControllers.store);
-router.post('/productCart/:id/', mainControllers.productCart);
-router.delete('/productCart/delete/:id/', mainControllers.productCartDelete);
-router.put('/editProduct/:id/', upload.any(), mainControllers.editProductStore);
+router.delete('/editProduct/delete/:id/', productsController.delete);
+router.post('/createProduct', upload.any(), productsController.store);
+router.post('/productCart/:id/', productsController.productCart);
+router.delete('/productCart/delete/:id/', productsController.productCartDelete);
+router.put('/editProduct/:id/', upload.any(), productsController.editProductStore);
 
 module.exports = router;
 
