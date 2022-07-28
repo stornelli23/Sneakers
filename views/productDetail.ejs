@@ -15,11 +15,11 @@
          
             <article class="card-prod">
                 <div class="foto-prod">
-                    <img src="/img/products/<%=productosFiltrados.product_image%> " alt="">
+                    <img src="/img/products/<%=productosFiltrados.image%> " alt="">
                 </div>
                 <div class="main-article">
-                    <p class="name"><%=productosFiltrados.product_name%></p>
-                    <p class="price"><%=productosFiltrados.product_price%></p>
+                    <p class="name"><%=productosFiltrados.name%></p>
+                    <p class="price"><%=productosFiltrados.price%></p>
                     <p class="text-top">Talle</p>
                     <div class="shoe-size">
                     <button class="size"><span>35</span></button>
@@ -29,7 +29,7 @@
                     <button class="size"><span>39</span></button>
                     <button class="size"><span>40</span></button>
                     </div>
-                    <form method="POST" action="/productCart/<%=productosFiltrados.product_id%>">
+                    <form method="POST" action="/productCart/<%=productosFiltrados.id%>">
                       <button class="submit">
                             Agregar al carrito
                         </button></a> 
@@ -43,7 +43,7 @@
                 <div class="card-specification">
                     <h3 class="title-specification">Descripción:</h3>
                     <p class="air-max">
-                    <%=productosFiltrados.product_description%>
+                    <%=productosFiltrados.description%>
                     </p>
                 </div>
             </article>
@@ -78,10 +78,10 @@
                     <article class="articleIndex">
                        
                         <div class="productIndex">
-                        <a href="/productDetail/<%= producto.product_id %> "><img src="/img/products/<%=producto.product_image%> " alt=""></a>
+                        <a href="/productDetail/<%= producto.id %> "><img src="/img/products/<%=producto.image%> " alt=""></a>
                         <div class="product-detail-Index">
-                            <p><%=producto.product_name%></p>
-                            <p class="product-price-Index"><%=producto.product_price%></p>
+                            <p><%=producto.name%></p>
+                            <p class="product-price-Index"><%=producto.price%></p>
                         </div>
                         
                         </div>

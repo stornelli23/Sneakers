@@ -54,13 +54,26 @@ const productsController = {
     },
 
 
-    productDetail: (req, res) => {
+    productDetail: async (req, res) => {
         let logueado = req.session.userLogged ;
         let id = req.params.id;
-        let productosFiltrados = productsJson.find(products => products.product_id == id)
-     let destacados = productsJson.filter(product => product.product_discount <= 0)
 
-    res.render('productDetail', {productosFiltrados, destacados, logueado});
+        let destacados = await db.Product.findAll({
+            where: {
+                discount: {
+                    [Op.lte]: 0,
+                },
+            },
+        });
+
+        await db.Product.findByPk(req.params.id)
+        .then(producto => {
+            res.render('productDetail', {productosFiltrados: producto, destacados, logueado})
+        })
+            
+     
+        //let productosFiltrados = productsJson.find(products => products.product_id == id)
+        //let destacados = productsJson.filter(product => product.product_discount <= 0)
     },
 
 
