@@ -11,68 +11,53 @@
 
     <main class="main-editProduct">
         <div class="contenedor-principal-editProduct">
-            <form method="POST" action="/editProduct/<%=productEdit.product_id%>?_method=PUT" enctype="multipart/form-data">
+            <form method="POST" action="/editProduct/<%=productToEdit.id%>?_method=PUT" enctype="multipart/form-data">
             <fieldset class="fieldset-editProduct">
                 <legend class="legend-editProduct">Editar Producto </legend>
                 <div>
                     <div class="formulario-general-editProduct">
-                        <p>*Nombre del Producto</p>
-                        <input type="text" name="product_name" class="barra-espacios-editProduct" value=<%=productEdit.product_name%>>
+                        <p>Nombre del Producto</p>
+                        <input type="text" name="name" class="barra-espacios-editProduct" value=<%=productToEdit.name%>>
                     </div>
                     <div class="formulario-general-editProduct">
-                        <p>*Precio</p>
-                        <input type="text" name="product_price" class="barra-espacios-editProduct" value=<%=productEdit.product_price%> >
+                        <p>Precio</p>
+                        <input type="text" name="price" class="barra-espacios-editProduct" value=<%=productToEdit.price%> >
                     </div>
                     <div class="formulario-general-editProduct">
-                        <p>*Descripcion</p>
-                        <textarea name="product_description" class="descripcion-editProduct" rows="5" cols="100" placeholder="Descripción del producto aquí" ><%-productEdit.product_description%></textarea>
+                        <p>Descripcion</p>
+                        <textarea name="description" class="descripcion-editProduct" rows="5" cols="100" placeholder="Descripción del producto aquí" ><%-productToEdit.description%></textarea>
                     </div>
                     <div class="formulario-general-editProduct">
-                        <p>*Imagen del Producto</p>
-                        <img src="/img/products/<%=productEdit.product_image%>" alt="" width="200" height="200" accept=".jpg, .png">
-                        <input class="imagenes-editProduct" type="file" name="product_image" accept=".jpg, .png" > 
+                        <p>Imagen del Producto</p>
+                        <img src="<%=productToEdit.image%>" alt="" width="200" height="200" accept=".jpg, .png">
+                        <input class="imagenes-editProduct" type="file" name="image" accept=".jpg, .png" > 
                     </div>
                     <div class="formulario-general-editProduct">
-                        <p>*Categoria</p>
+                        <p>Categoria</p>
                         <div class="control-radio-editProduct">
-                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="product_category" value="Hombre"
-                                    <%if(productEdit.product_category=="Hombre"){%>checked<%}%>>Hombre</input></div>
-                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="product_category" value ="Mujer"
-                                <%if(productEdit.product_category=="Mujer"){%>checked<%}%>>Mujer</input></div>
-                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="product_category" value="Unisex"
-                                <%if(productEdit.product_category=="Unisex"){%>checked<%}%>>Unisex</input></div>
+                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id" value="1"
+                                    <%if(productToEdit.category_id==1){%>checked<%}%>>Hombre</input></div>
+                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id" value ="2"
+                                <%if(productToEdit.category_id==2){%>checked<%}%>>Mujer</input></div>
+                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id" value="3"
+                                <%if(productToEdit.category_id==3){%>checked<%}%>>Unisex</input></div>
                         </div>
                     </div>
                     <div class="formulario-general-editProduct">
-                        <p>*Marca</p>
-                        <select name="product_brand" class="control-selector-editProduct">
+                        <p>Marca</p>
+                        <select name="brand_id" class="control-selector-editProduct">
                             <option>Seleccionar</option>
-                            <option  <%if(productEdit.product_brand=="Nike"){%>selected<%}%> >Nike</option>
-                            <option  <%if(productEdit.product_brand=="Adidas"){%>selected<%}%> >Adidas</option>
+                            <option  <%if(productToEdit.brand_id==1){%>selected<%}%> >Nike</option>
+                            <option  <%if(productToEdit.brand_id==2){%>selected<%}%> >Adidas</option>
                         </select>
                     </div>
-                    <div class="formulario-checkbox-editProduct">
-                        <div>
-                            <p>*Talles</p>
-                        </div>
-                        <div class="checkbox-editProduct">
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("35")){%>checked<%}%>>35</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("36")){%>checked<%}%>>36</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("37")){%>checked<%}%>>37</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("38")){%>checked<%}%>>38</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("39")){%>checked<%}%>>39</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("40")){%>checked<%}%>>40</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("41")){%>checked<%}%>>41</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("42")){%>checked<%}%>>42</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" <%if(productEdit.product_size.includes("43")){%>checked<%}%>>43</label>
-                        </div>
-                    </div>
+                   
                     <div class="boton-editProduct">
                         <button type="submit" class="boton-crear-editProduct">Guardar cambios</button>
                     </div>
          </form>
                     <div class="boton-editProduct">
-                    <form method="POST" action="/editProduct/delete/<%=productEdit.product_id%>?_method=DELETE">
+                    <form method="POST" action="/editProduct/delete/<%=productToEdit.id%>?_method=DELETE">
                         <button type="submit" class="boton-borrar-editProduct">Eliminar producto</button>
                     </form>
                     </div>

@@ -92,6 +92,7 @@ const mainControllers = {
         
     createProduct: (req, res) => {
         let logueado = req.session.userLogged ;
+
         res.render('createProduct',{logueado})
     },
 
@@ -110,76 +111,80 @@ const mainControllers = {
             category_id: req.body.category_id,
         })
         
+        res.redirect('/')
+        },
+
+    editProduct: async (req, res) => {
+
+        let logueado = req.session.userLogged ;
+
+        let productToEdit =  await db.Product.findByPk(req.params.id)
+
+        res.render('editProduct', {productToEdit, logueado})
+        
+    },
+    editProductStore: async (req, res) => {
+
+        await db.Product.update({
+            
+            name: req.body.name,
+            price: req.body.price ,
+            discount: req.body.discount,
+            description: req.body.description,
+            brand_id: req.body.brand_id,
+            image: req.body.image,
+            category_id: req.body.category_id,
+
+        }, {
+            where: {id: req.params.id}
+        })
+
+        res.redirect('/')
+        
         // let image
         // if(req.files[0] != undefined){
         //     image = req.files[0].filename
         // } else {
         //     image = 'default-image.jpeg'
         // }
-    
-        // let newProduct = {
+        // let id = req.params.id;
+        // const indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
+        
+        // let editedProduct = {
             
-            // product_id: productsJson[productsJson.length-1].product_id+1,
+        //     product_id : productsJson[indiceObjeto].product_id ,
         //     ...req.body,
-        //     product_image : image
+        //     product_image : image ,
+        //     product_discount : productsJson[indiceObjeto].product_discount
         // }
         
-        // productsJson.push(newProduct) ;      
+        
+        // productsJson.splice(indiceObjeto, 1, editedProduct) ; 
+        
         // fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
-        res.redirect('/')
-        },
-
-    editProduct: (req, res) => {
-        let logueado = req.session.userLogged ;
-        let id = req.params.id;
-        let indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
-        let productEdit = productsJson[indiceObjeto]
-       
-        res.render('editProduct', {productEdit : productEdit, logueado})
-        
-    },
-    editProductStore: (req, res) => {
-        let image
-        if(req.files[0] != undefined){
-            image = req.files[0].filename
-        } else {
-            image = 'default-image.jpeg'
-        }
-        let id = req.params.id;
-        const indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
-        
-        let editedProduct = {
-            
-            product_id : productsJson[indiceObjeto].product_id ,
-            ...req.body,
-            product_image : image ,
-            product_discount : productsJson[indiceObjeto].product_discount
-        }
-        
-        
-        productsJson.splice(indiceObjeto, 1, editedProduct) ; 
-        
-        fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
    
         
-        res.redirect('/')
+        // res.redirect('/')
     },
 
-    products: (req, res) => {
+    products: async (req, res) => {
         let logueado = req.session.userLogged ;
-        res.render('products', {productsJson, logueado})
+        let productos =  await db.Product.findAll();
+        res.render('products', {productos, logueado})
     },
 
-    delete: (req,res) => {
-        let logueado = req.session.userLogged ;
-        let id = req.params.id
-        const indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
-        let productDelete = productsJson.splice(indiceObjeto, 1)
+    delete: async (req,res) => {
+        // let logueado = req.session.userLogged ;
+        // let id = req.params.id
+        // const indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
+        // let productDelete = productsJson.splice(indiceObjeto, 1)
+        await db.Product.destroy({
+            where: { id: req.params.id}
+        })
         
-        
-        fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
+        // fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
      
-        res.render('products',{productsJson, logueado})
+        res.redirect('/products')
     }
      
  

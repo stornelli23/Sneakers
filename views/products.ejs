@@ -21,14 +21,14 @@
 <h2>PRODUCTOS</h2>
 
 <section class="indexDestacados">
-    <% productsJson.forEach(producto => { %>
+    <% productos.forEach(producto => { %>
     <article class="articleIndex">
        
         <div class="productIndex">
-        <a href="/productDetail/<%=producto.product_id%> "><img src="/img/products/<%=producto.product_image%> " alt=""></a>
+        <a href="/productDetail/<%=producto.id%> "><img src="<%=producto.image%> " alt=""></a>
         <div class="product-detail-Index">
-            <p><%=producto.product_name%></p>
-            <p class="product-price-Index"><%=producto.product_price%></p>
+            <p><%=producto.name%></p>
+            <p class="product-price-Index"><%=producto.price%></p>
         </div>
         
         </div>
