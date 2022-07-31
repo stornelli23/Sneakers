@@ -1,3 +1,4 @@
+const { error } = require('console');
 const fs = require('fs')
 const path = require('path');
 
@@ -25,57 +26,68 @@ const mainControllers = {
         
     },
     
-    productCart: (req, res) => {
+    productCart: async (req, res) => {
         let logueado = req.session.userLogged ;
-        let id = req.params.id;
         let arrayCarrito = [];
         let carrito = req.session.arrayCarrito;
-
+        let destacados =  await db.Product.findAll({
+            where: {
+               discount: {[Op.lte] : 0}
+            }})
+       
         if (carrito) {
           arrayCarrito = carrito
         } 
-        const indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
-        console.log("------Indice Objeto--------")
-        console.log(indiceObjeto)
-        if (indiceObjeto != -1){
-        arrayCarrito.push(productsJson[indiceObjeto]);
-        req.session.arrayCarrito = arrayCarrito;
-        }
-        let destacados = productsJson.filter(product => product.product_discount <= 0);
-        
-        res.render('productCart', {arrayCarrito, destacados,carrito, logueado}) 
+
+        let indice =  await db.Product.findByPk(req.params.id)
+      
+            if(indice){
+                arrayCarrito.push(indice);
+                req.session.arrayCarrito = arrayCarrito;
+            }
+
+            res.render('productCart', {arrayCarrito, destacados, carrito, logueado}) 
     },
 
-    productCartDelete: (req, res) => {
+    productCartDelete: async (req, res) => {
         let logueado = req.session.userLogged ;
         let id = req.params.id;
         let arrayCarrito = [];
         let carrito = req.session.arrayCarrito;
+        let destacados =  await db.Product.findAll({
+            where: {
+               discount: {[Op.lte] : 0}
+            }})
         
         if (carrito) {
             arrayCarrito = carrito
         }
-                
-        const indiceAEliminar = arrayCarrito.findIndex(elemento=>{ return elemento.product_id == id})
+        
+        const indiceAEliminar = arrayCarrito.findIndex(elemento=>{ return elemento.id == id})
         if (indiceAEliminar != -1){
-        
         arrayCarrito.splice(indiceAEliminar,1);
-       
         req.session.arrayCarrito = arrayCarrito;
-        
     }
-        let destacados = productsJson.filter(product => product.product_discount <= 0);
+        
         
         res.render('productCart', {arrayCarrito, destacados,carrito,logueado}) 
     },
     
-    productDetail: (req, res) => {
+    productDetail: async (req, res) => {
         let logueado = req.session.userLogged ;
-        let id = req.params.id;
-        let productosFiltrados = productsJson.find(products => products.product_id == id)
-        let destacados = productsJson.filter(product => product.product_discount <= 0)
-    
-        res.render('productDetail', {productosFiltrados, destacados, logueado})
+        
+        let destacados =  await db.Product.findAll({
+            where: {
+               discount: {[Op.lte] : 0}
+            }})
+        let productosFiltrados = await db.Product.findByPk(req.params.id);
+
+            if(!productosFiltrados){
+                res.send("Algo salió mal...")
+            }else{
+
+                res.render('productDetail', {productosFiltrados, destacados, logueado})
+            }
     },
         
     createProduct: (req, res) => {
@@ -83,23 +95,37 @@ const mainControllers = {
         res.render('createProduct',{logueado})
     },
 
-    store: (req, res) => {
-        let image
-        if(req.files[0] != undefined){
-            image = req.files[0].filename
-        } else {
-            image = 'default-image.jpeg'
-        }
-    
-        let newProduct = {
-            
-            product_id: productsJson[productsJson.length-1].product_id+1,
-            ...req.body,
-            product_image : image
-        }
+    store: async (req, res) => {
+
+    let productos =  await db.Product.findAll();
+
+        await db.Product.create({
+            id: productos.length + 1,
+            name: req.body.name,
+            price: req.body.price ,
+            discount: req.body.discount,
+            description: req.body.description,
+            brand_id: req.body.brand_id,
+            image: req.body.image,
+            category_id: req.body.category_id,
+        })
         
-        productsJson.push(newProduct) ;      
-        fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
+        // let image
+        // if(req.files[0] != undefined){
+        //     image = req.files[0].filename
+        // } else {
+        //     image = 'default-image.jpeg'
+        // }
+    
+        // let newProduct = {
+            
+            // product_id: productsJson[productsJson.length-1].product_id+1,
+        //     ...req.body,
+        //     product_image : image
+        // }
+        
+        // productsJson.push(newProduct) ;      
+        // fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
         res.redirect('/')
         },
 
@@ -108,9 +134,7 @@ const mainControllers = {
         let id = req.params.id;
         let indiceObjeto = productsJson.findIndex(elemento=>{ return elemento.product_id == id})
         let productEdit = productsJson[indiceObjeto]
-        
-        console.log("--Objeto a editar--")
-        console.log(productEdit)
+       
         res.render('editProduct', {productEdit : productEdit, logueado})
         
     },
@@ -136,9 +160,7 @@ const mainControllers = {
         productsJson.splice(indiceObjeto, 1, editedProduct) ; 
         
         fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
-        console.log("producto modificado")
-        console.log("--Objeto editado--")
-        console.log(productsJson[indiceObjeto])
+   
         
         res.redirect('/')
     },
@@ -156,8 +178,7 @@ const mainControllers = {
         
         
         fs.writeFileSync(productFilePath, JSON.stringify(productsJson));
-        
-        console.log("producto eliminado")
+     
         res.render('products',{productsJson, logueado})
     }
      

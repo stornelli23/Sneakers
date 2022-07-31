@@ -11,44 +11,44 @@
 
     <main class="main-editProduct">
         <div class="contenedor-principal-editProduct">
-            <form method="POST" action="/createProduct" enctype="multipart/form-data">
+            <form method="POST" action="/createProduct" >
             <fieldset class="fieldset-editProduct" >
                 <legend class="legend-editProduct">Crear Producto</legend>
                 <div>
                     <div class="formulario-general-editProduct">
-                        <p>*Nombre del Producto</p>
-                        <input type="text" name="product_name" class="barra-espacios-editProduct">
+                        <p>Nombre del Producto</p>
+                        <input type="text" name="name" class="barra-espacios-editProduct">
                     </div>
                     <div class="formulario-general-editProduct">
-                        <p>*Precio</p>
-                        <input type="number" name="product_price" class="barra-espacios-editProduct">
+                        <p>Precio</p>
+                        <input type="number" name="price" class="barra-espacios-editProduct">
                     </div>
                     <div class="formulario-general-editProduct">
-                        <p>*Descuento</p>
-                        <input type="number" name="product_discount" class="barra-espacios-editProduct" value="0">
+                        <p>Descuento</p>
+                        <input type="number" name="discount" class="barra-espacios-editProduct">
                     </div>
                     <div class="formulario-general-editProduct">
-                        <p>*Descripcion</p>
-                        <textarea name="product_description" class="descripcion-editProduct" rows="5" cols="100"></textarea>
+                        <p>Descripcion</p>
+                        <textarea name="description" class="descripcion-editProduct" rows="5" cols="100"></textarea>
                     </div>
                     <div class="formulario-general-editProduct">
-                        <p>*Imagen del Producto</p>
-                        <input type="file" name="product_image" accept=".jpg, .png">
+                        <p>Imagen del Producto</p>
+                        <input type="file" name="image" accept=".jpg, .png">
                     </div>
                     <div class="formulario-general-editProduct">
-                        <p>*Categoria</p>
+                        <p>Categoria</p>
                         <div class="control-radio-editProduct">
-                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="product_category"
-                                    value="hombre">Hombre</input></div>
-                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="product_category"
-                                    value="mujer">Mujer</input></div>
-                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="product_category"
-                                    value="unisex">Unisex</input></div>
+                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id"
+                                    value= "1" >Hombre</input></div>
+                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id"
+                                    value="2">Mujer</input></div>
+                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id"
+                                    value="3">Unisex</input></div>
                         </div>
                     </div>
                     <div class="formulario-general-editProduct">
-                        <p>*Marca</p>
-                        <select name="product_brand" class="control-selector-editProduct">
+                        <p>Marca</p>
+                        <select name="brand_id" class="control-selector-editProduct">
                             <option>Seleccionar</option>
                             <option value="1">Nike</option>
                             <option value="2">Adidas</option>
@@ -56,18 +56,15 @@
                     </div>
                     <div class="formulario-checkbox-editProduct">
                         <div>
-                            <p>*Talles</p>
+                            <p>Talles</p>
                         </div>
                         <div class="checkbox-editProduct">
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="35">35</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="36">36</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="37">37</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="38">38</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="39">39</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="40">40</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="41">41</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="42">42</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="product_size" value="43">43</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="1">35</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="2">36</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="3">37</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="4">38</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="5">39</label>
+
                         </div>
                         <div class="boton-editProduct">
                             <button type="reset" class="boton-crear-editProduct">Borrar</button>

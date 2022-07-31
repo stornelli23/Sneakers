@@ -32,15 +32,15 @@
                               </div>
                               <div class="bloqueSuperiorProducto">
                                   <div class="foto"><!--bloque foto-->
-                                      <img class="foto-producto" src="/img/products/public/img/products/nike-air-huarache.jpg" alt="Producto1">
+                                      <img class="foto-producto" src="<%= producto.image %> " alt="Producto1">
                                   </div>
 
                                   
                                   <div class="descripcion"><!--bloque descripción-->
-                                        <div class="modelo"><p class="cart" > <%=producto.product_name %></p>
+                                        <div class="modelo"><p class="cart" > <%=producto.name %></p>
                                         </div>
                     
-                                        <div class="talle"><p class="cart" >Talle: <%= producto.product_size%> </p>
+                                        <div class="talle"><p class="cart" >Talle: </p>
                                         </div>
                                   </div>
                                   <div class="columnaCantidad">
@@ -54,7 +54,7 @@
                                       </div>
                                       <div class="preciounidad">
                                           <p class="cart" >Precio unit.:</p>
-                                          <p class="cart" ><%=producto.product_price%> </p>
+                                          <p class="cart" ><%=producto.price%> </p>
                                       </div>
                                   </div>
                                   <div class="precio"><!--bloque precio-->
@@ -63,7 +63,7 @@
                                   
                               </div>
                               <div class="bloqueInferiorProducto"><!--bloque precio-->
-                                  <form method="POST" action="/productCart/delete/<%=producto.product_id%>?_method=DELETE">
+                                  <form method="POST" action="/productCart/delete/<%=producto.id%>?_method=DELETE">
                                     <button type="submit" class="bloqueInferiorProducto">
                                           Eliminar
                                       </button></a> 
@@ -133,11 +133,11 @@
           <article class="art-recomendados">
             <div class="product">
                 <div class="product-foto">
-                <a href="/productDetail/<%= producto.product_id %> "><img src="/img/products/<%=producto.product_image%> " alt=""></a>
+                <a href="/productDetail/<%= producto.id %> "><img src="<%=producto.image%> " alt=""></a>
                 </div>
                 <div class="product-detail">
-                <p class="cart" ><%=producto.product_description%> </p>
-                <p class="product-price"><%=producto.product_price%></p>
+                <p class="cart" ><%=producto.description%> </p>
+                <p class="product-price"><%=producto.price%></p>
                 </div>
             
             </div>
