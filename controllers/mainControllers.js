@@ -17,6 +17,13 @@ const mainControllers = {
             },
         });
 
+        let destacados = await db.Product.findAll({
+            where: {
+                discount: {
+                    [Op.lte]: 0,
+                },
+            },
+        });
            
         res.render('index', {descuentos, destacados, logueado})  
         
