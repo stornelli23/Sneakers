@@ -4,8 +4,7 @@ const router = express.Router();
 const path = require ('path');
 // const imgFilePath = path.join(__dirname, '../public/img');
 ///*** Controller Require **** */
-const mainControllers = require('../controllers/mainControllers');
-
+const productsController = require('../controllers/productsController');
 // ************ MULTER ************
 
 // const storage = multer.diskStorage({
@@ -25,19 +24,19 @@ const mainControllers = require('../controllers/mainControllers');
 
 
 // ROUTES GET//
-router.get('/productCart', mainControllers.productCart);
-router.get('/createProduct', mainControllers.createProduct);
-router.get('/editProduct/:id/', mainControllers.editProduct);
-router.get('/products', mainControllers.products);
-router.get('/productDetail/:id/', mainControllers.productDetail);
+router.get('/productCart', productsController.productCart);
+router.get('/createProduct', productsController.createProduct);
+router.get('/editProduct/:id/', productsController.editProduct);
+router.get('/products', productsController.products);
+router.get('/productDetail/:id/', productsController.productDetail);
 
 
 // ROUTES POST//
-router.delete('/editProduct/delete/:id/', mainControllers.delete);
-router.post('/createProduct', mainControllers.store);
-router.post('/productCart/:id/', mainControllers.productCart);
-router.delete('/productCart/delete/:id/', mainControllers.productCartDelete);
-router.put('/editProduct/:id/', mainControllers.editProductStore);
+router.delete('/editProduct/delete/:id/', productsController.delete);
+router.post('/createProduct', productsController.store);
+router.post('/productCart/:id/', productsController.productCart);
+router.delete('/productCart/delete/:id/', productsController.productCartDelete);
+router.put('/editProduct/:id/', productsController.editProductStore);
 
 module.exports = router;
 
