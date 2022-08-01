@@ -15,11 +15,11 @@
     <h2>USUARIOS</h2>
 
 <section class="indexDestacados">
-    <% usersJson.forEach(user => { %>
+    <% allUsers.forEach(user => { %>
         <article class="articleIndex">
            
             <div class="productIndex">
-            <img src="img/users/<%=user.avatar%>" alt="">
+            <img src="<%=user.avatar%>" alt="">
             <div class="product-detail-Index">
                 <p><%=user.first_name%> <%=user.last_name%></p>
                 <p class="product-price-Index"><%=user.email%></p>

@@ -1,19 +1,17 @@
 const fs = require("fs");
 const path = require("path");
-
 const User = require("../database/models/User");
-
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
-
-const userFilePath = path.join(__dirname, "../data/users.json");
-const usersJson = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
+// const userFilePath = path.join(__dirname, "../data/users.json");
+// const usersJson = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 const db = require('../database/models')
 
 const usersControllers = {
-  index: (req, res) => {
+  index: async (req, res) => {
     let logueado = req.session.userLogged ;
-    res.render("users", { usersJson, logueado });
+    let allUsers = await db.User.findAll();
+    res.render("users", { allUsers, logueado });
   },
   login: (req, res) => {
     let logueado = req.session.userLogged ;
@@ -24,7 +22,7 @@ const usersControllers = {
     let logueado = req.session.userLogged ;
     res.render("register",{logueado});
   },
-  processRegister: (req, res) => {
+  processRegister: async (req, res) => {
     let logueado = req.session.userLogged ;
     let resultValidation = validationResult(req);
     let file = req.file;
@@ -35,8 +33,12 @@ const usersControllers = {
         oldData: req.body });
     }
 
-    let userInDB = User.findByField('email', req.body.email)
-      if(userInDB){
+let userInData = await db.User.findOne({where: { email: req.body.email}})
+
+
+
+    // let userInDB = User.findByField('email', req.body.email)
+      if(userInData){
 
         return res.render('register', {logueado,
           errors: {
@@ -47,21 +49,29 @@ const usersControllers = {
           }
         })
       }
+
+
       let image 
           if(file){
               image = file.filename
           } else {
               image = 'avatardefault.png'
           };
-  
-      let newUser = {
-          user_id: User.generateId(),
-          ...req.body,
-          avatar: image,
-          password: bcrypt.hashSync(req.body.password, 10)
-      }
-      usersJson.push(newUser);
-      fs.writeFileSync(userFilePath, JSON.stringify(usersJson, null, ' '));
+
+  let allUsers = await db.User.findAll();
+
+      await db.User.create({includes: [{association: 'permissions'}]},{
+        id: allUsers.length + 1,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        avatar: image,
+        date_of_birth: req.body.date_of_birth,
+        gender: req.body.gender,
+        permission_id: 2
+      })
+
       return res.redirect("/users");
     
   },
