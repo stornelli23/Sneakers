@@ -11,8 +11,8 @@
 
     <main class="main-editProduct">
         <div class="contenedor-principal-editProduct">
-            <form method="POST" action="/editProduct/<%=productToEdit.id%>?_method=PUT" enctype="multipart/form-data">
             <fieldset class="fieldset-editProduct">
+            <form method="POST" action="/editProduct/<%=productToEdit.id%>?_method=PUT" enctype="multipart/form-data">
                 <legend class="legend-editProduct">Editar Producto </legend>
                 <div>
                     <div class="formulario-general-editProduct">
@@ -51,13 +51,14 @@
                         <p>Marca</p>
                         <select name="brand_id" class="control-selector-editProduct">
                             <option>Seleccionar</option>
-                            <option  <%if(productToEdit.brand_id==1){%>selected<%}%> >Nike</option>
-                            <option  <%if(productToEdit.brand_id==2){%>selected<%}%> >Adidas</option>
+                            <option  <%if(productToEdit.brand_id==1){%>selected<%}%> value="1">Nike</option>
+                            <option  <%if(productToEdit.brand_id==2){%>selected<%}%> value="2">Adidas</option>
                         </select>
                     </div>
                    
                     <div class="boton-editProduct">
                         <button type="submit" class="boton-crear-editProduct">Guardar cambios</button>
+                        
                     </div>
          </form>
                     <div class="boton-editProduct">

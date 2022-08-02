@@ -107,22 +107,28 @@ const productsController = {
         
     },
     editProductStore: async (req, res) => {
+        let id = req.params.id
+        
+        console.log('req.body',req.body )
+        let productToEdit =  await db.Product.findByPk(req.params.id);    
+        console.log('productToEdit:', productToEdit)
 
-        await db.Product.update({
+        productToEdit.name= req.body.name
+        productToEdit.price= req.body.price 
+        productToEdit.discount= req.body.discount
+        productToEdit.description= req.body.description
+        productToEdit.brand_id= req.body.brand_id
+        productToEdit.category_id= req.body.category_id
+        
+        //  await db.Product.update({includes: [{association: 'categories'}, {association: 'brands'}]},{
             
-            name: req.body.name,
-            price: req.body.price ,
-            discount: req.body.discount,
-            description: req.body.description,
-            brand_id: req.body.brand_id,
-            image: req.body.image,
-            category_id: req.body.category_id,
+await productToEdit.save()
+        // }, {
+        //     where: {id: id}
+        // })
+            res.redirect('/')
+        
 
-        }, {
-            where: {id: req.params.id}
-        })
-
-        res.redirect('/')
     },
 
     products: async (req, res) => {
