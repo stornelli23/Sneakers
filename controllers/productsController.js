@@ -1,4 +1,5 @@
-const fs = require('fs')
+const fs = require('fs');
+const multer = require('multer');
 const path = require('path');
 
 // const productFilePath = path.join(__dirname,'../data/products.json')
@@ -80,17 +81,19 @@ const productsController = {
     },
 
     store: async (req, res) => {
-
+    
     let productos =  await db.Product.findAll();
+    
+    console.log(req)
 
         await db.Product.create({
-            id: productos.length + 1,
+            id: productos.length + 2,
             name: req.body.name,
             price: req.body.price ,
             discount: req.body.discount,
             description: req.body.description,
             brand_id: req.body.brand_id,
-            image: req.body.image,
+            image: req.files[0].filename,
             category_id: req.body.category_id,
         })
         
