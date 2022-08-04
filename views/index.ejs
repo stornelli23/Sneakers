@@ -39,7 +39,7 @@
     <% destacados.forEach(element => { %>
     <article class="articleIndex">
         <div class="productIndex">
-        <a href="/productDetail/<%= element.id %> "><img src="<%=element.image%>" alt=""></a>
+        <a href="/productDetail/<%= element.id %> "><img src="/img/products/<%=element.image%>" alt=""></a>
         <div class="product-detail-Index">
             <p><%=element.name%></p>
             <p class="product-price-Index"><%=element.price%></p>
@@ -58,7 +58,7 @@
     
     <article class="articleIndex">
         <div class="productIndex">
-            <a href="/productDetail/<%=element.id%> "><img src="<%=element.image%> " alt=""></a>
+            <a href="/productDetail/<%=element.id%> "><img src="/img/products/<%=element.image%> " alt=""></a>
             <div class="product-detail-Index">
                 <p><%=element.name%> </p>
                 <p class="product-price-Index"><%=element.price%> </p>

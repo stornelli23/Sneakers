@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const multer  = require('multer');
+const multer  = require('multer');
 const path = require ('path');
 const imgFilePath = path.join(__dirname, '../public/img/users');
 const { body } = require('express-validator');
@@ -11,20 +11,20 @@ const usersControllers = require('../controllers/usersControllers');
 
 // ************ MULTER ************
 
-// const storage = multer.diskStorage({
+const storage = multer.diskStorage({
     
-//     destination: function (req, file, cb) {
-//       cb(null, imgFilePath )
-//     },
+    destination: function (req, file, cb) {
+      cb(null, imgFilePath )
+    },
 
-//     filename: function (req, file, cb) {
-//       const name = file.originalname     
-//       cb(null, name)
-//     }
+    filename: function (req, file, cb) {
+      const name = file.originalname     
+      cb(null, name)
+    }
 
-//   })
+  })
   
-// const upload = multer({ storage: storage })
+const upload = multer({ storage: storage })
 
 /*VALIDACIONES*/
 
@@ -47,16 +47,16 @@ const validateRegister = [
 
   body('gender').notEmpty().withMessage('Seleccione una opcion'),
 
-//   body('avatar').custom((value, {req}) => {
-//     let file = req.file;
-//     let acceptedExtensions = ['.png', '.jpg', '.jpeg'];
-//     if(file){
-//       let fileExtension = path.extname(file.originalname)
-//       if(!acceptedExtensions.includes(fileExtension)){
-//         throw new Error(`Las extensiones permitidas son ${acceptedExtensions.join('. ')}`)} 
-//     }  
-//     return true;
-//   })
+  body('avatar').custom((value, {req}) => {
+    let file = req.file;
+    let acceptedExtensions = ['.png', '.jpg', '.jpeg'];
+    if(file){
+      let fileExtension = path.extname(file.originalname)
+      if(!acceptedExtensions.includes(fileExtension)){
+        throw new Error(`Las extensiones permitidas son ${acceptedExtensions.join('. ')}`)} 
+    }  
+    return true;
+  })
 ]
 
 /*RUTAS POR GET*/
@@ -69,7 +69,7 @@ router.get('/logout', usersControllers.logout);
 
 /*RUTAS POR POST*/
 
-router.post('/register', validateRegister, usersControllers.processRegister);
+router.post('/register', validateRegister, upload.any(),  usersControllers.processRegister);
 router.post('/login', validateLogin, usersControllers.loginProcess);
 
 module.exports = router;
