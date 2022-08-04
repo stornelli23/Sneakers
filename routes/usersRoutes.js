@@ -9,22 +9,7 @@ const { body } = require('express-validator');
 ///*** Controller Require **** */
 const usersControllers = require('../controllers/usersControllers');
 
-// ************ MULTER ************
 
-const storage = multer.diskStorage({
-    
-    destination: function (req, file, cb) {
-      cb(null, imgFilePath )
-    },
-
-    filename: function (req, file, cb) {
-      const name = file.originalname     
-      cb(null, name)
-    }
-
-  })
-  
-const upload = multer({ storage: storage })
 
 /*VALIDACIONES*/
 
@@ -58,6 +43,24 @@ const validateRegister = [
     return true;
   })
 ]
+
+// ************ MULTER ************
+
+const storage = multer.diskStorage({
+    
+  destination: function (req, file, cb) {
+    cb(null, imgFilePath )
+  },
+
+  filename: function (req, file, cb) {
+    const name = file.originalname     
+    cb(null, name)
+  }
+
+})
+
+const upload = multer({ storage: storage })
+
 
 /*RUTAS POR GET*/
 
