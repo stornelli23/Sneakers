@@ -21,62 +21,58 @@ const usersControllers = {
     res.render("register", { logueado });
   },
   processRegister: async (req, res) => {
-    let logueado = req.session.userLogged;
+    let logueado = req.session.userLogged ;
     let resultValidation = validationResult(req);
     let file = req.file;
-    let allUsers = await db.User.findAll();
-    let userInData = await db.User.findOne({
-      where: { email: req.body.email },
-    });
-
-    let image;
-    if (file) {
-      image = file.filename;
-    } else {
-      image = "avatardefault.png";
-    }
-    
+    console.log(req.body)
     if (resultValidation.errors.length > 0) {
-      console.log('Soy resultV :', resultValidation)
-      console.log('Soy resultV.errors :', resultValidation.errors)
-      console.log('Soy resultV.length :', resultValidation.errors.length)
-
-      res.render("register", {
-        logueado,
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-      });
-    }else if (userInData) { 
-      console.log(userInData)
-      return res.render("register", {
-        logueado,
-        errors: {
-          email: {
-            msg: "El email ingresado ya esta registrado",
-          },
-          oldData: req.body,
-        },
-      });
-    }else{
-console.log('Llegueeeeeeeeee, voy a crearlo')
-      await db.User.create({
-          id: allUsers.length +2,
-          first_name: req.body.first_name,
-          last_name: req.body.last_name,
-          email: req.body.email,
-          password: bcrypt.hashSync(req.body.password, 10),
-          avatar: image,
-          date_of_birth: req.body.date_of_birth,
-          gender: req.body.gender,
-          permission_id: 2,
-        }
-      );
-  
-      return res.redirect("/");
-      
+      res.render("register", {logueado,
+        errors: resultValidation.mapped(), 
+        oldData: req.body });
     }
-  },
 
+let userInData = await db.User.findOne({where: { email: req.body.email}})
+
+
+
+    // let userInDB = User.findByField('email', req.body.email)
+      if(userInData){
+
+        return res.render('register', {logueado,
+          errors: {
+            email: {
+              msg: 'El email ingresado ya esta registrado'
+            },
+            oldData: req.body
+          }
+        })
+      }
+
+
+      let image 
+          if(file){
+              image = file.filename
+          } else {
+              image = 'avatardefault.png'
+          };
+
+  let allUsers = await db.User.findAll();
+
+      await db.User.create({includes: [{association: 'permissions'}]},{
+        id: allUsers.length + 1,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        avatar: image,
+        date_of_birth: req.body.date_of_birth,
+        gender: req.body.gender,
+        permission_id: 2
+      })
+
+      return res.redirect("/users");
+
+  },
   profile: (req, res) => {
     let logueado = req.session.userLogged;
     res.render("userProfile", { logueado });

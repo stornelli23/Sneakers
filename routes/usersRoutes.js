@@ -9,7 +9,22 @@ const { body } = require('express-validator');
 ///*** Controller Require **** */
 const usersControllers = require('../controllers/usersControllers');
 
+// ************ MULTER ************
 
+const storage = multer.diskStorage({
+    
+  destination: function (req, file, cb) {
+    cb(null, imgFilePath )
+  },
+
+  filename: function (req, file, cb) {
+    const name = file.originalname     
+    cb(null, name)
+  }
+
+})
+
+const upload = multer({ storage: storage })
 
 /*VALIDACIONES*/
 
@@ -44,22 +59,7 @@ const validateRegister = [
   })
 ]
 
-// ************ MULTER ************
 
-const storage = multer.diskStorage({
-    
-  destination: function (req, file, cb) {
-    cb(null, imgFilePath )
-  },
-
-  filename: function (req, file, cb) {
-    const name = file.originalname     
-    cb(null, name)
-  }
-
-})
-
-const upload = multer({ storage: storage })
 
 
 /*RUTAS POR GET*/
@@ -72,7 +72,7 @@ router.get('/logout', usersControllers.logout);
 
 /*RUTAS POR POST*/
 
-router.post('/register', validateRegister, upload.any(),  usersControllers.processRegister);
+router.post('/register', validateRegister, upload.single(),  usersControllers.processRegister);
 router.post('/login', validateLogin, usersControllers.loginProcess);
 
 module.exports = router;
