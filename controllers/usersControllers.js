@@ -23,8 +23,6 @@ const usersControllers = {
   processRegister: async (req, res) => {
     let logueado = req.session.userLogged;
     let resultValidation = validationResult(req);
-   let file = req.file;
-   console.log('REQFILE', file)
     let allUsers = await db.User.findAll();
     let userInData = await db.User.findOne({
       where: { email: req.body.email },
@@ -53,8 +51,8 @@ console.log('resultV: ', resultValidation.errors)
     }else {
 
       let image;
-      if (file) {
-        image = req.files[0].filename
+      if (req.file) {
+        image = req.file.filename
       } else {
         image = "avatardefault.png";
       }
