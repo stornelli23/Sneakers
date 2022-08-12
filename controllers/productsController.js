@@ -79,7 +79,7 @@ const productsController = {
     let productos = await db.Product.findAll();
 
     await db.Product.create({
-      id: productos.length + 2,
+      
       name: req.body.name,
       price: req.body.price,
       discount: req.body.discount,

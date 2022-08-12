@@ -59,7 +59,7 @@ console.log('resultV: ', resultValidation.errors)
   
       await db.User.create(
         {
-          id: allUsers.length + 1,
+          
           first_name: req.body.first_name,
           last_name: req.body.last_name,
           email: req.body.email,
