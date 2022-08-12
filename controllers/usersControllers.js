@@ -80,9 +80,12 @@ console.log('resultV: ', resultValidation.errors)
     res.render("userProfile", { logueado });
   },
 
-  loginProcess: (req, res) => {
+  loginProcess: async (req, res) => {
     let logueado = req.session.userLogged;
-    let userToLogin = User.findByField("email", req.body.email);
+    let resultValidation = validationResult(req);
+    let userToLogin = await db.User.findOne({
+      where: { email: req.body.email },
+    });
     if (userToLogin) {
       let passwordOk = bcrypt.compareSync(
         req.body.password,
@@ -114,9 +117,11 @@ console.log('resultV: ', resultValidation.errors)
         },
       });
     }
-
+    let usuariologueado = req.session.userLogged
+    console.log(req.session.userLogged.id)
     res.redirect("/");
   },
+  
 
   logout: (req, res) => {
     res.clearCookie("userEmail");
