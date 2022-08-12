@@ -121,7 +121,8 @@ console.log('resultV: ', resultValidation.errors)
     console.log(req.session.userLogged.id)
     res.redirect("/");
   },
-  
+ 
+ 
 
   logout: (req, res) => {
     res.clearCookie("userEmail");
