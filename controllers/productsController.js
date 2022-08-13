@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const Op = db.Sequelize.Op;
 
@@ -76,20 +77,42 @@ const productsController = {
   },
 
   store: async (req, res) => {
-    let productos = await db.Product.findAll();
+    let logueado = req.session.userLogged;
+    let resultValidation = validationResult(req);
 
-    await db.Product.create({
+    if(resultValidation.errors.length > 0){
+      return res.render("createProduct", {
+        logueado,
+        errors: resultValidation.mapped(),
+        oldData: req.body
+      })
+    }else {
+
       
-      name: req.body.name,
-      price: req.body.price,
-      discount: req.body.discount,
-      description: req.body.description,
-      brand_id: req.body.brand_id,
-      image: req.files[0].filename,
-      category_id: req.body.category_id,
-    });
+          let image;
+          if(req.file){
+            image = req.file.filename
+          }else{
+            image = 'nike.png'
+          }
+      
+          await db.Product.create({
+            
+            name: req.body.name,
+            price: req.body.price,
+            discount: req.body.discount,
+            description: req.body.description,
+            brand_id: req.body.brand_id,
+            image: image,
+            category_id: req.body.category_id,
+          });
+      
+          res.redirect("/");
 
-    res.redirect("/");
+
+    }
+
+
   },
 
   editProduct: async (req, res) => {

@@ -18,33 +18,70 @@
                     <div class="formulario-general-editProduct">
                         <p>Nombre del Producto</p>
                         <input type="text" name="name" class="barra-espacios-editProduct">
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="error-text">
+                              <p> <%= errors.name.msg %> </p>  
+                            </div>
+                           <% } %>
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Precio</p>
                         <input type="number" name="price" class="barra-espacios-editProduct">
+                        <% if (locals.errors && errors.price) { %>
+                            <div class="error-text">
+                              <p> <%= errors.price.msg %> </p>  
+                            </div>
+                           <% } %>
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Descuento</p>
                         <input type="number" name="discount" class="barra-espacios-editProduct">
+                        <% if (locals.errors && errors.discount) { %>
+                            <div class="error-text">
+                              <p> <%= errors.discount.msg %> </p>  
+                            </div>
+                           <% } %>
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Descripcion</p>
                         <textarea name="description" class="descripcion-editProduct" rows="5" cols="100"></textarea>
+                        <% if (locals.errors && errors.description) { %>
+                            <div class="error-text">
+                              <p> <%= errors.description.msg %> </p>  
+                            </div>
+                           <% } %>
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Imagen del Producto</p>
                         <input type="file" name="image" accept=".jpg, .png">
+                        <% if (locals.errors && errors.image) { %>
+                            <div class="error-text">
+                              <p> <%= errors.image.msg %> </p>  
+                            </div>
+                           <% } %>
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Categoria</p>
-                        <div class="control-radio-editProduct">
+                        <select name="cateogory_id" class="control-selector-editProduct">
+                            <option>Seleccionar</option>
+                            <option value="1">Hombre</option>
+                            <option value="2">Mujer</option>
+                            <option value="3">Unisex</option>
+                        </select>
+                        <% if (locals.errors && errors.category_id) { %>
+                            <div class="error-text">
+                              <p> <%= errors.category_id.msg %> </p>  
+                            </div>
+                           <% } %>
+
+                        <!-- <div class="control-radio-editProduct">
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id"
                                     value= "1" >Hombre</input></div>
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id"
                                     value="2">Mujer</input></div>
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id"
                                     value="3">Unisex</input></div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Marca</p>
@@ -53,6 +90,11 @@
                             <option value="1">Nike</option>
                             <option value="2">Adidas</option>
                         </select>
+                        <% if (locals.errors && errors.brand_id) { %>
+                            <div class="error-text">
+                              <p> <%= errors.brand_id.msg %> </p>  
+                            </div>
+                           <% } %>
                     </div>
                     <div class="formulario-checkbox-editProduct">
                         <div>
