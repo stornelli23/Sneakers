@@ -60,29 +60,14 @@
                             </div>
                            <% } %>
                     </div>
-                    <div class="formulario-general-editProduct">
-                        <p>Categoria</p>
-                        <select name="cateogory_id" class="control-selector-editProduct">
-                            <option>Seleccionar</option>
-                            <option value="1">Hombre</option>
-                            <option value="2">Mujer</option>
-                            <option value="3">Unisex</option>
-                        </select>
-                        <% if (locals.errors && errors.category_id) { %>
-                            <div class="error-text">
-                              <p> <%= errors.category_id.msg %> </p>  
-                            </div>
-                           <% } %>
-
-                        <!-- <div class="control-radio-editProduct">
+                        <div class="control-radio-editProduct">
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id"
                                     value= "1" >Hombre</input></div>
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id"
                                     value="2">Mujer</input></div>
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id"
                                     value="3">Unisex</input></div>
-                        </div> -->
-                    </div>
+                        </div>
                     <div class="formulario-general-editProduct">
                         <p>Marca</p>
                         <select name="brand_id" class="control-selector-editProduct">
