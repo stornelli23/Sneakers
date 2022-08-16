@@ -11,8 +11,6 @@
 
 #contenedor-principal-login {
     max-width: 700px;
-    border-top: solid 2px lightgray;
-    border-bottom: solid 2px lightgray;
     background-color: white;
     padding: 15px;
     margin: 20px 0px 20px 0px;
@@ -22,16 +20,18 @@
 #login-formulario {
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
-    align-items: center;
+    margin: 15px;
+  
+}
+
+.formulario-email-login{
+    margin: 5px 0;
 }
 
 .titular-sesion-r {
     font-size: 15px;
     padding: 15px 25px;
-    border-bottom: solid 2px #AD1457;
-    color:white;
-    background-color: #AD1457;
+
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
@@ -40,7 +40,7 @@
     font-size: 15px;
     padding: 15px 25px;
     border-bottom: solid 2px #AD1457;
-    text-align: center;
+    color: #ad1457;
 }
 
 .login-title {
@@ -51,7 +51,7 @@
 
 #login-formulario p {
     margin-top: 5px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     text-align: left;
     margin-bottom: 10px;
@@ -263,6 +263,13 @@ footer#footer-register {
 
 @media (min-width:426px) {
 
+    .form-principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    }
+
     .formulario-otros-register {
         display: flex;
         flex-direction: row;
@@ -305,10 +312,10 @@ footer#footer-register {
 
     #contenedor-principal-login {
         border: #78002E 2px solid;
-        width: 80%;
-        text-align: center;
-        padding: auto;
-        margin: 0px auto 0px auto;
+        width: 85%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
         box-shadow: 5px 5px 17px 5px rgba(0,0,0,0.76);
     }
 
@@ -375,9 +382,16 @@ footer#footer-register {
     }
 
 }
+
+@media (min-width: 768px) {
+    #contenedor-principal-login{
+        width: 50%;
+    }
+    
+}
     /**Escritorio**/
 
-    @media (min-width:1200px) {
+    @media (min-width:1024px) {
         
         .texto-copyright-r {
             font-size: 15px;

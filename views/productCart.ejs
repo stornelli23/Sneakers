@@ -124,7 +124,7 @@
         
         <section class="recommended">
         <div class="titularRecomendados">
-            <h2 class="cart">RECOMENDADOS PARA VOS</h2>
+            <h3 class="cart">Recomendados para vos</h3>
         </div>
         
         <div class="recomendados">
@@ -133,10 +133,10 @@
           <article class="art-recomendados">
             <div class="product">
                 <div class="product-foto">
-                <a href="/productDetail/<%= producto.id %> "><img src="<%=producto.image%> " alt=""></a>
+                <a href="/productDetail/<%= producto.id %> "><img src="/img/products/<%=producto.image%> " alt=""></a>
                 </div>
                 <div class="product-detail">
-                <p class="cart" ><%=producto.description%> </p>
+                <p class="cart" ><%=producto.name%> </p>
                 <p class="product-price"><%=producto.price%></p>
                 </div>
             

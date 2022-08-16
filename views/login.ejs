@@ -6,17 +6,16 @@
 <body>
     <%- include ('partials/header') %> 
     <main class="mainLogin">
-        <form action="/login" method="post">
+        <form action="/login" method="post" class="form-principal">
         <div id="contenedor-principal-login">
-            <h3 class="login-title">Iniciar Sesion</h3>
             <div id="contenedor-formulario-login">
                 <div class="login-register">
                     <h2 class="titular-sesion-l">Iniciar Sesion</h2>
                    <a href="/register"><h2 class="titular-sesion-r">Registrarse</h2></a>
                 </div> 
                 <div id="login-formulario">
-                    <div class="formulario-email-login">
-                        <p>* Email</p>
+                    <div class="formulario-email-login" >
+                        <p>Email</p>
                         <input type="email" name="email" class="barra-espacios" placeholder="ejemplo@email.com" value="<%= locals.old && old.name %> ">
                         <% if (locals.errors && errors.email) { %>
                             <div class="error-text">
@@ -26,7 +25,7 @@
                         
                     </div>
                     <div class="formulario-email-login">
-                        <p>* Contraseña</p>
+                        <p>Contraseña</p>
                         <input type="password" name="password" class="barra-espacios" placeholder="*********">
                         <% if (locals.errors && errors.password) { %>
                             <div class="error-text">
