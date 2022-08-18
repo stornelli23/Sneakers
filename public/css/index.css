@@ -56,6 +56,11 @@
    
 }
 
+.p-discount {
+    color: green;
+    font-weight: bolder;
+}
+
 .wallpaper-article{
     margin: 15px 0;
     width: 45%;

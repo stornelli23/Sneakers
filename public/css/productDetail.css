@@ -23,6 +23,20 @@ p.filter a:link {
 
 }
 
+.credit-card {
+    color: #AD1457;
+    padding-bottom: 20px;
+}
+
+.gift {
+    color: #AD1457;
+    padding-bottom: 20px;
+}
+
+.user-shield {
+    color: #AD1457;
+    padding-bottom: 20px;
+}
 
 
 p.products {
