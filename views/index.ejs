@@ -42,7 +42,7 @@
         <a href="/productDetail/<%= element.id %> "><img src="/img/products/<%=element.image%>" alt=""></a>
         <div class="product-detail-Index">
             <p><%=element.name%></p>
-            <p class="product-price-Index"><%=element.price%></p>
+            <p class="product-price-Index">$<%=element.price%></p>
         </div>
         
         </div>
@@ -61,8 +61,8 @@
             <a href="/productDetail/<%=element.id%> "><img src="img/products/<%=element.image%> " alt=""></a>
             <div class="product-detail-Index">
                 <p><%=element.name%> </p>
-                <p class="product-price-Index"><%=element.price%> </p>
-                <p><%=element.discount%> </p>
+                <p class="product-price-Index">$<%=element.price%> </p>
+                <p class="p-discount"><%=element.discount%>% OFF</p>
             </div>
             
         </div>
