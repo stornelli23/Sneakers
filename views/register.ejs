@@ -23,7 +23,7 @@
                             <input type="text" name="first_name" value="<%= locals.oldData ? oldData.first_name : null %>" placeholder="Nombre" class="barra-espacios">
                             <% if (locals.errors && errors.first_name) { %>
                              <div class="error-text">
-                               <p> <%= errors.first_name.msg %> </p>  
+                               <p class="error-text-p"> <%= errors.first_name.msg %> </p>  
                              </div>
                             <% } %>
                         </div>
@@ -32,27 +32,27 @@
                             <input type="text" name="last_name" value="<%= locals.oldData ? oldData.last_name : null %>" placeholder="Apellido" class="barra-espacios">
                             <% if (locals.errors && errors.last_name) { %>
                                 <div class="error-text">
-                                  <p> <%= errors.last_name.msg %> </p>  
+                                  <p class="error-text-p"> <%= errors.last_name.msg %> </p>  
                                 </div>
                                <% } %>
                         </div>
                     </div>
                     <div class="formulario-email-login">
-                        <p>E-Mail</p>
-                        <input type="email" name="email" value="<%= locals.oldData ? oldData.email : null %> " placeholder="ejemplo@email.com" class="barra-espacios">
+                        <p class="label">E-Mail</p>
+                        <input type="email" name="email" value="<%= locals.oldData ? oldData.email : null %> " placeholder="Ejemplo@email.com" class="barra-espacios">
                         <% if (locals.errors && errors.email) { %>
                             <div class="error-text">
-                              <p> <%= errors.email.msg %> </p>  
+                              <p class="error-text-p"> <%= errors.email.msg %> </p>  
                             </div>
                            <% } %>
                     </div>
                     <div class="password-completo-register">
                         <div class="formulario-general-login">
                             <p>Contraseña</p>
-                            <input type="password" name="password" placeholder="contraseña" minlength="5" class="barra-espacios" >
+                            <input type="password" name="password" placeholder="Contraseña" minlength="5" class="barra-espacios" >
                             <% if (locals.errors && errors.password) { %>
                                 <div class="error-text">
-                                  <p> <%= errors.password.msg %> </p>  
+                                  <p class="error-text-p"> <%= errors.password.msg %> </p>  
                                 </div>
                                <% } %>
                         </div>
@@ -61,7 +61,7 @@
                             <input type="file" name="avatar">
                             <% if (locals.errors && errors.avatar) { %>
                                 <div class="error-text">
-                                  <p> <%= errors.avatar.msg %> </p>  
+                                  <p class="error-text-p"> <%= errors.avatar.msg %> </p>  
                                 </div>
                                <% } %>
                         </div>
@@ -72,7 +72,7 @@
                         <input type="date" name="date_of_birth" class="control-calendario-login" value="<%= locals.oldData ? oldData.date_of_birth : null %> " >
                         <% if (locals.errors && errors.date_of_birth) { %>
                             <div class="error-text">
-                              <p> <%= errors.date_of_birth.msg %> </p>  
+                              <p class="error-text-p"> <%= errors.date_of_birth.msg %> </p>  
                             </div>
                            <% } %>    
                     </div>
@@ -91,7 +91,7 @@
                             </select>
                             <% if (locals.errors && errors.gender) { %>
                                 <div class="error-text">
-                                  <p> <%= errors.gender.msg %> </p>  
+                                  <p class="error-text-p"> <%= errors.gender.msg %> </p>  
                                 </div>
                                <% } %>
                         </div>

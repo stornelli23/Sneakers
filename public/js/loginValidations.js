@@ -3,8 +3,10 @@ window.addEventListener("load", function () {
 
   form.addEventListener("submit", function (e) {
     let errors = [];
-    let regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/ ;
-    
+    /* A regular expression that validates the email format. */
+    let regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/;
+
+    /* This is the code that validates the email and password fields. */
     let inputEmail = document.getElementById("email");
     if (inputEmail.value == "") {
       errors.push("Ingrese su email");
@@ -17,26 +19,24 @@ window.addEventListener("load", function () {
       errors.push("Ingrese su contraseña");
     }
 
+    /* This is the code that displays the error messages. */
     let divErrors = document.querySelector(".errors");
     let ulErrors = document.querySelector("div.errors ul");
     if (errors.length > 0) {
-        console.log("🚀 ~ file: loginValidations.js ~ line 23 ~ errors", errors)
-        e.preventDefault();
-        divErrors.style.display = "block"
+      e.preventDefault();
+      divErrors.style.display = "block";
       for (let index = 0; index < errors.length; index++) {
         ulErrors.innerHTML += "<li>" + errors[index] + "</li>";
       }
     }
-    let liErrors = document.querySelectorAll(".errors ul li")
-    console.log("🚀 ~ file: loginValidations.js ~ line 31 ~ liErrors", liErrors)
-    inputEmail.addEventListener('click', function(){
-        
-        errors.splice(0, errors.length)
-        console.log("🚀 ~ file: loginValidations.js ~ line 32 ~ errors", errors)
-        divErrors.style.display = "none"
-        
 
-    })
-
+   /* Removing the error messages when the user clicks on the input field. */
+    inputEmail.addEventListener("click", function () {
+      while (ulErrors.firstChild) {
+        ulErrors.removeChild(ulErrors.firstChild);
+      }
+      errors.splice(0, errors.length);
+      divErrors.style.display = "none";
+    });
   });
 });

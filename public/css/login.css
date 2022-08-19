@@ -26,6 +26,26 @@
     font-weight: bolder;
 }
 
+.error-text{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border: 2px solid #78002e;
+    border-radius: 5px;
+    margin: 15px 0;
+    background-color: #e35183;
+    padding: 0;
+}
+
+.error-text-p{
+    color: #78002e;
+    font-weight: bolder;
+    font-size: 12px;
+    margin: 0;
+    text-align: center;
+    padding: 5px;
+} 
+
 #contenedor-principal-login {
     max-width: 700px;
     background-color: white;
@@ -66,7 +86,7 @@
     margin-bottom: 20px;
 }
 
-#login-formulario p {
+#login-formulario .label {
     margin-top: 5px;
     font-size: 14px;
     font-weight: bold;
@@ -92,7 +112,7 @@
     border: 1px solid black;
 }
 
-.formulario-email-login p {
+.formulario-email-login .label {
     text-align: left;
     font-size: 14px;
     font-weight: bold;
@@ -248,12 +268,9 @@ footer#footer-register {
 
 }
 
-.error-text{
-    color: crimson;
-    padding: 0px;
-    margin: 5px;
-    width: fit-content;
-}
+
+
+
 
 .nombre-completo-register,
 .password-completo-register,
