@@ -13,10 +13,13 @@
                     <h2 class="titular-sesion-l">Iniciar Sesion</h2>
                    <a href="/register"><h2 class="titular-sesion-r">Registrarse</h2></a>
                 </div> 
+                <div id="errors" class="errors" style="display: none;">
+                    <ul></ul>
+                </div>
                 <div id="login-formulario">
                     <div class="formulario-email-login" >
                         <p>Email</p>
-                        <input type="email" name="email" class="barra-espacios" placeholder="ejemplo@email.com" value="<%= locals.old && old.name %> ">
+                        <input type="email" name="email"  id="email" class="barra-espacios" placeholder="ejemplo@email.com" value="<%= locals.old && old.name %> ">
                         <% if (locals.errors && errors.email) { %>
                             <div class="error-text">
                               <p> <%= errors.email.msg %> </p>  
@@ -26,13 +29,14 @@
                     </div>
                     <div class="formulario-email-login">
                         <p>Contraseña</p>
-                        <input type="password" name="password" class="barra-espacios" placeholder="*********">
+                        <input type="password" name="password" class="barra-espacios"  id="password" placeholder="*********">
                         <% if (locals.errors && errors.password) { %>
                             <div class="error-text">
                               <p> <%= errors.password.msg %> </p>  
                             </div>
                            <% } %>
                     </div>
+                    
                     <div class="display-linea-login">
                         <div class="checkbox-u"><label><input type="checkbox" name="recordarUsuario">Recordarme</label>
                         </div>
@@ -47,7 +51,7 @@
     </form>
     </main>
     <%- include ('partials/footerLogin') %> 
-
+<script src="/js/loginValidations.js"></script>
 </body>
 
 </html>
