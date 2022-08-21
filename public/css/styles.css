@@ -59,6 +59,7 @@ header {
 .iconos-carrito-perfil{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .iconos-carrito-perfil i {

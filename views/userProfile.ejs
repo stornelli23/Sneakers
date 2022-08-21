@@ -1,24 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include ('partials/head.ejs') %> 
+<%- include ('partials/head.ejs') %>
 
-    <!-- BODY -->
+<!-- BODY -->
 
-    <body class="indexBody">
+<body>
 
-    <%- include ('partials/header') %> 
+    <%- include ('partials/header') %>
 
-<!-- COMIENZO MAIN -->
+    <!-- COMIENZO MAIN -->
 
-    <main class="indexMain">
-<h1>Hola <%= logueado.first_name %> </h1>
-<form method="GET" action="/logout">
-<button>Logout</button>
-</form>
+    <main class="perfilUsuario-Main">
+        <div class="contenedor-perfil">
+
+            <div class="barra-titulo-perfil">
+                <h2 class="titulo-perfilUsuario">Perfil de Usuario</h2>
+            </div>
+            <div class="perfil-body">
+
+                <div class="container-info">
+                    <div class="items-perfil">
+                        <div class="titulos-perfil">Nombre:</div>
+                        <div class="control-datos"><%= logueado.first_name %></div>
+                    </div>
+                    <div class="items-perfil">
+                        <div class="titulos-perfil">Apellido:</div>
+                        <div class="control-datos"><%= logueado.last_name %></div>
+                    </div>
+                    <div class="items-perfil">
+                        <div class="titulos-perfil">Email:</div>
+                        <div class="control-datos"><%= logueado.email%></div>
+                    </div>
+                    <div class="items-perfil">
+                        <div class="titulos-perfil">Fecha de Nacimiento:</div>
+                        <div class="control-datos"><%= logueado.date_of_birth%></div>
+                    </div>
+                    <div class="items-perfil">
+                        <div class="titulos-perfil">Contraseña:</div>
+                        <div class="control-datos">***********</div>
+                    </div>
+
+                </div>
+                <div class="container-avatar">
+                    <img class="control-avatar" src="/img/users/<%=logueado.avatar%>" alt="Avatar">
+                </div>
+
+            </div>
+            <div class="controlBoton-logout">
+                <form method="GET" action="/logout">
+                    <button class="boton-logout">Logout</button>
+                </form>
+            </div>
+        </div>
+        </div>
+
+
     </main>
 
     <!-- FOOTER -->
-    <%- include ('partials/footer') %> 
+    <%- include ('partials/footer') %>
 
 </body>
+
 </html>

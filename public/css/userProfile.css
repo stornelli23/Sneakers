@@ -1,0 +1,151 @@
+.perfilUsuario-Main {
+    padding: 60px 30px;
+    background-color: beige;
+}
+
+.titulo-perfilUsuario {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    margin: 20px 0px;
+}
+
+.contenedor-perfil {
+    border: #78002E 2px solid;
+    box-shadow: 5px 5px 17px 5px rgb(0 0 0 / 76%);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: white;
+    max-width: 700px;
+}
+
+.barra-titulo-perfil {
+    display: flex;
+    background-color: lightpink;
+    text-align: center;
+    justify-content: center;
+    border-bottom: black solid 3px;
+}
+
+.perfil-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.container-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.items-perfil {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0px 0px 10px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.titulos-perfil {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.control-datos {
+    font-size: 14px;
+    text-align: center;
+    color: #78002e;
+    font-weight: bold;
+}
+
+.controlBoton-logout {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+}
+
+.control-avatar {
+    width: 50%;
+    margin: 20px;
+}
+
+.boton-logout {
+    background: #E35183;
+    background-image: -webkit-linear-gradient(top, #E35183, #AD1457);
+    background-image: -moz-linear-gradient(top, #E35183, #AD1457);
+    background-image: -ms-linear-gradient(top, #E35183, #AD1457);
+    background-image: -o-linear-gradient(top, #E35183, #AD1457);
+    background-image: -webkit-gradient(to bottom, #E35183, #AD1457);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border: solid #000000 1px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.boton-logout:hover {
+    border: solid #FFFFFF 1px;
+    background: #AD1457;
+    background-image: -webkit-linear-gradient(top, #AD1457, #78002E);
+    background-image: -moz-linear-gradient(top, #AD1457, #78002E);
+    background-image: -ms-linear-gradient(top, #AD1457, #78002E);
+    background-image: -o-linear-gradient(top, #AD1457, #78002E);
+    background-image: -webkit-gradient(to bottom, #AD1457, #78002E);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+
+@media (min-width: 768px) {
+    
+    .perfilUsuario-Main {
+        display: flex;
+        justify-content: center;
+    }
+
+    .titulo-perfilUsuario {
+        font-size: 30px;
+    }
+
+    .perfil-body {
+        flex-direction: row;
+    }
+
+    .container-info {
+        width: 80%;
+    }
+
+    .items-perfil {
+        margin: 25px 0px 25px 30px;
+    }
+
+    .container-avatar {
+        width: 50%;
+    }
+
+    .titulos-perfil {
+        font-size: 20px;
+
+    }
+
+    .control-avatar {
+        width: 200px;
+    }
+
+    .control-datos {
+        font-size: 18px;
+    }
+}
