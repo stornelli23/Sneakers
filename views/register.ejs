@@ -7,7 +7,7 @@
     <%- include ('partials/header') %> 
 
     <main class="mainLogin">
-        <form method="POST" action="/register" enctype="multipart/form-data" class="form-principal" >
+        <form method="POST" action="/register" enctype="multipart/form-data" class="form-principal register" >
         <div id="contenedor-principal-login">
             <!-- <h3 class="login-title">Registrate</h3> -->
             <div id="contenedor-formulario-login">
@@ -15,12 +15,14 @@
                    <a href="/login"> <h2 class="titular-sesion-l">Iniciar Sesion</h2></a>
                     <h2 class="titular-sesion-r">Registrarse</h2>
                 </div>
-               
+                <div id="errors" class="errors" style="display: none;">
+                    <ul></ul>
+                </div>
                 <div id="register-formulario">
                     <div class="nombre-completo-register">
                         <div class="formulario-general-login">
                             <p>Nombre</p>
-                            <input type="text" name="first_name" value="<%= locals.oldData ? oldData.first_name : null %>" placeholder="Nombre" class="barra-espacios">
+                            <input type="text" id="name" name="first_name" value="<%= locals.oldData ? oldData.first_name : null %>" placeholder="Nombre" class="barra-espacios">
                             <% if (locals.errors && errors.first_name) { %>
                              <div class="error-text">
                                <p class="error-text-p"> <%= errors.first_name.msg %> </p>  
@@ -29,7 +31,7 @@
                         </div>
                         <div class="formulario-general-login">
                             <p>Apellido</p>
-                            <input type="text" name="last_name" value="<%= locals.oldData ? oldData.last_name : null %>" placeholder="Apellido" class="barra-espacios">
+                            <input type="text" id="lastName" name="last_name" value="<%= locals.oldData ? oldData.last_name : null %>" placeholder="Apellido" class="barra-espacios">
                             <% if (locals.errors && errors.last_name) { %>
                                 <div class="error-text">
                                   <p class="error-text-p"> <%= errors.last_name.msg %> </p>  
@@ -39,7 +41,7 @@
                     </div>
                     <div class="formulario-email-login">
                         <p class="label">E-Mail</p>
-                        <input type="email" name="email" value="<%= locals.oldData ? oldData.email : null %> " placeholder="Ejemplo@email.com" class="barra-espacios">
+                        <input type="email" id="email" name="email" value="<%= locals.oldData ? oldData.email : null %> " placeholder="Ejemplo@email.com" class="barra-espacios">
                         <% if (locals.errors && errors.email) { %>
                             <div class="error-text">
                               <p class="error-text-p"> <%= errors.email.msg %> </p>  
@@ -49,7 +51,7 @@
                     <div class="password-completo-register">
                         <div class="formulario-general-login">
                             <p>Contraseña</p>
-                            <input type="password" name="password" placeholder="Contraseña" minlength="5" class="barra-espacios" >
+                            <input type="password" id="password" name="password" placeholder="Contraseña" class="barra-espacios" >
                             <% if (locals.errors && errors.password) { %>
                                 <div class="error-text">
                                   <p class="error-text-p"> <%= errors.password.msg %> </p>  
@@ -69,7 +71,7 @@
                     <div class="formulario-otros-register">
                         <div class="formulario-general-login">
                             <p>Fecha de nacimiento</p>
-                        <input type="date" name="date_of_birth" class="control-calendario-login" value="<%= locals.oldData ? oldData.date_of_birth : null %> " >
+                        <input type="date" id="dateOfBirth"  name="date_of_birth" class="control-calendario-login" value="<%= locals.oldData ? oldData.date_of_birth : null %> " >
                         <% if (locals.errors && errors.date_of_birth) { %>
                             <div class="error-text">
                               <p class="error-text-p"> <%= errors.date_of_birth.msg %> </p>  
@@ -78,7 +80,7 @@
                     </div>
                         <div class="formulario-general-login">
                             <p>Genero</p>
-                            <select name="gender" class="control-selector-login">
+                            <select name="gender" id="gender" class="control-selector-login">
                                 <option>Seleccionar</option>
                                 <% 
                                 let gender = ['Masculino', 'Femenino', 'Otro'];
@@ -107,7 +109,8 @@
     </form>
     </main>
     <%- include ('partials/footerLogin') %> 
-
+<script src="/js/registerValidations.js"></script>
 </body>
+
 
 </html>

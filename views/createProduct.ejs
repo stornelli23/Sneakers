@@ -11,13 +11,16 @@
 
     <main class="main-editProduct">
         <div class="contenedor-principal-editProduct">
-            <form method="POST" action="/createProduct" enctype="multipart/form-data" >
+            <form method="POST" action="/createProduct" enctype="multipart/form-data" class="form-principal createProduct">
             <fieldset class="fieldset-editProduct" >
                 <legend class="legend-editProduct">Crear Producto</legend>
+                <div id="errors" class="errors" style="display: none;">
+                    <ul></ul>
+                </div>
                 <div>
                     <div class="formulario-general-editProduct">
                         <p>Nombre del Producto</p>
-                        <input type="text" name="name" class="barra-espacios-editProduct">
+                        <input type="text" id="name" name="name" class="barra-espacios-editProduct">
                         <% if (locals.errors && errors.name) { %>
                             <div class="error-text">
                               <p> <%= errors.name.msg %> </p>  
@@ -26,7 +29,7 @@
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Precio</p>
-                        <input type="number" name="price" class="barra-espacios-editProduct">
+                        <input type="number" id="price" name="price" class="barra-espacios-editProduct">
                         <% if (locals.errors && errors.price) { %>
                             <div class="error-text">
                               <p> <%= errors.price.msg %> </p>  
@@ -44,7 +47,7 @@
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Descripcion</p>
-                        <textarea name="description" class="descripcion-editProduct" rows="5" cols="100"></textarea>
+                        <textarea name="description" id="description" class="descripcion-editProduct" rows="5" cols="100"></textarea>
                         <% if (locals.errors && errors.description) { %>
                             <div class="error-text">
                               <p> <%= errors.description.msg %> </p>  
@@ -53,24 +56,24 @@
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Imagen del Producto</p>
-                        <input type="file" name="image" accept=".jpg, .png">
+                        <input type="file" name="image" accept=".jpg, .png" id="image">
                         <% if (locals.errors && errors.image) { %>
                             <div class="error-text">
                               <p> <%= errors.image.msg %> </p>  
                             </div>
                            <% } %>
                     </div>
-                        <div class="control-radio-editProduct">
+                        <div class="control-radio-editProduct" id="category" >
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id"
-                                    value= "1" >Hombre</input></div>
+                                    value= "1" id="categoryUno">Hombre</input></div>
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id"
-                                    value="2">Mujer</input></div>
+                                    value="2" id="categoryDos">Mujer</input></div>
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id"
-                                    value="3">Unisex</input></div>
+                                    value="3" id="categoryTres">Unisex</input></div>
                         </div>
                     <div class="formulario-general-editProduct">
                         <p>Marca</p>
-                        <select name="brand_id" class="control-selector-editProduct">
+                        <select name="brand_id"  id="brand" class="control-selector-editProduct">
                             <option>Seleccionar</option>
                             <option value="1">Nike</option>
                             <option value="2">Adidas</option>
@@ -86,17 +89,17 @@
                         <div>
                             <p>Talles</p>
                         </div>
-                        <div class="checkbox-editProduct">
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="1">35</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="2">36</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="3">37</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="4">38</label>
-                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="5">39</label>
+                        <div class="checkbox-editProduct" id="size" >
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="1" id="sizeUno">35</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="2" id="sizeDos">36</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="3" id="sizeTres">37</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="4" id="sizeCuatro">38</label>
+                            <label class="control-checkbox-editProduct"><input type="checkbox" name="size" value="5" id="sizeCinco">39</label>
 
                         </div>
                         <div class="boton-editProduct">
                             <button type="reset" class="boton-crear-editProduct">Borrar</button>
-                            <button type="submit" class="boton-crear-editProduct">Guardar</button>
+                            <button type="submit" class="boton-crear-editProduct" id="enviarProducto">Guardar</button>
                         </div>
                     </div>
                 </div>
@@ -109,7 +112,7 @@
     <!----- Footer ------>
 
     <%- include ('partials/footer') %>
-
+    <script src="/js/createProductValidations.js"></script>
 </body>
 
 </html>

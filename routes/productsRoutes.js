@@ -41,7 +41,7 @@ const validateProduct = [
     .withMessage("Ingrese un valor entero"),
   check("discount")
     .notEmpty()
-    .withMessage("Ingrese su contraseña")
+    .withMessage("Ingrese un descuento")
     .bail()
     .isNumeric()
     .withMessage("Ingrese un valor numerico")
@@ -60,7 +60,8 @@ const validateProduct = [
   check("brand_id")
     .notEmpty()
     .withMessage("Seleccione la marca del producto"),
-  check("image").custom((value, { req }) => {
+  check("image")
+  .custom((value, { req }) => {
     let file = req.file;
     let acceptedExtensions = [".png", ".jpg", ".jpeg", ".gif"];
     if (file) {
@@ -72,7 +73,7 @@ const validateProduct = [
       }
     }
     return true;
-  }),
+  })
 ];
 
 // ROUTES GET//

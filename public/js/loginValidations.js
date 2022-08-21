@@ -7,6 +7,7 @@ window.addEventListener("load", function () {
     let regex = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,4})+$/;
 
     /* This is the code that validates the email and password fields. */
+
     let inputEmail = document.getElementById("email");
     if (inputEmail.value == "") {
       errors.push("Ingrese su email");
