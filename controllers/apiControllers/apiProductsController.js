@@ -45,26 +45,26 @@ const apiProductsController = {
 
   productDetail: (req, res) => {
     let id = req.params.id
-    db.Product.findByPk(id)
+    db.Product.findByPk(id, {include: [{ association: 'category'}]})
       .then((product) => {
+console.log(product)
 
-
-        res.status(200).json({
-          data: {
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            discount: product.discount,
-            description: product.description,
-            image: "http://localhost:3000/public/img/products/" + product.image,
-            productCategory: [{
-              Category: product.category_id},
-              {
-              Brand: product.brand_id}
-          ],
-          },
-          status: 200,
-        });
+        // res.status(200).json({
+        //   data: {
+        //     id: product.id,
+        //     name: product.name,
+        //     price: product.price,
+        //     discount: product.discount,
+        //     description: product.description,
+        //     image: "http://localhost:3000/img/products/" + product.image,
+        //     productCategory: [{
+        //       Category: product.category_id},
+        //       {
+        //       Brand: product.brand_id}
+        //   ],
+        //   },
+        //   status: 200,
+        // });
       });
   },
 
