@@ -1,54 +1,72 @@
 const db = require("../../database/models");
-const { productCart } = require("../productsController");
+const {
+  productCart
+} = require("../productsController");
 
 const apiProductsController = {
 
-    allProducts: (req, res) => {
+  allProducts: (req, res) => {
     db.Product.findAll({
-      attributes: ["id", "name", "description"],
-    })
-    .then((products) => {
-      for (let i = 0; i < products.length; i++) {
-        products[i].setDataValue(
-          "detail",
-          "http://localhost:3000/productDetail/" + products[i].id
-        );
-      }
+        attributes: ["id", "name", "description", "category_id"],
+      })
+      .then(products => {
 
-      res.status(200).json({
-        total: products.length,
-        data: products,
-        status: 200,
+        let totalHombre = 0
+        let totalMujer = 0
+        let totalUnisex = 0
+
+        for (let i = 0; i < products.length; i++) {
+      
+          products[i].setDataValue("detail","http://localhost:3000/productDetail/" + products[i].id)
+
+          if (products[i].category_id == 1) {
+            totalHombre++}
+          if (products[i].category_id == 2) {
+            totalMujer++}
+          if (products[i].category_id == 3) {
+            totalUnisex++}
+          }
+      
+
+        res.status(200).json({
+          total: products.length,
+          countByCategory: [{
+            Hombre: totalHombre
+          }, {
+            Mujer: totalMujer
+          }, {
+            Unisex: totalUnisex
+          }, ],
+          data: products,
+          status: 200,
+        });
       });
-    });
   },
 
   productDetail: (req, res) => {
     let id = req.params.id
     db.Product.findByPk(id)
-    .then((product) => {
-      
+      .then((product) => {
 
-      res.status(200).json({
-        data: {
-            id:             product.id,
-            name:     product.name,
-            price:      product.price,
-            discount:          product.discount,
-            description:  product.description,
-            brand_id:         product.brand_id,
-            image: "localhost:3000/public/img/products/"+product.image,
-            category_id:     product.category_id
-        },
-        status: 200,
+
+        res.status(200).json({
+          data: {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            discount: product.discount,
+            description: product.description,
+            image: "http://localhost:3000/public/img/products/" + product.image,
+            productCategory: [{
+              Category: product.category_id},
+              {
+              Brand: product.brand_id}
+          ],
+          },
+          status: 200,
+        });
       });
-    });
   },
-
-
-
-
-
 
 };
 
