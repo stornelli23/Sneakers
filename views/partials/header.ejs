@@ -2,7 +2,22 @@
         <nav class="navbar">
         <nav class="navbar-top">
             <div class="icono_burgerMenu">
-                <i class="fas fa-bars"></i>
+  <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+  <label for="openSidebarMenu" class="sidebarIconToggle">
+    <div class="spinner diagonal part-1"></div>
+    <div class="spinner horizontal"></div>
+    <div class="spinner diagonal part-2"></div>
+  </label>
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuInner">
+      <li><% if(logueado) { %>
+        <a href="/userProfile/<%=logueado.id%>/">  <p style="color:white">Hola <%= logueado.first_name %> !</p></a> 
+        <% } else { %>  <p>Bienvenido!</p>  <% } %></li>
+      <li><a href="/products" >Productos</a></li>
+      <li><a href="/createProduct" >Crear Producto</a></li>
+    </ul>
+  </div>
+  </div>
               </div>
               <div class="logo">
                <a href="/"><img src="/img/LogoBlanco.png" alt=""></a>
@@ -10,7 +25,7 @@
               <div class="iconos-carrito-perfil">
                 
                 <% if(logueado) { %>
-                    <a href="/userProfile/<%=logueado.id%>/"> <img width="20" height="20" style="margin-right: 5px;" src="/img/users/<%= logueado.avatar %>"> </a><p style="color:white">Hola <%= logueado.first_name %> !</p> 
+                    <a href="/userProfile/<%=logueado.id%>/"> <img width="20" height="20" style="margin-right: 5px;" src="/img/users/<%= logueado.avatar %>"> </a><p style="color:white" class="loggedComputer">Hola <%= logueado.first_name %> !</p> 
                     <a href="/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
                     <% } else { %>
                 
