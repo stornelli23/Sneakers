@@ -45,3 +45,7 @@ app.use(usersRoutes)
 const apiUsersRoutes = require('./routes/apisRoutes/apiUsersRoutes');
 
 app.use(apiUsersRoutes)
+
+const apiProductsRoutes = require('./routes/apisRoutes/apiProductsRoutes');
+
+app.use(apiProductsRoutes)
