@@ -1,4 +1,3 @@
-
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Product';
     let cols = {
@@ -68,14 +67,14 @@ module.exports = (sequelize, dataTypes) => {
 
     Product.associate = function(models){
         Product.belongsTo(models.Category, {
-            as: 'category',
+            as: 'categories',
             foreignKey: 'category_id'
         })
     }
 
     Product.associate = function(models){
         Product.belongsTo(models.Brand, {
-            as: 'brand',
+            as: 'brands',
             foreignKey: 'brand_id'
         })
     }

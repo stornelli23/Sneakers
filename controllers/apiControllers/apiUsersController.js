@@ -36,7 +36,7 @@ const apiUsersController = {
             email:          user.email,
             date_of_birth:  user.date_of_birth,
             gender:         user.gender,
-            avatar: "localhost:3000/public/img/users/"+user.avatar
+            avatar: "localhost:3000/img/users/"+user.avatar
         },
         status: 200,
       });
