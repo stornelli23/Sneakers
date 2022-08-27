@@ -49,16 +49,17 @@
                                           </div>
                                               <!--BOTÓN CANTIDAD-->
                                           <div class="input-group plus-minus-input">
-                                                  <input class="input-group-field" type="number" name="quantity" value="0" width=10px >
+                                                  <input class="input-group-field quantity" type="number" value="1" id="quantity" name="quantity" width=10px >
                                           </div>     
                                       </div>
                                       <div class="preciounidad">
                                           <p class="cart" >Precio unit.:</p>
-                                          <p class="cart" ><%=producto.price%> </p>
+                                          <p class="preciouno" class="cart" ><%=producto.price%> </p>
                                       </div>
                                   </div>
                                   <div class="precio"><!--bloque precio-->
-                                      <p class="cart" >Suma total: </p>
+                                    
+                                      <p> $ </p></p><p class="subtotal" > <%=producto.price%>  </p>
                                   </div>
                                   
                               </div>
@@ -153,7 +154,7 @@
 
     </main>
     <%- include ('partials/footer') %> 
-    
+<script src="/js/carrito.js"></script>
 </body>
 </html>
 

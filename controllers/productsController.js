@@ -29,16 +29,14 @@ const productsController = {
       req.session.arrayPrecio = arrayPrecio;
       req.session.arrayCarrito = arrayCarrito;
     }
-    console.log(indice.precio)
-    console.log(arrayPrecio)
 
-    const initialValue = 0;
+    const initialValue = 0;               //reduce para sumar los distintos precios del array de carrito y guardarlo en sumaTotal
 const sumaTotal = arrayPrecio.reduce(
   (previousValue, currentValue) => previousValue + currentValue,
   initialValue
 );
-  console.log(sumaTotal)
-    res.render("productCart", { arrayCarrito, destacados, carrito, logueado, sumaTotal });
+    
+res.render("productCart", { arrayCarrito, destacados, carrito, logueado, sumaTotal});
   },
 
   productCartDelete: async (req, res) => {
