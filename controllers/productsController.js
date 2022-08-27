@@ -6,13 +6,17 @@ const productsController = {
   productCart: async (req, res) => {
     let logueado = req.session.userLogged;
     let arrayCarrito = [];
+    let arrayPrecio = [];
+    let precio = req.session.arrayPrecio ;
     let carrito = req.session.arrayCarrito;
     let destacados = await db.Product.findAll({
       where: {
         discount: { [Op.lte]: 0 },
       },
     });
-
+    if(precio){
+      arrayPrecio = precio ;
+    }
     if (carrito) {
       arrayCarrito = carrito;
     }
@@ -21,10 +25,20 @@ const productsController = {
 
     if (indice) {
       arrayCarrito.push(indice);
+      arrayPrecio.push(indice.price)
+      req.session.arrayPrecio = arrayPrecio;
       req.session.arrayCarrito = arrayCarrito;
     }
+    console.log(indice.precio)
+    console.log(arrayPrecio)
 
-    res.render("productCart", { arrayCarrito, destacados, carrito, logueado });
+    const initialValue = 0;
+const sumaTotal = arrayPrecio.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  initialValue
+);
+  console.log(sumaTotal)
+    res.render("productCart", { arrayCarrito, destacados, carrito, logueado, sumaTotal });
   },
 
   productCartDelete: async (req, res) => {
