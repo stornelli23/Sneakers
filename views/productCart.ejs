@@ -49,6 +49,9 @@
                                           </div>
                                               <!--BOTÓN CANTIDAD-->
                                           <div class="input-group plus-minus-input">
+                                                  <!-- <form class="formulario-boton" action="/" method="POST">
+                                                  <button class="boton-sumar" type="submit" >Agregar</button>
+                                                  </form> -->
                                                   <input class="input-group-field quantity" type="number" value="1" id="quantity" name="quantity" width=10px >
                                           </div>     
                                       </div>
@@ -61,6 +64,7 @@
                                     
                                       <p> $ </p></p><p class="subtotal" > <%=producto.price%>  </p>
                                   </div>
+                                  
                                   
                               </div>
                               <div class="bloqueInferiorProducto"><!--bloque precio-->
@@ -76,6 +80,7 @@
                               
                           </div>
                     </article>
+                    
                     <% }) %>
 
                     
@@ -95,7 +100,9 @@
                                 <div class="total"><!--bloque SUBTOTAL SIN ENVIO-->
                                     <div class="total-leyenda">Total de la compra:
                                     </div>
-                                    <div class="total-precio"><%=sumaTotal%>
+                                    <div class="total-precio">
+                                        <p class="total-precio"><%=sumaTotal%>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="continuarCompra">
@@ -155,6 +162,7 @@
     </main>
     <%- include ('partials/footer') %> 
 <script src="/js/carrito.js"></script>
+<script src="/js/precioTotal.js"></script>
 </body>
 </html>
 

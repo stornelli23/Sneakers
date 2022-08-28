@@ -6,9 +6,9 @@ const productsController = {
   productCart: async (req, res) => {
     let logueado = req.session.userLogged;
     let arrayCarrito = [];
-    let arrayPrecio = [];
-    let precio = req.session.arrayPrecio ;
     let carrito = req.session.arrayCarrito;
+    let arrayPrecio = [];
+    let precio = req.session.arrayPrecio ;    
     let destacados = await db.Product.findAll({
       where: {
         discount: { [Op.lte]: 0 },
@@ -27,15 +27,16 @@ const productsController = {
       arrayCarrito.push(indice);
       arrayPrecio.push(indice.price)
       req.session.arrayPrecio = arrayPrecio;
-      req.session.arrayCarrito = arrayCarrito;
+      req.session.arrayCarrito = arrayCarrito; 
+      
+      
     }
 
     const initialValue = 0;               //reduce para sumar los distintos precios del array de carrito y guardarlo en sumaTotal
 const sumaTotal = arrayPrecio.reduce(
   (previousValue, currentValue) => previousValue + currentValue,
-  initialValue
-);
-    
+  initialValue);
+    req.session.sumaTotal = sumaTotal
 res.render("productCart", { arrayCarrito, destacados, carrito, logueado, sumaTotal});
   },
 
@@ -44,6 +45,9 @@ res.render("productCart", { arrayCarrito, destacados, carrito, logueado, sumaTot
     let id = req.params.id;
     let arrayCarrito = [];
     let carrito = req.session.arrayCarrito;
+    let arrayPrecio = [];
+    let precio = req.session.arrayPrecio ;
+    
     let destacados = await db.Product.findAll({
       where: {
         discount: { [Op.lte]: 0 },
@@ -53,6 +57,9 @@ res.render("productCart", { arrayCarrito, destacados, carrito, logueado, sumaTot
     if (carrito) {
       arrayCarrito = carrito;
     }
+    if(precio){
+      arrayPrecio = precio ;
+    }
 
     const indiceAEliminar = arrayCarrito.findIndex((elemento) => {
       return elemento.id == id;
@@ -61,8 +68,13 @@ res.render("productCart", { arrayCarrito, destacados, carrito, logueado, sumaTot
       arrayCarrito.splice(indiceAEliminar, 1);
       req.session.arrayCarrito = arrayCarrito;
     }
+    const initialValue = 0;               //reduce para sumar los distintos precios del array de carrito y guardarlo en sumaTotal
+const sumaTotal = arrayPrecio.reduce(
+  (previousValue, currentValue) => previousValue + currentValue,
+  initialValue);
+    req.session.sumaTotal = sumaTotal
 
-    res.render("productCart", { arrayCarrito, destacados, carrito, logueado });
+    res.render("productCart", { arrayCarrito, destacados, carrito, logueado, sumaTotal });
   },
 
   productDetail: async (req, res) => {
