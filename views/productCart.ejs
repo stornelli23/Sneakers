@@ -69,8 +69,13 @@
                                           Eliminar
                                       </button></a> 
                                   </form>
+                                  <form method="POST" action="/productCart/modify/<%=producto.id%>?_method=DELETE">
+                                    <button type="submit" class="bloqueInferiorProducto">
+                                          Modificar
+                                      </button></a> 
+                                  </form>
                                   
-                                  <a href="/productDetail/<%=producto.id%>">Modificar</a>
+                                  <!-- <a href="/productCart/modify/">Modificar</a> -->
                                   <a href="/products/">Ver otros artículos del vendedor</a>
                               </div>
                               

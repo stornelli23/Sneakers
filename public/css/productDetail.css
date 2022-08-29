@@ -122,6 +122,7 @@ button.size{
     padding: 5px;
     border-radius: 90px;
     width: 100%; 
+    cursor: pointer;
 }
 button.size span{
     font-size: 12px;
@@ -139,6 +140,8 @@ button.submit {
     padding: 5px;
     border-radius: 5px;
     width: 100%;
+    cursor: pointer;
+    
 }
 
 button:focus {
@@ -147,6 +150,7 @@ button:focus {
     -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
     box-shadow: inset 0px 0px 5px #c1c1c1;
+
 }
 
 article.product-specification{
@@ -489,6 +493,7 @@ button.size span{
         margin: 15px 2px;
         padding: 10px;
         border-radius: 10px;
+        
     }
 
     button {
@@ -780,9 +785,9 @@ section.recommended article {
     }
 
     button.submit {
-        background-color: #AD1457;
+        /* background-color: #AD1457; */
         border: none;
-        color: white;
+        /* color: white; */
         text-align: center;
         text-decoration: none;
         display: inline-block;

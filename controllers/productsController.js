@@ -47,6 +47,49 @@ const productsController = {
       req.session.sumaTotal = sumaTotal
       res.render("productCart", { arrayCarrito, destacados, carrito, logueado, sumaTotal});
   },
+  modify: async (req, res) => {
+    let logueado = req.session.userLogged; 
+    let id = req.params.id;
+    let arrayCarrito = [];
+    let carrito = req.session.arrayCarrito;
+    let arrayPrecio = [];
+    let precio = req.session.arrayPrecio ;
+    
+    let destacados = await db.Product.findAll({
+      where: {
+        discount: { [Op.lte]: 0 },
+      },
+    });
+
+    if (carrito) {
+      arrayCarrito = carrito;
+    }
+    console.log("preciosession", precio)
+    if(precio){
+      arrayPrecio = precio ;
+    }
+
+    const indiceAEliminar = arrayCarrito.findIndex((elemento) => {   //busca en el carrito el indice del producto a eliminar (viene por paramas)
+      return elemento.id == id;
+    });
+    console.log("indiceaELIMINAR", indiceAEliminar)
+    if (indiceAEliminar != -1) {  
+      console.log("aaaaaaaaaaaaaaaaaaa")                                        
+      arrayCarrito.splice(indiceAEliminar, 1);                        //si lo encuentra elimina ese indice del arrayCarrito
+      req.session.arrayCarrito = arrayCarrito;
+      arrayPrecio.splice(indiceAEliminar+1, 1);                       //elimina el subtotal correspondiente a ese producto del arraySumatotal
+      req.session.arrayPrecio = arrayPrecio;                          //guarda el nuevo array de suma total en session
+      console.log("arrayPrecio", arrayPrecio)
+    }
+  
+    let productosFiltrados = await db.Product.findByPk(id);
+
+    if (!productosFiltrados) {
+      res.send("Algo salió mal...");
+    } else {
+      res.render("productDetail", { productosFiltrados, destacados, logueado });
+    }
+  },   
 
   productCartDelete: async (req, res) => {
     let logueado = req.session.userLogged;
