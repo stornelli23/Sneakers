@@ -18,6 +18,19 @@ h3
     margin: 15px;
 }
 
+.cantunid{
+    background-color: #AD1457;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 8px 1px;
+    padding: 3px;
+    border-radius: 70px;
+    width: 80%;
+}
 .contenedor-gral{ /*= contenedor gral del body*/    
     display: flex;
     flex-direction: column;
@@ -203,11 +216,17 @@ h3
     display: flex;
     justify-content: space-evenly;
     padding: 0% 20% 5% 5%;
-    color: rgb(71,71,71);
+    
     font-weight: lighter;
+    font-size: 3vh;
+    color: rgb(120,0,46)
     
 }
 
+button {
+    background-color: white;
+    border: none;
+}
 .bloqueInferiorProducto a{
     font-size:9px;
     text-decoration: none;
@@ -216,37 +235,22 @@ h3
 
 .bloqueInferiorProducto :hover{ /* "modificar", y "ver otros.." en negrita al pasar el mouse.*/
     font-weight: bold;
+    cursor: pointer;
 }
 
 .bloqueInferiorProducto :focus{ /* "modificar", y "ver otros.." en negrita al pasar el mouse.*/
     font-weight: bold;
 }
 
-button {/*"eliminar",
-    
-    background-color: white;
-    border: none;
-    color: #AD1457;
-    text-align: center;
-    text-decoration: none;
-    /* -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-    box-shadow: inset 0px 0px 5px #c1c1c1; */
-    cursor:pointer;
-    color: inherit;
-  /* cursor: default; */
-  font: inherit;
-  line-height: normal;
-  overflow: visible;
-  padding: 0;
-  -webkit-user-select: none; /* for button */
-   -webkit-appearance: button; /* for input */
-     -moz-user-select: none;
-      -ms-user-select: none;
-}
 
-button:hover  {/*"eliminar",*/
+
+button.bloqueInferiorProducto:hover  {/*"eliminar",*/
     font-weight: bold;
+    -webkit-box:none;
+    -webkit-box-shadow:none;
+    box-shadow: none;
+    background-color: white;
+    border: none
 }
 
 
@@ -312,7 +316,7 @@ button:hover  {/*"eliminar",*/
 .total{
     display: flex;
     text-align: right; 
-    margin: 3% 5% 3%;
+    margin: 3% 0% 3%;
     padding:0 0 30% 0 ;
     font-weight: bolder;
     
@@ -322,13 +326,16 @@ button:hover  {/*"eliminar",*/
 .total-leyenda{
     width: 80%;
     text-align: right;
-    font-size: 2vh;
+    font-size: 1vh;
 }
 
 .total-precio{
+            position: relative;
+            left: 10px;
             width: 20%;
-            text-align: center;
-            font-size: 2vh;
+            text-align: right;
+            font-size: 1vh;
+            
 }
 
 
@@ -557,13 +564,13 @@ h3
     .total-leyenda{
     width: 80%;
     text-align: right;
-    font-size: 3vh
+    font-size: 2vh
     }
 
     .total-precio{
             width: 20%;
-            text-align: center;
-            font-size: 3vh;
+            text-align: right;
+            font-size: 2vh;
         }
     .continuarCompra{
      display: flex;
@@ -649,13 +656,13 @@ h3
     .total-leyenda{
         width: 80%;
         text-align: right;
-        font-size: 4.5vh;
+        font-size: 3vh;
     }
 
     .total-precio{
             width: 20%;
-            text-align: center;
-            font-size: 4.5vh;
+            text-align: right;
+            font-size: 3vh;
         }
     .titularRecomendados{
         padding-top: 30px;
@@ -709,13 +716,13 @@ h3
     .total-leyenda{
          width: 80%;
          text-align: right;
-         font-size: 4.5vh;
+         font-size: 3vh;
     }
 
     .total-precio{
             width: 20%;
-            text-align: center;
-            font-size: 4.5vh;
+            text-align: right;
+            font-size: 3vh;
     }
     button.finalizar {
         position:relative;

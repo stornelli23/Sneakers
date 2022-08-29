@@ -45,32 +45,20 @@
                                   </div>
                                   <div class="columnaCantidad">
                                       <div class="cantidad" ><!--bloque cantidad-->
-                                          <div class="cantidadtexto"><p class="cart" >Cantidad:</p>
-                                          </div>
-                                              <!--BOTÓN CANTIDAD-->
-                                          <div class="input-group plus-minus-input">
-                                                  <form class="formulario-boton-sumar" action="/" method="POST">
-                                                  <button type="submit" >Agregar</button>
-                                                  </form>
-                                                  <form class="formulario-boton-restar" action="/" method="POST">
-                                                    <button type="submit" >Restar</button>
-                                                    </form>
-                                                  <input class="input-group-field quantity" type="number" value="1" id="quantity" name="quantity" width=10px >
-                                                  
-                                                
-
-
-
-                                          </div>     
+                                          
                                       </div>
-                                      <div class="preciounidad">
+                                      <div class="preciounidad cantunid">
                                           <p class="cart" >Precio unit.:</p>
-                                          <p class="preciouno" class="cart" ><%=producto.price%> </p>
+                                          <p class="preciouno" class="cart" >$ <%=producto.price%> </p>
                                       </div>
+                                      <div class="preciounidad cantunid">
+                                        <p class="cart" >Cantidad:</p>
+                                        <p class="preciouno" class="cart" ><%=producto.cantidad%> pares</p>
+                                    </div>
                                   </div>
                                   <div class="precio"><!--bloque precio-->
                                     
-                                      <p> $ </p></p><p class="subtotal" > <%=producto.price%>  </p>
+                                      <p> $ </p></p><p class="subtotal" > <%=producto.subtotalElemento%>  </p>
                                   </div>
                                   
                                   
@@ -81,9 +69,14 @@
                                           Eliminar
                                       </button></a> 
                                   </form>
+                                  <form method="POST" action="/productCart/modify/<%=producto.id%>?_method=DELETE">
+                                    <button type="submit" class="bloqueInferiorProducto">
+                                          Modificar
+                                      </button></a> 
+                                  </form>
                                   
-                                  <a href="#">Modificar</a>
-                                  <a href="#">Ver otros artículos del vendedor</a>
+                                  <!-- <a href="/productCart/modify/">Modificar</a> -->
+                                  <a href="/products/">Ver otros artículos del vendedor</a>
                               </div>
                               
                           </div>
@@ -106,10 +99,10 @@
                                 
                                 
                                 <div class="total"><!--bloque SUBTOTAL SIN ENVIO-->
-                                    <div class="total-leyenda">Total de la compra:
+                                    <div class="total-leyenda">Total de la compra:    
                                     </div>
                                     <div class="total-precio">
-                                        <p class="total-precio"><%=sumaTotal%>
+                                        <p class="total-precio">$<%=sumaTotal%>
                                         </p>
                                     </div>
                                 </div>

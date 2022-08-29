@@ -83,6 +83,7 @@ router.get("/editProduct/:id/", productsController.editProduct);
 router.get("/products", productsController.products);
 router.get("/productDetail/:id/", productsController.productDetail);
 
+
 // ROUTES POST//
 router.delete("/editProduct/delete/:id/", productsController.delete);
 router.post(
@@ -98,5 +99,6 @@ router.put(
   upload.single(),
   productsController.editProductStore
 );
+router.delete("/productCart/modify/:id/", productsController.modify);
 
 module.exports = router;
