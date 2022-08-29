@@ -1,8 +1,10 @@
 const db = require("../../database/models");
 
 const apiProductsController = {
-  allProducts: (req, res) => {
-    db.Product.findAll().then((products) => {
+  allProducts: async (req, res) => {
+    let totalBrands = await db.Brand.findAll();
+
+    await db.Product.findAll().then((products) => {
       let totalNike = 0;
       let totalAdidas = 0;
       let totalReebok = 0;
@@ -26,10 +28,10 @@ const apiProductsController = {
 
       res.status(200).json({
         totalProducts: products.length,
-        totalBrands: totalNike + totalAdidas + totalReebok,
+        totalBrands: totalBrands.length,
         countByBrand: [
           {
-           Nike: totalNike,
+            Nike: totalNike,
           },
           {
             Adidas: totalAdidas,
@@ -47,9 +49,8 @@ const apiProductsController = {
   productDetail: async (req, res) => {
     let id = req.params.id;
 
-    await db.Product.findByPk(id)
-    .then((product) => {
-      res.json(resultado)
+    await db.Product.findByPk(id).then((product) => {
+      res.json(resultado);
 
       res.status(200).json({
         data: {
