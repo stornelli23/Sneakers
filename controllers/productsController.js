@@ -4,40 +4,48 @@ const Op = db.Sequelize.Op;
 
 const productsController = {
   productCart: async (req, res) => {
-    let logueado = req.session.userLogged;
-    let arrayCarrito = [];
-    let carrito = req.session.arrayCarrito;
-    let arrayPrecio = [];
-    let precio = req.session.arrayPrecio ;    
-    let destacados = await db.Product.findAll({
+    let logueado = req.session.userLogged;      
+    let arrayCarrito = [];                          //inicializa el array de elementos del carrito
+    let carrito = req.session.arrayCarrito;         //recupera el arrayCarrito del session si existe
+    let arrayPrecio = [500];                        //inicializa array de SumaTotal incluyendo costo de envío
+    let precio = req.session.arrayPrecio ;          //recupera array de SumaTotal del session si existe
+    let destacados = await db.Product.findAll({     
       where: {
         discount: { [Op.lte]: 0 },
       },
     });
-    if(precio){
+    if(precio){                                     //si existe sumaTotal en session lo incluye en el arrayPrecio (suma total)
       arrayPrecio = precio ;
-    }
-    if (carrito) {
+    }   
+    if (carrito) {                                  //si existe arrayCarrito en session lo incluye en el arrayCarrito
       arrayCarrito = carrito;
     }
 
-    let indice = await db.Product.findByPk(req.params.id);
+    let indice = await db.Product.findByPk(req.params.id);         //trae de DB el producto a incorporar al carrito
 
-    if (indice) {
-      arrayCarrito.push(indice);
-      arrayPrecio.push(indice.price)
-      req.session.arrayPrecio = arrayPrecio;
-      req.session.arrayCarrito = arrayCarrito; 
-      
-      
-    }
+    if (indice) {                                                  //si lo encuentra trae sus datos
+        let indice2 = indice.dataValues
+      let cantidad = req.body.selectcantidad                        //agrega la cantidad seleccionada al objeto
+      let subtotalElemento = cantidad*indice2.price                 //calcula subtotal (precio x cantidad)
+      let elemento ={                                       
+        ...indice2,
+        cantidad:cantidad,
+        subtotalElemento:subtotalElemento
+      }
+      console.log("elemento", elemento)
+      arrayCarrito.push(elemento);                                  //agrega el elemento al carrito
+      arrayPrecio.push(subtotalElemento)                            //agrega el subtotal a la SuMaTotal
+      console.log("indiceprice", indice.price)
+      req.session.arrayPrecio = arrayPrecio;                        //guarda en session el arrayPrecio (sumaTotal que levanta al principio)
+      req.session.arrayCarrito = arrayCarrito;                      //guarda en session el carrito
+      }
 
-    const initialValue = 0;               //reduce para sumar los distintos precios del array de carrito y guardarlo en sumaTotal
-const sumaTotal = arrayPrecio.reduce(
+      const initialValue = 0;               //reduce para sumar los distintos precios del array de carrito y guardarlo en sumaTotal
+      const sumaTotal = arrayPrecio.reduce(
   (previousValue, currentValue) => previousValue + currentValue,
-  initialValue);
-    req.session.sumaTotal = sumaTotal
-res.render("productCart", { arrayCarrito, destacados, carrito, logueado, sumaTotal});
+      initialValue);
+      req.session.sumaTotal = sumaTotal
+      res.render("productCart", { arrayCarrito, destacados, carrito, logueado, sumaTotal});
   },
 
   productCartDelete: async (req, res) => {
@@ -57,17 +65,22 @@ res.render("productCart", { arrayCarrito, destacados, carrito, logueado, sumaTot
     if (carrito) {
       arrayCarrito = carrito;
     }
+    console.log("preciosession", precio)
     if(precio){
       arrayPrecio = precio ;
     }
 
-    const indiceAEliminar = arrayCarrito.findIndex((elemento) => {
+    const indiceAEliminar = arrayCarrito.findIndex((elemento) => {   //busca en el carrito el indice del producto a eliminar (viene por paramas)
       return elemento.id == id;
     });
-    if (indiceAEliminar != -1) {
-      arrayCarrito.splice(indiceAEliminar, 1);
+    if (indiceAEliminar != -1) {                                          
+      arrayCarrito.splice(indiceAEliminar, 1);                        //si lo encuentra elimina ese indice del arrayCarrito
       req.session.arrayCarrito = arrayCarrito;
+      arrayPrecio.splice(indiceAEliminar+1, 1);                       //elimina el subtotal correspondiente a ese producto del arraySumatotal
+      req.session.arrayPrecio = arrayPrecio;                          //guarda el nuevo array de suma total en session
+      console.log("arrayPrecio", arrayPrecio)
     }
+  
     const initialValue = 0;               //reduce para sumar los distintos precios del array de carrito y guardarlo en sumaTotal
 const sumaTotal = arrayPrecio.reduce(
   (previousValue, currentValue) => previousValue + currentValue,
