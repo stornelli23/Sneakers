@@ -69,8 +69,11 @@ console.log('resultV: ', resultValidation.errors)
           gender: req.body.gender,
           permission_id: 2,
         }
-      );
-  
+      )
+      .then((newUser) => {
+        req.session.userLogged = newUser
+      })
+      .then()
       return res.redirect("/");
     }
 
