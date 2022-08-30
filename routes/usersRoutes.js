@@ -93,6 +93,7 @@ const validateRegister = [
 router.get("/users", usersControllers.index);
 router.get("/login", usersControllers.login);
 router.get("/register", usersControllers.register);
+router.get("/userEdit/:id/", usersControllers.userEdit);
 router.get("/userProfile/:id", usersControllers.profile);
 router.get("/logout", usersControllers.logout);
 
@@ -104,6 +105,8 @@ router.post(
   validateRegister,
   usersControllers.processRegister
 );
+router.put("/userEdit/:id/",upload.single('avatar'),usersControllers.editUserStore);
+
 router.post("/login", validateLogin, usersControllers.loginProcess);
 
 module.exports = router;

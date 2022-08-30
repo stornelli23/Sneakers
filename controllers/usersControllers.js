@@ -2,53 +2,65 @@ const fs = require("fs");
 const path = require("path");
 const User = require("../database/models/User");
 const bcrypt = require("bcryptjs");
-const { validationResult } = require("express-validator");
+const {
+  validationResult
+} = require("express-validator");
 const db = require("../database/models");
 
 const usersControllers = {
   index: async (req, res) => {
     let logueado = req.session.userLogged;
     let allUsers = await db.User.findAll();
-    res.render("users", { allUsers, logueado });
+    res.render("users", {
+      allUsers,
+      logueado
+    });
   },
   login: (req, res) => {
     let logueado = req.session.userLogged;
 
-    res.render("login", { logueado });
+    res.render("login", {
+      logueado
+    });
   },
   register: (req, res) => {
     let logueado = req.session.userLogged;
-    res.render("register", { logueado });
+    res.render("register", {
+      logueado
+    });
   },
   processRegister: async (req, res) => {
     let logueado = req.session.userLogged;
     let resultValidation = validationResult(req);
     let allUsers = await db.User.findAll();
     let userInData = await db.User.findOne({
-      where: { email: req.body.email },
+      where: {
+        email: req.body.email
+      },
     });
 
     console.log('REQBODY: ', req.body);
 
     if (resultValidation.errors.length > 0) {
 
-console.log('resultV: ', resultValidation.errors)
+      console.log('resultV: ', resultValidation.errors)
 
       return res.render("register", {
         logueado,
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
-    } else if(userInData) {
+    } else if (userInData) {
       return res.render('register', {
-        logueado, errors: {
+        logueado,
+        errors: {
           email: {
             msg: 'El email ingresado ya está resgistrado'
           },
           oldData: req.body
         }
       })
-    }else {
+    } else {
 
       let image;
       if (req.file) {
@@ -56,10 +68,9 @@ console.log('resultV: ', resultValidation.errors)
       } else {
         image = "avatardefault.png";
       }
-  
-      await db.User.create(
-        {
-          
+
+      await db.User.create({
+
           first_name: req.body.first_name,
           last_name: req.body.last_name,
           email: req.body.email,
@@ -68,26 +79,29 @@ console.log('resultV: ', resultValidation.errors)
           date_of_birth: req.body.date_of_birth,
           gender: req.body.gender,
           permission_id: 2,
-        }
-      )
-      .then((newUser) => {
-        req.session.userLogged = newUser
-      })
-      .then()
+        })
+        .then((newUser) => {
+          req.session.userLogged = newUser
+        })
+        .then()
       return res.redirect("/");
     }
 
   },
   profile: (req, res) => {
     let logueado = req.session.userLogged;
-    res.render("userProfile", { logueado });
+    res.render("userProfile", {
+      logueado
+    });
   },
 
   loginProcess: async (req, res) => {
     let logueado = req.session.userLogged;
     let resultValidation = validationResult(req);
     let userToLogin = await db.User.findOne({
-      where: { email: req.body.email },
+      where: {
+        email: req.body.email
+      },
     });
     if (userToLogin) {
       let passwordOk = bcrypt.compareSync(
@@ -98,7 +112,9 @@ console.log('resultV: ', resultValidation.errors)
         req.session.userLogged = userToLogin;
 
         if (req.body.recordarUsuario != undefined) {
-          res.cookie("userEmail", userToLogin.email, { maxAge: 60000 * 60 });
+          res.cookie("userEmail", userToLogin.email, {
+            maxAge: 60000 * 60
+          });
         }
       } else {
         return res.render("login", {
@@ -124,8 +140,43 @@ console.log('resultV: ', resultValidation.errors)
     console.log(req.session.userLogged.id)
     res.redirect("/");
   },
- 
- 
+
+
+  userEdit: async (req, res) => {
+    let logueado = req.session.userLogged;
+
+    let userToEdit = await db.User.findByPk(req.params.id);
+
+    res.render("userEdit", {
+      userToEdit,
+      logueado
+    });
+  },
+  editUserStore: async (req, res) => {
+    let userToEdit = await db.User.findByPk(req.params.id);
+    let image;
+    if (req.file) {
+      image = req.file.filename || userToEdit.avatar
+    } else if (userToEdit.avatar != 'avatardefault.png') {
+      image = userToEdit.avatar;
+    }else {
+      image = 'avatardefault.png'
+    }
+
+    userToEdit.first_name = req.body.first_name;
+    userToEdit.last_name = req.body.last_name;
+    userToEdit.email = req.body.email;
+    userToEdit.date_of_birth = req.body.date_of_birth;
+    userToEdit.gender = req.body.gender;
+    userToEdit.password = bcrypt.hashSync(req.body.password, 10);
+    userToEdit.avatar = image;
+
+    await userToEdit.save();
+
+
+    req.session.destroy();
+    return res.redirect("/");
+  },
 
   logout: (req, res) => {
     res.clearCookie("userEmail");

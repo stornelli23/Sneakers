@@ -33,11 +33,15 @@
                     </div>
                     <div class="items-perfil">
                         <div class="titulos-perfil">Fecha de Nacimiento:</div>
-                        <div class="control-datos"><%= logueado.date_of_birth%></div>
+                        <div class="control-datos"><%=logueado.date_of_birth%></div>
                     </div>
                     <div class="items-perfil">
                         <div class="titulos-perfil">Contraseña:</div>
                         <div class="control-datos">***********</div>
+                    </div> 
+                    <div class="items-perfil">
+                        <div class="titulos-perfil">Genero:</div>
+                        <div class="control-datos"><%= logueado.gender%></div>
                     </div>
 
                 </div>
@@ -46,6 +50,13 @@
                 </div>
 
             </div>
+            <div>
+                <a href="/userEdit/<%=logueado.id%>/" class="control-info-r">Hola</a>
+            </div>
+            <div class="controlBoton-logout">
+                <form action="/userEdit/<%=logueado.id%>/">
+                    <button class="boton-logout">Editar Perfil</button>
+                </form>
             <div class="controlBoton-logout">
                 <form method="GET" action="/logout">
                     <button class="boton-logout">Logout</button>
