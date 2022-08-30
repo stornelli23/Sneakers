@@ -14,6 +14,16 @@ main.container p {
 }
 
 
+.divBuscador {
+    background-color: #AD1457;
+    color: white;
+    
+}
+
+.resultadoBusqueda {
+    padding: 5px;
+}
+
 p.filter a:link {
         text-decoration: none;
         color: black;

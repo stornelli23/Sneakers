@@ -22,9 +22,9 @@
 
 <section class="indexDestacados">
     <% productos.forEach(producto => { %>
-    <article class="articleIndex">
+    <article class="articleIndex" id="resultado">
        
-        <div class="productIndex">
+        <div class="productIndex"> 
         <a href="/productDetail/<%=producto.id%> "><img src="/img/products/<%=producto.image%> " alt=""></a>
         <div class="product-detail-Index">
             <p><%=producto.name%></p>
@@ -44,6 +44,6 @@
 
     <!-- FOOTER -->
     <%- include ('partials/footer') %> 
-
+    <script src="/js/buscador.js"></script>
 </body>
 </html>
