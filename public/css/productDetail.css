@@ -393,18 +393,18 @@ footer{
 
 
 .boxselect select {
-    border-radius: 20px;
-    background-color: #AD1457;
-    text-align: center;
-    color: white;
-  padding: 10px;
-  width: 250px;
-  border: none;
-  font-size: 15px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-  -webkit-appearance: button;
-  appearance: button;
-  outline: none;
+        border-radius: 10px;
+        background-color: #AD1457;
+        text-align: center;
+        color: white;
+        padding: 5px;
+        width: 100%;
+        border: none;
+        font-size: 12px;
+        box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+        -webkit-appearance: button;
+        appearance: button;
+        outline: none;
   }
   
   .boxselect::before {
@@ -587,7 +587,7 @@ section.recommended article {
 
 
     main.container p {
-        margin-top: 15px;
+        /* margin-top: 15px; */
         display: flex;
     }
 
@@ -619,14 +619,36 @@ section.recommended article {
         font-size: 20px;
         font-weight: bold;
         color: #AD1457;
+        margin-bottom: 25px;
     }
 
     p.text-top {
-        font-size: 20px;
+        font-size: 15px;
         border-bottom: solid 1px grey;
         display: flex;
         justify-content: space-between;
+        margin-left: 10px;
+        margin-top: 8px;
     }
+   .talleCantidad {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .boxselect select {
+        border-radius: 10px;
+        background-color: #AD1457;
+        text-align: center;
+        color: white;
+        padding: 5px;
+        border: none;
+        margin-top: 10px;
+        font-size: 12px;
+        box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+        -webkit-appearance: button;
+        appearance: button;
+        outline: none;
+  }
 
     .size span{
         font-size: 14px;
@@ -768,7 +790,22 @@ section.recommended article {
         display: flex;
         font-size: 18px;
     }
-
+    
+    .boxselect select {
+        border-radius: 10px;
+        background-color: #AD1457;
+        text-align: center;
+        color: white;
+        padding: 10px;
+        border: none;
+        margin-top: 10px;
+        margin-right: 5px;
+        font-size: 15px;
+        box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+        -webkit-appearance: button;
+        appearance: button;
+        outline: none;
+  }
 
     .size{
         background-color: #AD1457;

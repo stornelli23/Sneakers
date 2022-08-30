@@ -23,7 +23,7 @@ window.addEventListener("load", function () {
         let nuevaCantidad = Number(cantidadAnterior)+1
         console.log("precioUnidad", precioUnidad)
         console.log("nuevaCantidad", nuevaCantidad)
-
+   
         let subtotalElemento = precioUnidad*nuevaCantidad               //calcula el nuevo subtotal del elemento
         console.log("🚀 ~  subtotalElemento", subtotalElemento)         
         document.querySelector("p.subtotal").innerText = subtotalElemento //modifica el subtotal del elemento
@@ -44,7 +44,6 @@ window.addEventListener("load", function () {
         let nuevaCantidad = Number(cantidadAnterior)-1
         console.log("precioUnidad", precioUnidad)
         console.log("nuevaCantidad", nuevaCantidad)
-
         let subtotalElemento = precioUnidad*nuevaCantidad               //calcula el nuevo subtotal del elemento
         console.log("🚀 ~  subtotalElemento", subtotalElemento)         
         document.querySelector("p.subtotal").innerText = subtotalElemento //modifica el subtotal del elemento

@@ -25,11 +25,13 @@ const productsController = {
 
     if (indice) {                                                  //si lo encuentra trae sus datos
         let indice2 = indice.dataValues
-      let cantidad = req.body.selectcantidad                        //agrega la cantidad seleccionada al objeto
+      let cantidad = req.body.selectcantidad  
+      let talle= req.body.selectTalle                      //agrega la cantidad seleccionada al objeto
       let subtotalElemento = cantidad*indice2.price                 //calcula subtotal (precio x cantidad)
       let elemento ={                                       
         ...indice2,
         cantidad:cantidad,
+        talle: talle,
         subtotalElemento:subtotalElemento
       }
       console.log("elemento", elemento)

@@ -22,19 +22,23 @@
                     <img src="/img/products/<%=productosFiltrados.image%>" alt="">
                 </div>
                 <div class="main-article">
+                    <form method="POST" action="/productCart/<%=productosFiltrados.id%>">
                     <p class="name"><%=productosFiltrados.name%></p>
                     <p class="price">$<%=productosFiltrados.price%></p>
+                    <div class="talleCantidad">
                     <p class="text-top">Talle</p>
-                    <div class="shoe-size">
-                    <button class="size"><span>35</span></button>
-                    <button class="size"><span>36</span></button>
-                    <button class="size"><span>37</span></button>
-                    <button class="size"><span>38</span></button>
-                    <button class="size"><span>39</span></button>
-                    <button class="size"><span>40</span></button>
+                
+                    <br>
+                    <div class="boxselect">
+                        <select  name="selectTalle">
+                    <option value="35" class="size">35</option>
+                    <option value="36" class="size">36</option>
+                    <option value="37" class="size">37</option>
+                    <option value="38" class="size">38</option>
+                    <option value="39" class="size">39</option>
+                    <option value="40" class="size">40</button>
+                        </select>
                     </div>
-                    
-                    <form method="POST" action="/productCart/<%=productosFiltrados.id%>">
                         <p class="text-top">Cantidad</p>
                         <br>
                         <div class="boxselect">
@@ -51,6 +55,7 @@
                             <option value="10">10 pares</option>
                         </select>
                         </div>
+                    </div>
                         <br>
                         
                         
