@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('partials/head.ejs') %>
+
+<body>
+
+    <!----- Header ------>
+
+    <%- include ('partials/header') %>
+
+    <main class="main-editProduct">
+        <div class="contenedor-principal-editProduct">
+            <fieldset class="fieldset-editProduct">
+                <form method="POST" action="/userEdit/<%=userToEdit.id%>?_method=PUT" enctype="multipart/form-data">
+                    <legend class="legend-editProduct">Editar Usuario</legend>
+                    <div>
+                        <div class="formulario-general-editProduct">
+                            <p>Nombre</p>
+                            <input type="text" name="first_name" class="barra-espacios-editProduct"
+                                value="<%=userToEdit.first_name%>">
+                                 <% if (locals.errors && errors.first_name) { %>
+                             <div class="error-text">
+                               <p class="error-text-p"> <%= errors.first_name.msg %> </p>  
+                             </div>
+                            <% } %>
+                        </div>
+                        <div class="formulario-general-editProduct">
+                            <p>Apellido</p>
+                            <input type="text" name="last_name" class="barra-espacios-editProduct"
+                                value="<%=userToEdit.last_name%>">
+                                <% if (locals.errors && errors.last_name) { %>
+                                    <div class="error-text">
+                                      <p class="error-text-p"> <%= errors.last_name.msg %> </p>  
+                                    </div>
+                                   <% } %>
+                        </div>
+
+                  <div class="formulario-general-editProduct">
+                            <p>Cambiar Contraseña</p>
+                            <input type="password" name="password" class="barra-espacios-editProduct">
+                                <% if (locals.errors && errors.password) { %>
+                                    <div class="error-text">
+                                      <p class="error-text-p"> <%= errors.password.msg %> </p>  
+                                    </div>
+                                   <% } %>
+                        </div> 
+
+                        <div class="formulario-general-editProduct">
+                            <p>Genero</p>
+                            <select name="gender" id="gender" class="control-selector-login" value="<%=userToEdit.gender%>" ">
+                            <option>Seleccionar</option>
+                            <% 
+                            let gender = ['Masculino', 'Femenino', 'Otro'];
+                            %> 
+                            <% for( let unGenero of gender ) { %>
+                                <option value="<%= unGenero %>" <%= userToEdit.gender ? 'selected' : null %> > <%= unGenero %>
+                            </option>                 
+                            <% } %>
+                        </select>
+                    </div>
+
+                    <div class="formulario-general-editProduct">
+                        <p>E-Mail</p>
+                        <input type="email" id="email" name="email" value="<%= userToEdit.email %> " class="barra-espacios">
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="error-text">
+                              <p class="error-text-p"> <%= errors.email.msg %> </p>  
+                            </div>
+                           <% } %>
+                    </div>
+
+                    <div class="formulario-general-editProduct">
+                        <p>Fecha de Nacimiento</p>
+                    <input type="date" name="date_of_birth" class="control-calendario-login" value="<%= userToEdit.date_of_birth %>">
+                    </div>
+                    
+                        <div class="formulario-general-editProduct">
+                            <p>Avatar</p>
+                        <img src="/img/users/<%=userToEdit.avatar%>" alt="" width="200" height="200" >
+                        <input class="imagenes-editProduct" type="file" id="avatar" name="avatar" accept=".jpg, .png" value="/img/users/<%=userToEdit.avatar%>" >
+                        </div>
+
+                    </div>
+
+                    <div class="boton-editProduct">
+                        <button type="submit" class="boton-crear-editProduct">Guardar cambios</button>
+                    </div>
+                </form>
+
+        </div>
+        </div>
+        </fieldset>
+
+        </div>
+
+    </main>
+
+    <!----- Footer ------>
+
+    <%- include ('partials/footer') %>
+
+</body>
+
+</html>
