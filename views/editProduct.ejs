@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include ('partials/head.ejs') %> 
+<%- include ('partials/head.ejs') %>
 
 <body>
 
@@ -9,38 +9,42 @@
 
     <%- include ('partials/header') %>
 
-    <main class="main-editProduct">
-        <div class="contenedor-principal-editProduct">
-            <fieldset class="fieldset-editProduct">
+    <main class="contenedor-principal-editProduct">
+        <fieldset class="fieldset-editProduct">
+            <legend class="legend-editProduct">Editar Producto </legend>
             <form method="POST" action="/editProduct/<%=productToEdit.id%>?_method=PUT" enctype="multipart/form-data">
-                <legend class="legend-editProduct">Editar Producto </legend>
                 <div>
                     <div class="formulario-general-editProduct">
                         <p>Nombre del Producto</p>
-                        <input type="text" name="name" class="barra-espacios-editProduct" value="<%=productToEdit.name%>">
+                        <input type="text" name="name" class="barra-espacios-editProduct"
+                            value="<%=productToEdit.name%>">
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Precio</p>
-                        <input type="number" name="price" class="barra-espacios-editProduct" value=<%=productToEdit.price%> >
+                        <input type="number" name="price" class="barra-espacios-editProduct"
+                            value=<%=productToEdit.price%>>
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Descuento</p>
-                        <input type="number" name="discount" class="barra-espacios-editProduct" value=<%=productToEdit.discount%>>
+                        <input type="number" name="discount" class="barra-espacios-editProduct"
+                            value=<%=productToEdit.discount%>>
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Descripcion</p>
-                        <textarea name="description" class="descripcion-editProduct" rows="5" cols="100" placeholder="Descripción del producto aquí" ><%-productToEdit.description%></textarea>
+                        <textarea name="description" class="descripcion-editProduct" rows="5" cols="100"
+                            placeholder="Descripción del producto aquí"><%-productToEdit.description%></textarea>
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Imagen del Producto</p>
-                        <img src="/img/products/<%=productToEdit.image%>" alt="" width="200" height="200" accept=".jpg, .png">
-                        <input class="imagenes-editProduct" type="file" name="image" accept=".jpg, .png" > 
+                        <img src="/img/products/<%=productToEdit.image%>" alt="" width="200" height="200"
+                            accept=".jpg, .png">
+                        <input class="imagenes-editProduct" type="file" name="image" accept=".jpg, .png">
                     </div>
                     <div class="formulario-general-editProduct">
                         <p>Categoria</p>
                         <div class="control-radio-editProduct">
-                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id" value="1"
-                                    <%if(productToEdit.category_id==1){%>checked<%}%>>Hombre</input></div>
+                            <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct"
+                                    name="category_id" value="1" <%if(productToEdit.category_id==1){%>checked<%}%>>Hombre</input></div>
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id" value ="2"
                                 <%if(productToEdit.category_id==2){%>checked<%}%>>Mujer</input></div>
                             <div class="radio-editProduct"><input type="radio" class="control-radio-editProduct" name="category_id" value="3"
@@ -63,19 +67,17 @@
          </form>
                     <div class="boton-editProduct">
                     <form method="POST" action="/editProduct/delete/<%=productToEdit.id%>?_method=DELETE">
-                        <button type="submit" class="boton-borrar-editProduct">Eliminar producto</button>
-                    </form>
-                    </div>
-                </div>
-            </fieldset>
-        
-        </div>
+                                <button type="submit" class="boton-borrar-editProduct">Eliminar producto</button>
+            </form>
+            </div>
+            </div>
+        </fieldset>
 
     </main>
 
     <!----- Footer ------>
 
-    <%- include ('partials/footer') %>
+    <%- include ('partials/footerLogin') %>
 
 </body>
 

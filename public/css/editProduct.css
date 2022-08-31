@@ -6,19 +6,25 @@
 }
 
 .fieldset-editProduct {
+    margin: 25px 0px;
+    background-color: pink;
     max-width: 900px;
     text-align: center;
     color: #000000;
-    border: 1px solid rgb(120,0,46);
+    box-shadow: 5px 5px 17px 5px rgb(0 0 0 / 76%);
+    border: 2px solid rgb(120,0,46);
 }
 
 .legend-editProduct{
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bolder;
     font-style: italic;
 }
 
 .contenedor-principal-editProduct {
+    background-color: white;
+    /* background-image: url(../img/copia.png); */
+    padding: 20px 20px;
     display: flex;
     justify-content: center;
     align-items: center;

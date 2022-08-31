@@ -175,6 +175,7 @@ const usersControllers = {
 
 
     req.session.destroy();
+    res.clearCookie("userEmail");
     return res.redirect("/");
   },
 

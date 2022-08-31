@@ -9,12 +9,12 @@
 
     <%- include ('partials/header') %>
 
-    <main class="main-editProduct">
-        <div class="contenedor-principal-editProduct">
-            <fieldset class="fieldset-editProduct">
+        <main class="contenedor-principal-editProduct">
                 <form method="POST" action="/userEdit/<%=userToEdit.id%>?_method=PUT" enctype="multipart/form-data">
-                    <legend class="legend-editProduct">Editar Usuario</legend>
-                    <div>
+                    <fieldset class="fieldset-editProduct">
+                        <legend class="legend-editProduct">Editar Usuario</legend>
+                        <div>
+                        
                         <div class="formulario-general-editProduct">
                             <p>Nombre</p>
                             <input type="text" name="first_name" class="barra-espacios-editProduct"
@@ -92,13 +92,12 @@
         </div>
         </fieldset>
 
-        </div>
-
     </main>
 
+    
     <!----- Footer ------>
 
-    <%- include ('partials/footer') %>
+    <%- include ('partials/footerLogin') %>
 
 </body>
 

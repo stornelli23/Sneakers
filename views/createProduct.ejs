@@ -9,8 +9,7 @@
 
     <%- include ('partials/header') %>
 
-    <main class="main-editProduct">
-        <div class="contenedor-principal-editProduct">
+        <main class="contenedor-principal-editProduct">
             <form method="POST" action="/createProduct" enctype="multipart/form-data" class="form-principal createProduct">
             <fieldset class="fieldset-editProduct" >
                 <legend class="legend-editProduct">Crear Producto</legend>
@@ -105,13 +104,13 @@
                 </div>
             </fieldset>
         </form>
-        </div>
-
     </main>
+
+    
 
     <!----- Footer ------>
 
-    <%- include ('partials/footer') %>
+    <%- include ('partials/footerLogin') %>
     <script src="/js/createProductValidations.js"></script>
 </body>
 

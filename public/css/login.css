@@ -126,9 +126,13 @@
 }
 
 .checkbox-u input {
-    border-radius: 2px;
-    margin-right: 5px;
+    margin-left: 20px;
 }
+
+.recordarUsuario-radio input{
+    margin-left: 10px;
+}
+
 
 .display-linea-login label {
     font-size: 15px;
@@ -172,6 +176,7 @@
     text-align: center;
     justify-content: center;
 }
+
 
 /*********** FOOTER ************/
 
@@ -268,10 +273,6 @@ footer#footer-register {
 
 }
 
-
-
-
-
 .nombre-completo-register,
 .password-completo-register,
 .formulario-otros-register {
@@ -341,6 +342,7 @@ footer#footer-register {
     }
 
     .mainLogin {
+        height: 720px;
         padding: 130px 0px;
     }
 
@@ -371,6 +373,7 @@ footer#footer-register {
 
     .display-linea-login {
         display: flex;
+        justify-content: center;
         flex-direction: row;
         align-items: center;
     }
@@ -378,7 +381,7 @@ footer#footer-register {
     /**Register*/
     
     footer#footer-register{
-        height: 200px;
+        height: 150px;
     }
 
     .footer-logo-r {
