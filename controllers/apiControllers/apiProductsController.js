@@ -50,7 +50,7 @@ const apiProductsController = {
     let id = req.params.id;
 
     await db.Product.findByPk(id).then((product) => {
-      res.json(resultado);
+      // res.json(product);
 
       res.status(200).json({
         data: {

@@ -17,7 +17,7 @@ main.container p {
 .divBuscador {
     background-color: #AD1457;
     color: white;
-    
+    display: none;
 }
 
 .resultadoBusqueda {

@@ -46,14 +46,15 @@ window.addEventListener("load", function () {
           filtrar()
           let div = document.querySelector(".divBuscador");
           div.style.display = "block"
-         
+          let divResultado = document.querySelector(".resultadoBusqueda");
+          divResultado.style.display = "block"
 
         }
       })
 
       document.querySelector('#formulario').addEventListener('mouseout', function (e) {
-        let div = document.querySelector(".divBuscador");
-        div.style.display = "none"
+        let divResultado = document.querySelector(".resultadoBusqueda");
+        divResultado.style.display = "none"
         // let resultadoBusqueda = div.querySelector(".resultadoBusqueda");
         // resultadoBusqueda.style.display = "none"
       })
