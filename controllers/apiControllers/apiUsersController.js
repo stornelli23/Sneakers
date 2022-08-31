@@ -4,13 +4,18 @@ const apiUsersController = {
 
     allUsers: (req, res) => {
     db.User.findAll({
-      attributes: ["id", "first_name", "email"],
+      attributes: ["id", "first_name",  "last_name", "email", "avatar"],
     })
     .then((users) => {
       for (let i = 0; i < users.length; i++) {
         users[i].setDataValue(
           "detail",
           "http://localhost:3000/api/users/" + users[i].id
+        );
+
+        users[i].setDataValue(
+          "imagen",
+          "http://localhost:3000/img/users/" + users[i].avatar
         );
       }
 
@@ -36,7 +41,7 @@ const apiUsersController = {
             email:          user.email,
             date_of_birth:  user.date_of_birth,
             gender:         user.gender,
-            avatar: "localhost:3000/img/users/"+user.avatar
+            avatar: "http://localhost:3000/img/users/"+user.avatar
         },
         status: 200,
       });
